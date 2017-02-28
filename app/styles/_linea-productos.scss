@@ -2,6 +2,7 @@
     justify-content: space-between;
     margin: 5px;
     color: $color-terciario;
+    height: 500px;
     .linea-productos-imagen {
         background: $color-terciario;
         position: relative;
@@ -14,15 +15,18 @@
         padding: 12px;
         padding-top: 0px;
         text-align: center;
+        h2 {
+            height: 70px;
+        }
     }
     
 }
 
 .linea-productos-3 {
     display: flex;
-    border: 2px solid !important;
-    border-color: $color-primario !important;
-    @include button-box-shadow(-5px 0px 5px 0px rgba(#000, 0.4));
+    // border: 2px solid !important;
+    // border-color: $color-primario !important;
+    // @include button-box-shadow(-5px 0px 5px 0px rgba(#000, 0.4));
     .linea-productos-description {
         order: 1;
         width: 70%;

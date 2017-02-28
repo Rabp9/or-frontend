@@ -1,0 +1,14 @@
+{
+    "elements": {},
+    "attributes": {
+        "uib-carousel": {
+            "context": "div"
+        },
+        "aria-expanded": {
+            "context": "a"
+        },
+        "when-visible": {
+            "context": "div"
+        }
+    }
+}

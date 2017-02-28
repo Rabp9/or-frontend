@@ -24,6 +24,7 @@
     background-color: white;
     transition: background-color 0.5s;
     height: 450px;
+    // border-top: 1px solid;
     &:hover {
         background-color: $color-default;
     }
@@ -146,4 +147,28 @@
 
 .navbar-header {
     width: 400px;
+}
+
+.separador {
+    height: 70px;
+}
+
+.delay-0 {
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+.delay-1 {
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-duration: 1s;
+    animation-delay: 0.6s;
 }
