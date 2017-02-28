@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Graphic version="2.0" viewHeight="42.5195" viewWidth="295.373" ai:appVersion="16.0.0.682" ATE:version="1.0.0" flm:version="1.0.0" d:using="" xmlns="http://ns.adobe.com/fxg/2008" xmlns:ATE="http://ns.adobe.com/ate/2009" xmlns:ai="http://ns.adobe.com/ai/2009" xmlns:d="http://ns.adobe.com/fxg/2008/dt" xmlns:flm="http://ns.adobe.com/flame/2008">
+  <Library/>
+  <Group blendMode="normal" d:layerType="page" d:pageHeight="42.52" d:pageWidth="295.373" d:type="layer" d:userLabel="Mesa de trabajo 1">
+    <Group d:type="layer" d:userLabel="Capa 1">
+      <Rect y="13.8398" width="85.0391" height="14.1729" ai:seqID="1">
+        <fill>
+          <SolidColor color="#5E8C38"/>
+        </fill>
+      </Rect>
+      <Rect x="105.095" y="13.8398" width="85.0386" height="14.1729" ai:seqID="2">
+        <fill>
+          <SolidColor color="#5E8C38"/>
+        </fill>
+      </Rect>
+      <Rect x="210.333" y="13.8398" width="85.0391" height="14.1729" ai:seqID="3">
+        <fill>
+          <SolidColor color="#5E8C38"/>
+        </fill>
+      </Rect>
+      <Rect x="88.0386" width="14.1733" height="42.5195" ai:seqID="4">
+        <fill>
+          <SolidColor color="#5E8C38"/>
+        </fill>
+      </Rect>
+      <Rect x="193.039" width="14.1729" height="42.5195" ai:seqID="5">
+        <fill>
+          <SolidColor color="#5E8C38"/>
+        </fill>
+      </Rect>
+    </Group>
+  </Group>
+  <Private/>
+</Graphic>

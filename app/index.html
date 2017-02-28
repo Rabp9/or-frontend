@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title ng-bind="$root.title + ' - Tuberias Plásticas'">Tuberías Plásticas</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="tuplastFrontendApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <span id="spLoader" ng-show='layout.loading' style="width: {{counter * 100 / total_counts}}%">
+        
+    </span>
+    <div class="header">
+        <div class="navbar navbar-default navbar-fixed-top navbar-inner" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#/">
+                        <img src="images/logo-blanco.png" />
+                    </a><br>
+                    <span style="margin-left: 5px;">
+                        <span class="glyphicon glyphicon-lamp"></span> 044-659230
+                    </span><br>
+                    <span style="margin-left: 5px;">
+                        <span class="glyphicon glyphicon-lamp"></span> ventas@tuberiasplasticas.com 
+                    </span>
+                </div> 
+
+                <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#/">Inicio</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Nosotros 
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left animated fadeIn">
+                                <li><a ng-href="#/quienes-somos">¿Quiénes somos?</a></li>
+                                <li><a href="#">Políticas</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Productos 
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left animated fadeIn">
+                                <li><a href="#/productos">Características</a></li>
+                                <li><a href="#">Línea Eléctrica</a></li>
+                                <li><a href="#">Línea Agua y Desagüe Doméstico</a></li>
+                                <li><a href="#">Línea Agua y Alcantarillado Público</a></li>
+                                <li><a href="#">Cemento disolvente para PVC</a></li>
+                            </ul>
+                        </li>
+                        <li><a ng-href="#/">Clientes</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Proyectos 
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left animated fadeIn">
+                                <li><a href="#">Obras</a></li>
+                                <li><a href="#">Asesoría</a></li>
+                                <li><a href="#">Ventas</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Contáctanos 
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left animated fadeIn">
+                                <li><a href="#">Bolsa de Trabajo</a></li>
+                                <li><a href="#">Planta Industrial</a></li>
+                                <li><a href="#">Sugerencias</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <ui-view ng-hide='layout.loading' ></ui-view>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>Eventos</h4>
+                    <a href="#">Descargar Brochure</a>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Sìguenos en:</h4>     
+                    <div>
+                        <a ng-href="#">
+                            <img src="images/facebook.svg" style="width: 35px" alt="Facebook"/>
+                        </a>
+                        <a ng-href="#">
+                            <img src="images/twitter.svg" style="width: 35px" alt="Twitter" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Contacto:</h4>
+                    <address>
+                        Telf. Oficina: <a href="tel:044-659230">044-659230</a><br />
+
+                        E-mail: <a href="mailto:ventas@tuberiasplasticas.com">ventas@tuberiasplasticas.com</a> <br />
+                        E-mail: <a href="mailto:info@tuberiasplasticas.com">info@tuberiasplasticas.com</a><br />
+
+                        Área Técnica: <a href="tel:982579831">RPC: 982579831</a>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="copyright">
+            <p>© Copyright 2017 TUBERÍAS PLÁSTICAS SAC</p>
+        </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/productos.js"></script>
+        <script src="scripts/controllers/quienes-somos.js"></script>
+        <script src="scripts/controllers/productos-detail.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

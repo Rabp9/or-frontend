@@ -1,0 +1,192 @@
+<style>
+.delay-0 {
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+.delay-1 {
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+}
+.delay-2 {
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+}
+.delay-3 {
+    animation-duration: 1s;
+    animation-delay: 0.6s;
+}
+</style>
+<div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" class="slide carousel-fade">
+    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption animated fadeInLeft">
+            <h1>Slide {{slide.id}}</h1>
+            <p>{{slide.text}}</p>
+        </div>
+    </div>
+</div>
+<div style="height: 70px;">
+</div>
+<div class="row not-visible empresa-main-card" when-visible="animateElementIn" when-not-visible="animateElementOut">
+    <div class="col-sm-12" style="text-align: center;">
+        <h1>Tuberías Plásticas</h1>
+        <img src="images/separador.svg" alt="separador"/>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a finibus sapien, vel tristique nulla. Cras a velit tincidunt, euismod dolor non, posuere nulla. Nam blandit id massa ac maximus. Nam vel justo augue. Proin pharetra nunc lacus, laoreet posuere nisi dapibus in. Aliquam gravida nulla ante, eu aliquam tellus efficitur vel. In ac mauris lacinia, pellentesque odio sed, sagittis turpis. Integer luctus fermentum urna, eget eleifend mauris malesuada tristique. Fusce id pretium sapien. Pellentesque maximus nulla ac dui lacinia ornare.
+        </p>
+        <a ng-href="#" class="btn btn-lg btn-primary">¿Quiénes Somos?</a>
+        <a ng-href="#" class="btn btn-lg btn-default">Políticas</a>
+    </div>
+</div>
+<div style="height: 70px;">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="linea-productos not-visible" when-visible="animateElementIn"
+                  when-not-visible="animateElementOut" ng-mouseenter="hoverLineaProductos($event)">
+                <div class="linea-productos-imagen">
+                    <img src="//unsplash.it/300/200" class="not-visible">
+                </div>
+                <div class="linea-productos-description">
+                    <h2>Línea Eléctrica</h2>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo aliquam nulla at ultricies. Sed augue orci, fringilla ut scelerisque.
+                    </p>
+                    <a ng-href="#" class="btn btn-lg btn-primary">Conoce más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="linea-productos not-visible" when-visible="animateElementIn"
+                  when-not-visible="animateElementOut" ng-mouseenter="hoverLineaProductos($event)">
+                <div class="linea-productos-imagen">
+                    <img src="//unsplash.it/300/200" class="not-visible">
+                </div>
+                <div class="linea-productos-description">
+                    <h2>Línea Agua y Desagüe Doméstico</h2>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo aliquam nulla at ultricies. Sed augue orci, fringilla ut scelerisque.
+                    </p>
+                    <a ng-href="#" class="btn btn-lg btn-primary">Conoce más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="linea-productos not-visible" when-visible="animateElementIn"
+                  when-not-visible="animateElementOut" ng-mouseenter="hoverLineaProductos($event)">
+                <div class="linea-productos-imagen">
+                    <img src="//unsplash.it/300/200" class="not-visible">
+                </div>
+                <div class="linea-productos-description">
+                    <h2>Línea Agua y Alcantarillado Público</h2>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo aliquam nulla at ultricies. Sed augue orci, fringilla ut scelerisque.
+                    </p>
+                    <a ng-href="#" class="btn btn-lg btn-primary">Conoce más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 70px;">
+    </div>
+    <div class="row with-margin linea-productos linea-productos-3 not-visible" when-visible="animateElementIn"
+          when-not-visible="animateElementOut" ng-mouseenter="hoverLineaProductos($event)">
+         <div class="linea-productos-description">
+            <h2>Proyectos</h2>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id libero volutpat, venenatis mauris eu, tempus libero. Nunc ornare aliquam dolor, blandit pharetra metus ullamcorper et. Phasellus feugiat accumsan porta. Ut accumsan et sem nec bibendum. Vivamus erat nisi, ultrices vel purus commodo, mollis elementum mauris. Nam porttitor sit amet nunc vitae laoreet. Ut ultricies augue augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi consequat dui nec lorem commodo vestibulum. Quisque sed egestas ex. Nunc blandit ultrices mi sit amet consectetur. Integer in tempus lorem, sed ornare turpis. Nunc facilisis, lacus quis maximus dictum, risus diam dictum elit, at tincidunt quam risus vel magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.     
+            </p>
+            <a ng-href="#" class="btn btn-lg btn-primary pull-right">Conoce más</a>
+        </div>
+        <div class="linea-productos-imagen">
+            <img src="//unsplash.it/300/200" class="not-visible">
+        </div>
+    </div>
+</div>
+
+<div class="row cartera-clientes"
+    ng-mouseenter="hoverCarteraClientes($event, true)" ng-mouseleave="hoverCarteraClientes($event, false)" >
+    <div class="col-sm-12" style="text-align: center;">
+        <h1>Cartera de Clientes</h1>
+        <img src="images/separador.svg" alt="separador"/>
+        <br />
+        <br />
+        <div class="cartera-clientes-description animated fadeIn">
+            <p>
+                Nuestros clientes confian en la calidad de nuestros productos
+            </p>
+            <br/>
+            <br/>
+            <h1 class="col-md-4 col-sm-offset-4">Son más de 40 empresas con las que trabajamos conjuntamente</h1>
+        </div>
+        <div class="cartera-clientes-logos animated fadeIn col-sm-8 col-sm-offset-2" style="display: none;">
+            <div class="row">
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-3">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-0">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-0">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-2">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-2">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-1">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-0">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-1">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-2">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-3">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-2">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+                <div class="col-xs-3 col-md-2">
+                    <span class="thumbnail animated zoomIn delay-0">
+                        <img src="//unsplash.it/300/300">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

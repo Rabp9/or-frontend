@@ -1,0 +1,149 @@
+.glyphicon-chevron-left { 
+    &:before { 
+        @extend .glyphicon-menu-left; 
+    } 
+}
+.glyphicon-chevron-right { 
+    &:before { 
+        @extend .glyphicon-menu-right; 
+    } 
+}
+
+.navbar-brand {
+    padding: 0px;
+    img {
+        height: $navbar-height;
+    }
+}
+
+.row.with-margin  {
+    margin: 10px 0px;
+}
+
+.cartera-clientes {
+    background-color: white;
+    transition: background-color 0.5s;
+    height: 450px;
+    &:hover {
+        background-color: $color-default;
+    }
+    img {
+        @extend .img-rounded;
+    }
+}
+
+.navbar-inner {
+    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.175);
+    box-shadow: 0 3px 3px rgba(0,0,0,0.175);
+}
+
+.not-visible {
+    display: flex;
+    visibility: hidden;
+}
+
+.thumbnail {
+    margin: 5px;
+}
+
+.footer {
+    background-color: $color-terciario;
+    color: $color-cuartario;
+    .copyright {
+        padding: 10px 20px 10px 0px;
+        p {
+            text-align: right;
+        }
+    }
+    a {
+        color: rgba($color-cuartario, 0.75);
+    }
+}
+
+.container-fluid {
+    min-height: 800px;
+}
+
+.dropdown {
+    &:hover {
+        @extend .open;
+        .dropdown-menu {
+            display: block;
+        }
+    }
+}
+
+.btn {
+    border: 0px;
+//    @include button-box-shadow(0px 0px 5px 2px rgba(#000, 0.4));
+    @include button-box-shadow(0px 5px 15px 0px rgba(0,0,0,0.75));
+    
+}
+
+.dropdown-menu {
+    border-radius: 4px;
+}
+
+#spLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9000; 
+    background-color: $color-default; 
+    height: 2px;
+    @include button-box-shadow(0px 2px 10px 0px rgba(0,0,0,0.75));
+}
+
+.empresa-main-card {
+    a {
+        margin: 10px;
+    }
+    p {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.productos {
+    .header {
+        background-color: $color-primario;
+        height: 200px;
+        padding-top: 100px - 39px;
+        padding-right: 5%;
+        h1 {
+            border-bottom: $color-cuartario 2px solid;
+            text-align: right;
+        }
+    }
+}
+
+.breadcrumb {
+    margin-top: $line-height-computed;
+}
+
+.lista-links {
+    ul {
+        padding-left: 0px;
+        li {
+            list-style-type: none;
+            margin: 5px;
+        }
+        ul {
+            padding-left: 15px;
+        }
+    }
+    a {
+        cursor: pointer;
+        &.active {
+            color: #333;
+            text-decoration: none;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.navbar-header {
+    width: 400px;
+}
