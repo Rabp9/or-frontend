@@ -29,6 +29,15 @@ angular
         title: 'Home'
     };
 
+    var quienesSomosState = {
+        name: 'quienesSomos',
+        url: '/quienes-somos',
+        templateUrl: 'views/quienes-somos.html',
+        controller: 'QuienesSomosCtrl',
+        controllerAs: 'quienesSomos',
+        title: '¿Quiènes Somos?'
+    };
+
     var productosState = {
         name: 'productos',
         url: '/productos',
@@ -50,11 +59,12 @@ angular
         }
     };
     $stateProvider.state(mainState);
+    $stateProvider.state(quienesSomosState);
     $stateProvider.state(productosState);
     $stateProvider.state(productosDetailState);
     $urlRouterProvider.when('', '/');
 })
-.run(function($rootScope, $interval, $state) {
+.run(function($rootScope, $interval, $state, $window) {
 
     $rootScope.layout = {};
     $rootScope.layout.loading = false; 
@@ -78,6 +88,7 @@ angular
 
         // setting title
         $rootScope.title = $state.current.title;
+        $window.scrollTo(0, 0);
     });
 
     $rootScope.$on('$stateChangeCancel', function() {

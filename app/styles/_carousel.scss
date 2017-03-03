@@ -1,9 +1,9 @@
 .carousel {
-    height: -webkit-calc(100vh - #{$navbar-height});
-    height:    -moz-calc(100vh - #{$navbar-height});
-    height:         calc(100vh - #{$navbar-height});
+    height: -webkit-calc(100vh - #{$navbar-height + $navbar-header-top-height});
+    height:    -moz-calc(100vh - #{$navbar-height + $navbar-header-top-height});
+    height:         calc(100vh - #{$navbar-height + $navbar-header-top-height});
     
-    min-height: 580px;
+    min-height: 400px;
     .item {
         @extend .carousel;
     }

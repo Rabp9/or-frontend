@@ -120,9 +120,9 @@ $line-height-small:         1.5 !default;
 // $border-radius-base:        4px !default;
 // $border-radius-large:       6px !default;
 // $border-radius-small:       3px !default;
-$border-radius-base:        12px !default;
-$border-radius-large:       18px !default;
-$border-radius-small:       9px !default;
+$border-radius-base:        4px !default;
+$border-radius-large:       5px !default;
+$border-radius-small:       2px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
 // $component-active-color:    #fff !default;
@@ -251,8 +251,7 @@ $cursor-disabled:                not-allowed !default;
 //## Dropdown menu container and contents.
 
 //** Background for the dropdown menu.
-// $dropdown-bg:                    #fff !default;
-$dropdown-bg:                    $color-default !default;
+$dropdown-bg:                    #fff !default;
 //** Dropdown menu `border-color`.
 // $dropdown-border:                rgba(0,0,0,.15) !default;
 $dropdown-border:                rgba($color-cuartario,.15) !default;
@@ -263,8 +262,7 @@ $dropdown-fallback-border:       $color-cuartario !default;
 $dropdown-divider-bg:            #e5e5e5 !default;
 
 //** Dropdown link text color.
-// $dropdown-link-color:            $gray-dark !default;
-$dropdown-link-color:            #eee !default;
+$dropdown-link-color:            $gray-dark !default;
 //** Hover color for dropdown links.
 $dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
 //** Hover background for dropdown links.

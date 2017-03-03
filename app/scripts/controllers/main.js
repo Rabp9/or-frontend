@@ -14,10 +14,11 @@ angular.module('tuplastFrontendApp')
     $scope.active = 0;
     var slides = $scope.slides = [];
     var currIndex = 0;
+    var controladorWhenVisible = 0;
 
     $scope.addSlide = function() {
         var newWidth = 1400 + slides.length + 1;
-        var height_slide = $window.innerHeight - 70;
+        var height_slide = $window.innerHeight - (50 + 80); // 50: $navbar-height, 80: $navbar-header-top-height
         slides.push({
             image: '//unsplash.it/' + newWidth + '/' + height_slide,
             text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
@@ -72,8 +73,11 @@ angular.module('tuplastFrontendApp')
     };
 
     $scope.animateElementOut = function($el) {
-     /*   $el.addClass('hidden');
-        $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes*/
+        if (controladorWhenVisible !== 5) {
+            $el.addClass('not-visible');
+            $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
+            controladorWhenVisible++;
+        }
     };
     
     $scope.hoverLineaProductos = function($event) {

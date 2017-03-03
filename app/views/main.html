@@ -1,6 +1,6 @@
 <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" class="slide carousel-fade">
     <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <img ng-src="{{slide.image}}" style="margin:auto;" class="img-responsive">
         <div class="carousel-caption animated fadeInLeft">
             <h1>Slide {{slide.id}}</h1>
             <p>{{slide.text}}</p>
@@ -12,9 +12,9 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <div class="linea-productos not-visible delay-0" when-visible="animateElementIn">
+            <div class="linea-productos not-visible delay-0" when-visible="animateElementIn" when-not-visible="animateElementOut">
                 <div class="linea-productos-imagen">
-                    <img src="//unsplash.it/300/200" alt="">
+                    <img src="//unsplash.it/300/200" alt="" class="hvr-grow">
                 </div>
                 <div class="linea-productos-description">
                     <h2><a href="#">Línea Eléctrica</a></h2>
@@ -29,7 +29,7 @@
             <div class="linea-productos not-visible delay-3" when-visible="animateElementIn"
                   when-not-visible="animateElementOut">
                 <div class="linea-productos-imagen">
-                    <img src="//unsplash.it/300/200" alt="">
+                    <img src="//unsplash.it/300/200" alt="" class="hvr-grow">
                 </div>
                 <div class="linea-productos-description">
                     <h2><a href="#">Línea Agua y Desagüe Doméstico</a></h2>
@@ -44,7 +44,7 @@
             <div class="linea-productos not-visible delay-2" when-visible="animateElementIn"
                   when-not-visible="animateElementOut">
                 <div class="linea-productos-imagen">
-                    <img src="//unsplash.it/300/200" alt="">
+                    <img src="//unsplash.it/300/200" alt="" class="hvr-grow">
                 </div>
                 <div class="linea-productos-description">
                     <h2><a href="#">Línea Agua y Alcantarillado Público</a></h2>
@@ -82,8 +82,8 @@
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a finibus sapien, vel tristique nulla. Cras a velit tincidunt, euismod dolor non, posuere nulla. Nam blandit id massa ac maximus. Nam vel justo augue. Proin pharetra nunc lacus, laoreet posuere nisi dapibus in. Aliquam gravida nulla ante, eu aliquam tellus efficitur vel. In ac mauris lacinia, pellentesque odio sed, sagittis turpis. Integer luctus fermentum urna, eget eleifend mauris malesuada tristique. Fusce id pretium sapien. Pellentesque maximus nulla ac dui lacinia ornare.
         </p>
-        <a ng-href="#" class="btn btn-lg btn-primary">¿Quiénes Somos?</a>
-        <a ng-href="#" class="btn btn-lg btn-default">Políticas</a>
+        <a ng-href="#" class="btn btn-lg btn-primary ripple">¿Quiénes Somos?</a>
+        <a ng-href="#" class="btn btn-lg btn-default hvr-underline-from-left">Políticas</a>
     </div>
 </div>
 <div class="separador">

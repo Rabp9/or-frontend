@@ -9,10 +9,12 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="bower_components/hover/css/hover.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/glyphicons.css">
     <!-- endbuild -->
 </head>
 <body ng-app="tuplastFrontendApp">
@@ -22,15 +24,14 @@
 
     <!-- Add your site or application content here -->
     <span id="spLoader" ng-show='layout.loading' style="width: {{counter * 100 / total_counts}}%">
-        
     </span>
     <div class="header">
         <div class="navbar navbar-default navbar-fixed-top navbar-inner" role="navigation">
             <div class="container">
-                <div class="row">
+                <div class="row navbar-header-top">
                     <div class="col-sm-2">
                         <a class="navbar-brand" href="#/">
-                            <img src="images/logo.png" />
+                            <img src="images/logo.png" alt=""/>
                         </a>
                     </div>
                     <div class="col-sm-offset-9">
@@ -64,7 +65,7 @@
                                 Nosotros 
                                 <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-left animated fadeIn">
+                            <ul class="dropdown-menu dropdown-menu-left animated slideInDown">
                                 <li><a ng-href="#/quienes-somos">¿Quiénes somos?</a></li>
                                 <li><a href="#">Políticas</a></li>
                             </ul>
