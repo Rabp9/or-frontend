@@ -37,6 +37,15 @@ angular
         controllerAs: 'quienesSomos',
         title: '¿Quiènes Somos?'
     };
+    
+    var politicasState = {
+        name: 'politicas',
+        url: '/politicas',
+        templateUrl: 'views/politicas.html',
+        controller: 'PoliticasCtrl',
+        controllerAs: 'politicas',
+        title: 'Políticas'
+    }
 
     var productosState = {
         name: 'productos',
@@ -58,10 +67,58 @@ angular
             }
         }
     };
+    
+    var clientesState = {
+        name: 'clientes',
+        url: '/clientes',
+        templateUrl: 'views/clientes.html',
+        controller: 'ClientesCtrl',
+        controllerAs: 'clientes',
+        title: 'Clientes'
+    };
+    
+    var pagesState = {
+        name: 'pages',
+        url: '/pages',
+        templateUrl: 'views/pages.html',
+        controller: 'PagesCtrl',
+        controllerAs: 'pages'
+    };
+    
+    var bolsaTrabajoState = {
+        name: 'bolsaTrabajo',
+        url: '/bolsa-trabajo',
+        templateUrl: 'views/bolsa-trabajo.html',
+        controller: 'BolsaTrabajoCtrl',
+        controllerAs: 'bolsaTrabajo'
+    };
+    
+    var plantaIndustrialState = {
+        name: 'plantaIndustrial',
+        url: '/planta-industrial',
+        templateUrl: 'views/planta-industrial.html',
+        controller: 'PlantaIndustrialCtrl',
+        controllerAs: 'plantaIndustrial'
+    };
+    
+    var sugerenciasState = {
+        name: 'sugerencias',
+        url: '/sugerencias',
+        templateUrl: 'views/sugerencias.html',
+        controller: 'SugerenciasCtrl',
+        controllerAs: 'sugerencias'
+    };
+    
     $stateProvider.state(mainState);
     $stateProvider.state(quienesSomosState);
+    $stateProvider.state(politicasState);
     $stateProvider.state(productosState);
     $stateProvider.state(productosDetailState);
+    $stateProvider.state(clientesState);
+    $stateProvider.state(pagesState);
+    $stateProvider.state(bolsaTrabajoState);
+    $stateProvider.state(plantaIndustrialState);
+    $stateProvider.state(sugerenciasState);
     $urlRouterProvider.when('', '/');
 })
 .run(function($rootScope, $interval, $state, $window) {
@@ -88,6 +145,7 @@ angular
 
         // setting title
         $rootScope.title = $state.current.title;
+        
         $window.scrollTo(0, 0);
     });
 

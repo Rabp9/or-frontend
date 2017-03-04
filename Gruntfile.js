@@ -200,9 +200,10 @@ module.exports = function (grunt) {
 
     // Automatically inject Bower components into the app
     wiredep: {
-      app: {
-        src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        app: {
+            src: ['<%= yeoman.app %>/index.html'],
+            ignorePath:  /\.\.\//,
+            exclude: ['bower_components/hover/css/hover.css']
       },
       test: {
         devDependencies: true,
@@ -222,7 +223,19 @@ module.exports = function (grunt) {
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        ignorePath: /(\.\.\/){1,2}bower_components\//
+        ignorePath: /(\.\.\/){1,2}bower_components\//,
+        "overrides": {
+            "hover": {
+                "main": [
+                    "scss/hover.scss"
+                ]
+            },
+            "imagehover.css": {
+                "main": [
+                    "scss/imagehover.scss"
+                ]
+            }
+        }
       }
     }, 
 
