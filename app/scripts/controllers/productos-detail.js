@@ -25,4 +25,22 @@ angular.module('tuplastFrontendApp')
     });
     
     $scope.pagina = paginas[id - 1];
+    
+    $scope.images = [{
+        title : 'This is amazing photo of nature',
+        alt : 'amazing nature photo',
+        url : '//unsplash.it/200/400',
+        extUrl : '//unsplash.it/270/500'
+    }, {
+        url : '//unsplash.it/180/400'
+    }, {
+        url : '//unsplash.it/190/300'
+    }, {
+        url : '//unsplash.it/120/100'
+    }, {
+        url : '//unsplash.it/170/500'
+    }, {
+        thumbUrl : '//unsplash.it/200/50',
+        url : '//unsplash.it/350/270'
+    }];
 });

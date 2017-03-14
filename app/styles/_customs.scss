@@ -64,19 +64,6 @@
     min-height: 800px;
 }
 
-.dropdown {
-    &:hover {
-        @extend .open;
-        .dropdown-menu {
-            display: block;
-        }
-    }
-}
-
-.dropdown-menu {
-    border-radius: 4px;
-}
-
 #spLoader {
     position: fixed;
     top: 0;
@@ -239,5 +226,23 @@
         justify-content: center;
         align-content: center;
         flex-direction: column;
+    }
+}
+
+.thumb {
+    height: 80px !important;
+    width: 80px !important;
+}
+
+.clientes {
+    figure {
+        figcaption {
+            p {
+                text-align: center;
+                position: relative;
+                top: 50%;
+                font-size: 25px;
+            }
+        }
     }
 }

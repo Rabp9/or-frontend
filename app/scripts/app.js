@@ -17,9 +17,11 @@ angular
     'ngTouch',
     'ui.bootstrap',
     'angular-scroll-animate',
-    'ui.router'
+    'ui.router',
+    'bootstrapHoverAnimationDropdown',
+    'thatisuday.ng-image-gallery'
 ])
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, ngImageGalleryOptsProvider) {
     var mainState = {
         name: 'main',
         url: '/',
@@ -120,6 +122,15 @@ angular
     $stateProvider.state(plantaIndustrialState);
     $stateProvider.state(sugerenciasState);
     $urlRouterProvider.when('', '/');
+    
+    ngImageGalleryOptsProvider.setOpts({
+        thumbnails: true,
+        inline:   false,
+        imgBubbles:   false, 
+        bgClose:   true,
+        bubbles:   true, 
+        imgAnim:   'fadeup'
+    });
 })
 .run(function($rootScope, $interval, $state, $window) {
 

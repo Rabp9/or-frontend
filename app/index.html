@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="bower_components/ng-image-gallery/dist/ng-image-gallery.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -58,22 +59,22 @@
 
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#/">Inicio</a></li>
-                        <li class="dropdown">
+                        <li class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Nosotros 
                                 <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-left animated slideInDown">
+                            <ul class="dropdown-menu dropdown-menu-left">
                                 <li><a ng-href="#/quienes-somos">¿Quiénes somos?</a></li>
                                 <li><a ng-href="#/politicas">Políticas</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                        <li class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Productos 
                                 <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-left animated fadeIn">
+                            <ul class="dropdown-menu dropdown-menu-left">
                                 <li><a href="#/productos">Características</a></li>
                                 <li><a href="#">Línea Eléctrica</a></li>
                                 <li><a href="#">Línea Agua y Desagüe Doméstico</a></li>
@@ -81,24 +82,24 @@
                                 <li><a href="#">Cemento disolvente para PVC</a></li>
                             </ul>
                         </li>
-                        <li><a ng-href="#/">Clientes</a></li>
-                        <li class="dropdown">
+                        <li><a ng-href="#/clientes">Clientes</a></li>
+                        <li class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Proyectos 
                                 <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-left animated fadeIn">
+                            <ul class="dropdown-menu dropdown-menu-left">
                                 <li><a href="#">Obras</a></li>
                                 <li><a href="#">Asesoría</a></li>
                                 <li><a href="#">Ventas</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                        <li class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Contáctanos 
                                 <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-left animated fadeIn">
+                            <ul class="dropdown-menu dropdown-menu-left">
                                 <li><a href="#">Bolsa de Trabajo</a></li>
                                 <li><a href="#">Planta Industrial</a></li>
                                 <li><a href="#">Sugerencias</a></li>
@@ -176,6 +177,9 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/hammerjs/hammer.js"></script>
+    <script src="bower_components/ng-image-gallery/dist/ng-image-gallery.js"></script>
+    <script src="bower_components/bootstrap-hover-animation-dropdown/dist/bootstrap-hover-animation-dropdown.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -186,6 +190,7 @@
         <script src="scripts/controllers/quienes-somos.js"></script>
         <script src="scripts/controllers/productos-detail.js"></script>
         <script src="scripts/controllers/politicas.js"></script>
+        <script src="scripts/controllers/clientes.js"></script>
         <!-- endbuild -->
 </body>
 </html>
