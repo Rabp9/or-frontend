@@ -83,7 +83,7 @@ angular.module('tuplastFrontendApp')
     $scope.hoverLineaProductos = function($event) {
         $($event.currentTarget).find('.linea-productos-imagen img').addClass('animated fadeIn delay-1');
         $($event.currentTarget).find('.linea-productos-imagen img').removeClass('not-visible');
-    }
+    };
     
     $scope.hoverCarteraClientes = function($event, hover) {
         if (hover) {
@@ -93,7 +93,7 @@ angular.module('tuplastFrontendApp')
             $($event.currentTarget).find('.cartera-clientes-description').css('display', 'block');
             $($event.currentTarget).find('.cartera-clientes-logos').css('display', 'none');
         }
-    }
+    };
     
-    $(".dropdown-toggle").dropdown();
+    $('.dropdown-toggle').dropdown();
 });

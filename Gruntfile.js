@@ -224,15 +224,15 @@ module.exports = function (grunt) {
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//,
-        "overrides": {
-            "hover": {
-                "main": [
-                    "scss/hover.scss"
+        'overrides': {
+            'hover': {
+                'main': [
+                    'scss/hover.scss'
                 ]
             },
-            "imagehover.css": {
-                "main": [
-                    "scss/imagehover.scss"
+            'imagehover.css': {
+                'main': [
+                    'scss/imagehover.scss'
                 ]
             }
         }

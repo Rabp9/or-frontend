@@ -47,7 +47,7 @@ angular
         controller: 'PoliticasCtrl',
         controllerAs: 'politicas',
         title: 'Políticas'
-    }
+    };
 
     var productosState = {
         name: 'productos',
@@ -142,7 +142,7 @@ angular
     $rootScope.layout = {};
     $rootScope.layout.loading = false; 
             
-    $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
         //show loading gif
         $rootScope.layout.loading = true;
@@ -154,7 +154,7 @@ angular
         $rootScope.total_counts = 50;
         $interval(function() {
             $rootScope.counter++;
-            if($rootScope.counter == $rootScope.total_counts) {
+            if($rootScope.counter === $rootScope.total_counts) {
                 $rootScope.layout.loading = false;
             }
         }, 10, $rootScope.total_counts);
@@ -173,6 +173,6 @@ angular
    
     $rootScope.refresh = function() {
         $state.reload();
-    }
+    };
     
 });
