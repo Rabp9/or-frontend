@@ -92,7 +92,8 @@ angular
         url: '/bolsa-trabajo',
         templateUrl: 'views/bolsa-trabajo.html',
         controller: 'BolsaTrabajoCtrl',
-        controllerAs: 'bolsaTrabajo'
+        controllerAs: 'bolsaTrabajo',
+        title: 'Bolsa de Trabajo'
     };
     
     var plantaIndustrialState = {
@@ -134,6 +135,10 @@ angular
 })
 .run(function($rootScope, $interval, $state, $window) {
 
+    $rootScope.showChat = function() {
+        $window.open('#/chat/', '_blank', 'Chat Online');
+    };
+    
     $rootScope.layout = {};
     $rootScope.layout.loading = false; 
             

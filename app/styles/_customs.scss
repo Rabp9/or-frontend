@@ -246,3 +246,22 @@
         }
     }
 }
+
+.navbar-chat-link {
+    border: 0px;
+    background: transparent;
+    .container {
+        button {
+            background-color: $color-primario;
+            height: 50px;
+            padding: 0px 50px;
+            font-size: 20px;
+            &:hover {
+                color: white;
+            }
+            &:focus {
+                color: white;
+            }
+        }
+    }
+}

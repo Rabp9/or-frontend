@@ -100,7 +100,7 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-left">
-                                <li><a href="#">Bolsa de Trabajo</a></li>
+                                <li><a href="#/bolsa-trabajo">Bolsa de Trabajo</a></li>
                                 <li><a href="#">Planta Industrial</a></li>
                                 <li><a href="#">Sugerencias</a></li>
                             </ul>
@@ -150,18 +150,23 @@
         <div class="copyright">
             <p>© Copyright 2017 TUBERÍAS PLÁSTICAS SAC</p>
         </div>
+        <nav class="navbar navbar-default navbar-fixed-bottom navbar-chat-link">
+            <div class="container">
+                <button class="navbar-right btn" ng-click="showChat()">Chat online</button>
+            </div>
+        </nav>
     </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <script>
+        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+        }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -183,14 +188,15 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/productos.js"></script>
-        <script src="scripts/controllers/quienes-somos.js"></script>
-        <script src="scripts/controllers/productos-detail.js"></script>
-        <script src="scripts/controllers/politicas.js"></script>
-        <script src="scripts/controllers/clientes.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/productos.js"></script>
+    <script src="scripts/controllers/quienes-somos.js"></script>
+    <script src="scripts/controllers/productos-detail.js"></script>
+    <script src="scripts/controllers/politicas.js"></script>
+    <script src="scripts/controllers/clientes.js"></script>
+    <script src="scripts/controllers/bolsa-trabajo.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
