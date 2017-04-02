@@ -1,18 +1,7 @@
-.glyphicon-chevron-left { 
-    &:before { 
-        @extend .glyphicon-menu-left; 
-    } 
-}
-.glyphicon-chevron-right { 
-    &:before { 
-        @extend .glyphicon-menu-right; 
-    } 
-}
-
 .navbar-brand {
     padding: 0px;
     img {
-        height: $navbar-height;
+        height: $navbar-height + 25px;
     }
 }
 
@@ -31,6 +20,9 @@
     img {
         @extend .img-rounded;
     }
+    h1:first {
+        color: $color-primario;
+    }
 }
 
 .navbar-inner {
@@ -47,8 +39,8 @@
 }
 
 .footer {
-    background-color: $color-terciario;
-    color: $color-cuartario;
+    background-color: $color-default;
+    color: #fff;
     .copyright {
         padding: 10px 20px 10px 0px;
         p {
@@ -56,7 +48,10 @@
         }
     }
     a {
-        color: rgba($color-cuartario, 0.75);
+        color: rgba(#fff, 0.75);
+    }
+    hr {
+        border-color: #fff;
     }
 }
 
@@ -79,8 +74,11 @@
         margin: 10px;
     }
     p {
-        width: 50%;
+        /*width: 50%;*/
         margin: 0 auto;
+    }
+    h1 {
+        color: $color-primario;
     }
 }
 
@@ -160,7 +158,8 @@
     overflow: hidden;
     padding-top: 7px;
     li {
-        margin-bottom: 35px;
+        // margin-bottom: 35px;
+        margin-bottom: 10px;
         position: relative;
         width: 100%;
         h3 {
@@ -191,6 +190,8 @@
 }
 
 .navbar-header-top {
+    margin-top: $navbar-header-top-margin;
+    margin-bottom: $navbar-header-top-margin;
     height: $navbar-header-top-height;
 }
 
@@ -256,6 +257,7 @@
             height: 50px;
             padding: 0px 50px;
             font-size: 20px;
+            margin-right: 250px;
             &:hover {
                 color: white;
             }
@@ -263,5 +265,12 @@
                 color: white;
             }
         }
+    }
+}
+
+.contacto-header {
+    .contacto-header-field {
+        margin-left: 5px;
+        font-size: 18px;
     }
 }

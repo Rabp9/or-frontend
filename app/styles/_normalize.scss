@@ -1,15 +1,25 @@
+@font-face {
+    font-family: "Blaster Infinite";
+    src: url(../fonts/Blaster_Infinite_Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "News Gothic BT";
+    src: url(../fonts/newsgoth-bt.ttf) format("truetype");
+}
+
 body {
-    padding-top: $navbar-height + $navbar-header-top-height;
+    padding-top: $navbar-height + $navbar-header-top-height + ($navbar-header-top-margin * 2);
     height: 100%;
 }
 
 html {
     height: 100%;
-    font-family: Book Antiqua !important;
+    font-family: $font-family-blaster-infinite;
 }
 
 h1, h2, h3, h4 {
-    text-shadow: $carousel-text-shadow;
+    /*text-shadow: $carousel-text-shadow;*/
 }
 
 hr {

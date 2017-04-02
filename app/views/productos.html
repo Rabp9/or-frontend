@@ -2,14 +2,11 @@
     <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><a href="#">Productos</a></li>
-        <li>Características</li>
+        <li>{{}}</li>
     </ol>
     <div class="row">
-        <div class="col-sm-3 header">
-            <h1>Productos</h1>
-        </div>
-        <div class="col-sm-9">
-            <img src="//unsplash.it/850/200" alt="productos" />
+        <div class="col-sm-12">
+            <img src="//unsplash.it/1140/200" alt="productos" />
         </div>
     </div>
     <div class="row">
@@ -18,10 +15,9 @@
                 <li><a ui-sref="productos.detail({ id: 1 })" ui-sref-active="active">Características</a></li>
                 <li>Línea de Productos
                     <ul>
-                        <li><a ui-sref="productos.detail({ id: 2 })" ui-sref-active="active">Línea Eléctrica</a></li>
-                        <li><a ui-sref="productos.detail({ id: 3 })" ui-sref-active="active">Línea Agua y Desagüe Doméstico</a></li>
-                        <li><a ui-sref="productos.detail({ id: 4 })" ui-sref-active="active">Línea Agua y Alcantarillado Público</a></li>
-                        <li><a ui-sref="productos.detail({ id: 5 })" ui-sref-active="active">Cemento disolvente para PVC</a></li>
+                        <li ng-repeat="producto in productos">
+                            <a ui-sref="productos.detail({ id: producto.id })" ui-sref-active="active">{{ producto.title }}</a>
+                        </li>
                     </ul>
                 </li>
             </ul>

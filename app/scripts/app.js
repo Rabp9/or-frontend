@@ -37,7 +37,7 @@ angular
         templateUrl: 'views/quienes-somos.html',
         controller: 'QuienesSomosCtrl',
         controllerAs: 'quienesSomos',
-        title: '¿Quiènes Somos?'
+        title: '¿Quiènes somos?'
     };
     
     var politicasState = {
@@ -63,6 +63,7 @@ angular
         url: '/{id}',
         templateUrl: 'views/productos-detail.html',
         controller: 'ProductosDetailCtrl',
+        controllerAs: 'productosDetail',
         params: {
             id: {
                 value: '1'
@@ -133,7 +134,7 @@ angular
         imgAnim:   'fadeup'
     });
 })
-.run(function($rootScope, $interval, $state, $window) {
+.run(function($rootScope, $interval, $state, $window, ProductosService) {
 
     $rootScope.showChat = function() {
         $window.open('#/chat/', '_blank', 'Chat Online');
@@ -175,4 +176,9 @@ angular
         $state.reload();
     };
     
-});
+    ProductosService.get(function(data) {
+       $rootScope.productos = data.productos;
+    });
+    
+})
+.path_location = 'http://localhost:8000/or-backend/';

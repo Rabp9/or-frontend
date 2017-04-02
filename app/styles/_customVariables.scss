@@ -54,11 +54,12 @@ $link-hover-decoration: none !default;
 $font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-book-antiqua: Book Antiqua !default;
-$font-family-blaster-finiti: Blaster Infiniti !default;
+$font-family-blaster-infinite: Blaster Infinite !default;
+$font-family-news-gothic-bt: News Gothic BT !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 // $font-family-base:        $font-family-sans-serif !default;
-$font-family-base:        $font-family-blaster-finiti !default;
+$font-family-base:        $font-family-news-gothic-bt !default;
 
 // $font-size-base:          14px !default;
 $font-size-base:          15px !default;

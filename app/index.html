@@ -33,14 +33,25 @@
                             <img src="images/logo.png" alt=""/>
                         </a>
                     </div>
-                    <div class="col-sm-offset-9">
+                    <div class="col-sm-3 col-sm-offset-6 contacto-header">
                         <br>
-                        <span style="margin-left: 5px;">
-                            <span class="glyphicon glyphicon-lamp"></span> 044-659230
+                        <span class="contacto-header-field">
+                            <span class="glyphicon glyphicon-earphone glyphicon-color-default"></span> 044-659230
                         </span><br>
-                        <span style="margin-left: 5px;">
-                            <span class="glyphicon glyphicon-lamp"></span> ventas@tuberiasplasticas.com 
+                        <span class="contacto-header-field">
+                            <span class="glyphicon glyphicon-envelope glyphicon-color-default"></span> ventas@tuberiasplasticas.com 
                         </span>
+                    </div>
+                    <div class="col-sm-1">
+                        <br>
+                        <div>
+                            <a ng-href="#">
+                                <img src="images/facebook-header.svg" style="width: 35px" alt="Facebook"/>
+                            </a>
+                            <a ng-href="#">
+                                <img src="images/twitter-header.svg" style="width: 35px" alt="Twitter" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,11 +86,9 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-left">
-                                <li><a href="#/productos">Características</a></li>
-                                <li><a href="#">Línea Eléctrica</a></li>
-                                <li><a href="#">Línea Agua y Desagüe Doméstico</a></li>
-                                <li><a href="#">Línea Agua y Alcantarillado Público</a></li>
-                                <li><a href="#">Cemento disolvente para PVC</a></li>
+                                <li ng-repeat="producto in productos">
+                                    <a ui-sref="productos.detail({ id: producto.id })" ui-sref-active="active">{{ producto.title }}</a>
+                                </li>
                             </ul>
                         </li>
                         <li><a ng-href="#/clientes">Clientes</a></li>
@@ -102,7 +111,7 @@
                             <ul class="dropdown-menu dropdown-menu-left">
                                 <li><a href="#/bolsa-trabajo">Bolsa de Trabajo</a></li>
                                 <li><a href="#">Planta Industrial</a></li>
-                                <li><a href="#">Sugerencias</a></li>
+                                <li><a href="#/sugerencias">Sugerencias</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -123,13 +132,13 @@
                     <a href="#">Descargar Brochure</a>
                 </div>
                 <div class="col-sm-4">
-                    <h4>Sìguenos en:</h4>     
+                    <h4>Sìguenos en:</h4>
                     <div>
                         <a ng-href="#">
-                            <img src="images/facebook.svg" style="width: 35px" alt="Facebook"/>
+                            <img src="images/facebook-footer.svg" style="width: 35px" alt="Facebook"/>
                         </a>
                         <a ng-href="#">
-                            <img src="images/twitter.svg" style="width: 35px" alt="Twitter" />
+                            <img src="images/twitter-footer.svg" style="width: 35px" alt="Twitter" />
                         </a>
                     </div>
                 </div>
@@ -185,6 +194,8 @@
     <script src="bower_components/hammerjs/hammer.js"></script>
     <script src="bower_components/ng-image-gallery/dist/ng-image-gallery.js"></script>
     <script src="bower_components/bootstrap-hover-animation-dropdown/dist/bootstrap-hover-animation-dropdown.js"></script>
+    <script src="bower_components/tinymce/tinymce.js"></script>
+    <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -197,6 +208,9 @@
     <script src="scripts/controllers/politicas.js"></script>
     <script src="scripts/controllers/clientes.js"></script>
     <script src="scripts/controllers/bolsa-trabajo.js"></script>
+    <script src="scripts/services/productosService.js"></script>
+    <script src="scripts/controllers/sugerencias.js"></script>
+    <script src="scripts/services/infosService.js"></script>
     <!-- endbuild -->
 </body>
 </html>

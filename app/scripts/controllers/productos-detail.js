@@ -8,23 +8,12 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ProductosDetailCtrl', function ($scope, $state, $stateParams) {
+.controller('ProductosDetailCtrl', function ($scope, $stateParams, ProductosService) {
     var id = $stateParams.id;
-    var paginas = [];
-    
-    paginas.push({
-        titulo: 'Titulo 1'
-    }, {
-        titulo: 'Titulo 2'
-    }, {
-        titulo: 'Titulo 3'
-    }, {
-        titulo: 'Titulo 4'
-    }, {
-        titulo: 'Titulo 5'
+        
+    ProductosService.get({id: id}, function(data) {
+        $scope.producto = data.producto;
     });
-    
-    $scope.pagina = paginas[id - 1];
     
     $scope.images = [{
         title : 'This is amazing photo of nature',
