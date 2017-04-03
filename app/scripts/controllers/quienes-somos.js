@@ -8,8 +8,15 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('QuienesSomosCtrl', function ($scope) {
+.controller('QuienesSomosCtrl', function ($scope, InfosService) {
     var controladorWhenVisible = 0;
+    var dataSearch = ['nuestraHistoria', 'vision', 'mision'];
+    
+    InfosService.getDataMany(dataSearch, function(data) {
+        angular.forEach(dataSearch, function(value, key) {
+            $scope[value] = data.info[value];
+        });
+    });
     
     $scope.animateElementIn = function($el) {
         $el.removeClass('not-visible');
