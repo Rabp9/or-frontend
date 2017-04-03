@@ -10,13 +10,17 @@
 angular.module('tuplastFrontendApp')
 .controller('QuienesSomosCtrl', function ($scope, InfosService) {
     var controladorWhenVisible = 0;
-    var dataSearch = ['nuestraHistoria', 'vision', 'mision'];
+    var dataSearch = ['nuestraHistoria', 'vision', 'mision', 'valor1', 'valor2',
+        'valor3', 'valor4', 'valor5', 'valor6', 'valor7'
+    ];
+    $scope.quienesSomos = {};
     
     InfosService.getDataMany(dataSearch, function(data) {
         angular.forEach(dataSearch, function(value, key) {
-            $scope[value] = data.info[value];
+            $scope.quienesSomos[value] = data.info[value];
         });
     });
+    
     
     $scope.animateElementIn = function($el) {
         $el.removeClass('not-visible');

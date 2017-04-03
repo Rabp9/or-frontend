@@ -11,28 +11,28 @@
         <div class="col-sm-12" style="padding: 20px;">
             <h2>Nuestra Historia</h2>
             <hr>
-            <span ng-bind-html="nuestraHistoria"></span>
+            <span ng-bind-html="quienesSomos.nuestraHistoria"></span>
             <h2>Valores</h2>
             <hr>
             <div class="row">
                 <div class="col-sm-12">
                     <ul class="ul-valores">
-                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">Trabajo en equipo</li>
-                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">Unidad</li>
-                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">Profesionalismo</li>
-                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">Lealtad</li>
-                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">Acción</li>
-                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">Servicio</li>
-                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">Tenacidad</li>
+                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">{{ quienesSomos.valor1 }}</li>
+                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">{{ quienesSomos.valor2 }}</li>
+                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">{{ quienesSomos.valor3 }}</li>
+                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">{{ quienesSomos.valor4 }}</li>
+                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">{{ quienesSomos.valor5 }}</li>
+                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">{{ quienesSomos.valor6 }}</li>
+                        <li when-visible="animateElementIn" when-not-visible="animateElementOut">{{ quienesSomos.valor7 }}</li>
                     </ul>
                 </div>
             </div>
             <h2>Visión</h2>
             <hr>
-            <span ng-bind-html="vision"></span>
+            <span ng-bind-html="quienesSomos.vision"></span>
             <h2>Misión</h2>
             <hr>
-            <span ng-bind-html="mision"></span>
+            <span ng-bind-html="quienesSomos.mision"></span>
             <!--
             <h2>Objetivos</h2>
             <hr>
