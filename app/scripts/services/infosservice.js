@@ -2,22 +2,17 @@
 
 /**
  * @ngdoc service
- * @name tuplastFrontendApp.InfosService
+ * @name tuplastAdminApp.infosService
  * @description
- * # InfosService
- * Factory in the tuplastFrontendApp.
+ * # infosService
+ * Factory in the tuplastAdminApp.
  */
 angular.module('tuplastFrontendApp')
-  .factory('InfosService', function () {
-    // Service logic
-    // ...
-
-    var meaningOfLife = 42;
-
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
-  });
+.factory('InfosService', function($resource) {
+    return $resource(angular.module("tuplastFrontendApp").path_location + 'infos/:id.json', {}, {
+        getDataMany: {
+            method: 'POST',
+            url: angular.module("tuplastFrontendApp").path_location + 'infos/getDataMany.json',
+        }
+    });
+});
