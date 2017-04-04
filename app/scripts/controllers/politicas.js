@@ -8,10 +8,8 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-  .controller('PoliticasCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+.controller('PoliticasCtrl', function($scope, PoliticasService) {
+    PoliticasService.get(function(data) {
+        $scope.politicas = data.politicas;
+    });
+});

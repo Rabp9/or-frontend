@@ -181,4 +181,4 @@ angular
     });
     
 })
-.path_location = 'http://localhost:8000/tuplast-backend/';
+.path_location = 'http://localhost:8000/or-backend/';

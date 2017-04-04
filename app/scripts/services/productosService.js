@@ -8,7 +8,7 @@
  * Factory in the tuplastFrontendApp.
  */
 angular.module('tuplastFrontendApp')
-.factory('ProductosService', function ($resource) {
+.factory('ProductosService', function($resource) {
     return $resource(angular.module('tuplastFrontendApp').path_location + 'productos/:id.json', {}, {
         getLineasProductos: {
             method: 'GET',
