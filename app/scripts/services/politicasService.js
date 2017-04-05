@@ -9,5 +9,5 @@
  */
 angular.module('tuplastFrontendApp')
 .factory('PoliticasService', function ($resource) {
-    return $resource(angular.module('tuplastFrontendApp').path_location + 'productos/:id.json', {});
+    return $resource(angular.module('tuplastFrontendApp').path_location + 'politicas/:id.json', {});
 });
