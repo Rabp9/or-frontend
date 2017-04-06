@@ -228,6 +228,11 @@
         align-content: center;
         flex-direction: column;
     }
+    .politica-detail-info {
+        overflow-y: auto;
+        background: $color-terciario;
+        @include button-box-shadow(-5px 0px 5px 0px rgba(#000, 0.4));
+    }
 }
 
 .thumb {
