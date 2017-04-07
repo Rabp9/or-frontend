@@ -80,6 +80,15 @@ angular
         title: 'Clientes'
     };
     
+    var obrasState = {
+        name: 'obras',
+        url: '/obras',
+        templateUrl: 'views/obras.html',
+        controller: 'ObrasCtrl',
+        controllerAs: 'obras',
+        title: 'Obras'
+    };
+    
     var pagesState = {
         name: 'pages',
         url: '/pages',
@@ -119,6 +128,7 @@ angular
     $stateProvider.state(productosState);
     $stateProvider.state(productosDetailState);
     $stateProvider.state(clientesState);
+    $stateProvider.state(obrasState);
     $stateProvider.state(pagesState);
     $stateProvider.state(bolsaTrabajoState);
     $stateProvider.state(plantaIndustrialState);
