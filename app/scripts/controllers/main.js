@@ -8,19 +8,31 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('MainCtrl', function ($scope, $window) {
+.controller('MainCtrl', function ($scope, $window, SlidesService) {
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
     $scope.active = 0;
-    var slides = $scope.slides = [];
+    // var slides = $scope.slides = [];
     var currIndex = 0;
+    
     var controladorWhenVisible = 0;
+  
+    SlidesService.get(function(data) {
+        $scope.slides = data.slides;
+        $scope.height_slide = $window.innerHeight - (1 + 50 + 80 + (25 * 2)); // 50: $navbar-height, 80: $navbar-header-top-height, 25: $navbar-header-top-margin
+      
+        angular.forEach($scope.slides, function(value, key) {
+            $scope.slides[key].index = currIndex;
+            currIndex++;
+        });
+    });
 
+    /*
     $scope.addSlide = function() {
         var newWidth = 1400 + slides.length + 1;
         var height_slide = $window.innerHeight - (50 + 80); // 50: $navbar-height, 80: $navbar-header-top-height
         slides.push({
-            image: '//unsplash.it/' + newWidth + '/' + height_slide,
+            url: '//unsplash.it/' + newWidth + '/' + height_slide,
             text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
             id: currIndex++
         });
@@ -34,7 +46,7 @@ angular.module('tuplastFrontendApp')
     for (var i = 0; i < 4; i++) {
         $scope.addSlide();
     }
-
+    
     // Randomize logic below
 
     function assignNewIndexesToSlides(indexes) {
@@ -66,7 +78,7 @@ angular.module('tuplastFrontendApp')
 
         return array;
     }
-    
+*/
     $scope.animateElementIn = function($el) {
         $el.removeClass('not-visible');
         $el.addClass('animated fadeInUp'); // this example leverages animate.css classes

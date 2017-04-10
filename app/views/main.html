@@ -1,9 +1,9 @@
 <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" class="slide carousel-fade">
-    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-        <img ng-src="{{slide.image}}" style="margin:auto;" class="img-responsive">
-        <div class="carousel-caption animated fadeInLeft">
-            <h1>Slide {{slide.id}}</h1>
-            <p>{{slide.text}}</p>
+    <div uib-slide ng-repeat="slide in slides track by slide.index" index="slide.index">
+        <img ng-src="{{ path_location}}/img/slides/{{ slide.url }}" style="margin: auto; width: 100%; max-height: {{ height_slide }}px">
+        <div class="carousel-caption animated fadeInLeft" ng-hide="slide.titulo === null">
+            <h1>{{slide.titulo}}</h1>
+            <p>{{slide.contenido}}</p>
         </div>
     </div>
 </div>

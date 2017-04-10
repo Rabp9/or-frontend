@@ -190,5 +190,6 @@ angular
        $rootScope.productos = data.productos;
     });
     
+    $rootScope.path_location = 'http://localhost:8000/or-backend/';
 })
 .path_location = 'http://localhost:8000/or-backend/';

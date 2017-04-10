@@ -1,7 +1,7 @@
 .carousel {
-    height: -webkit-calc(100vh - #{$navbar-height + $navbar-header-top-height});
-    height:    -moz-calc(100vh - #{$navbar-height + $navbar-header-top-height});
-    height:         calc(100vh - #{$navbar-height + $navbar-header-top-height});
+    height: -webkit-calc(100vh - #{$navbar-height + $navbar-header-top-height + ($navbar-header-top-margin * 2)});
+    height:    -moz-calc(100vh - #{$navbar-height + $navbar-header-top-height + ($navbar-header-top-margin * 2)});
+    height:         calc(100vh - #{$navbar-height + $navbar-header-top-height + ($navbar-header-top-margin * 2)});
     
     min-height: 400px;
     .item {

@@ -8,10 +8,8 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-  .controller('ObrasCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+.controller('ObrasCtrl', function($scope, ObrasService) {
+    ObrasService.get(function(data) {
+        $scope.obras = data.obras;
+    });
+});
