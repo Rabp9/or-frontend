@@ -8,7 +8,7 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('MainCtrl', function ($scope, $window, SlidesService) {
+.controller('MainCtrl', function ($scope, $window, SlidesService, ProductosService) {
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
     $scope.active = 0;
@@ -25,6 +25,16 @@ angular.module('tuplastFrontendApp')
             $scope.slides[key].index = currIndex;
             currIndex++;
         });
+    });
+    
+    ProductosService.getLineasProductos(function(data) {
+        var productos_aux = data.productos;
+        $scope.productos = [];
+        for (var i = 0; i < 3; i++) {
+            var index = Math.floor(Math.random() * productos_aux.length) + 0;
+            $scope.productos.push(productos_aux[index]);
+            productos_aux.splice(index, 1);
+        }
     });
 
     /*

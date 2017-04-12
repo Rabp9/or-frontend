@@ -14,13 +14,14 @@
         <div class="col-sm-4">
             <div class="linea-productos not-visible delay-0" when-visible="animateElementIn" when-not-visible="animateElementOut">
                 <div class="linea-productos-imagen">
-                    <img src="//unsplash.it/300/200" alt="" class="hvr-grow">
+                    <img ng-src="{{ path_location }}/img/productos/{{ productos[0].producto_images[0].url }}" alt="" class="hvr-grow img-responsive" 
+                         style="height: 200px;">
                 </div>
                 <div class="linea-productos-description">
-                    <h2><a href="#">Línea Eléctrica</a></h2>
+                    <h2><a ui-sref="productos.detail({ id: productos[0].id })" ui-sref-active="active">{{ productos[0].title }}</a></h2>
                     <hr>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo aliquam nulla at ultricies. Sed augue orci, fringilla ut scelerisque.
+                        {{ productos[0].resumen }}
                     </p>
                 </div>
             </div>
@@ -29,13 +30,14 @@
             <div class="linea-productos not-visible delay-3" when-visible="animateElementIn"
                   when-not-visible="animateElementOut">
                 <div class="linea-productos-imagen">
-                    <img src="//unsplash.it/300/200" alt="" class="hvr-grow">
+                    <img ng-src="{{ path_location }}/img/productos/{{ productos[1].producto_images[0].url }}" alt="" class="hvr-grow img-responsive" 
+                         style="height: 200px;">
                 </div>
                 <div class="linea-productos-description">
-                    <h2><a href="#">Línea Agua y Desagüe Doméstico</a></h2>
+                    <h2><a ui-sref="productos.detail({ id: productos[1].id })" ui-sref-active="active">{{ productos[1].title }}</a></h2>
                     <hr>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo aliquam nulla at ultricies. Sed augue orci, fringilla ut scelerisque.
+                        {{ productos[1].resumen }}
                     </p>
                 </div>
             </div>
@@ -44,13 +46,14 @@
             <div class="linea-productos not-visible delay-2" when-visible="animateElementIn"
                   when-not-visible="animateElementOut">
                 <div class="linea-productos-imagen">
-                    <img src="//unsplash.it/300/200" alt="" class="hvr-grow">
+                    <img ng-src="{{ path_location }}/img/productos/{{ productos[2].producto_images[0].url }}" alt="" class="hvr-grow img-responsive" 
+                         style="height: 200px;">
                 </div>
                 <div class="linea-productos-description">
-                    <h2><a href="#">Línea Agua y Alcantarillado Público</a></h2>
+                    <h2><a ui-sref="productos.detail({ id: productos[2].id })" ui-sref-active="active">{{ productos[2].title }}</a></h2>
                     <hr>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo aliquam nulla at ultricies. Sed augue orci, fringilla ut scelerisque.
+                        {{ productos[2].resumen }}
                     </p>
                 </div>
             </div>
