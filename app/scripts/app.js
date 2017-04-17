@@ -89,6 +89,19 @@ angular
         title: 'Obras'
     };
     
+    var obrasDetailState = {
+        name: 'obras-detail',
+        url: '/obras/{id}',
+        templateUrl: 'views/obras-detail.html',
+        controller: 'ObrasDetailCtrl',
+        controllerAs: 'obrasDetail',
+        params: {
+            id: {
+                value: '1'
+            }
+        }
+    };
+    
     var pagesState = {
         name: 'pages',
         url: '/pages',
@@ -129,6 +142,7 @@ angular
     $stateProvider.state(productosDetailState);
     $stateProvider.state(clientesState);
     $stateProvider.state(obrasState);
+    $stateProvider.state(obrasDetailState);
     $stateProvider.state(pagesState);
     $stateProvider.state(bolsaTrabajoState);
     $stateProvider.state(plantaIndustrialState);
@@ -144,7 +158,7 @@ angular
         imgAnim:   'fadeup'
     });
 })
-.run(function($rootScope, $interval, $state, $window, ProductosService) {
+.run(function($rootScope, $interval, $state, $window, ProductosService, InfosService) {
 
     $rootScope.showChat = function() {
         $window.open('#/chat/', '_blank', 'Chat Online');
@@ -191,5 +205,16 @@ angular
     });
     
     $rootScope.path_location = 'http://localhost:8000/or-backend/';
+       
+    var search = ['facebook_link', 'twitter_link', 'telf_oficina',
+        'email_1', 'email_2', 'telf_area_tecnica'
+    ];
+    $rootScope.infosRoot = {};
+    
+    InfosService.getDataMany(search, function(data) {
+        angular.forEach(search, function(value, key) {
+            $rootScope.infosRoot[value] = data.info[value];
+        });
+    });
 })
 .path_location = 'http://localhost:8000/or-backend/';

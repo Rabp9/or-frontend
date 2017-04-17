@@ -8,7 +8,7 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ProductosCtrl', function ($scope, ProductosService) {
+.controller('ProductosCtrl', function($scope, ProductosService) {
     ProductosService.getLineasProductos(function(data) {
         $scope.productos = data.productos;
     });

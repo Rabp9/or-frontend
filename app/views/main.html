@@ -20,9 +20,7 @@
                 <div class="linea-productos-description">
                     <h2><a ui-sref="productos.detail({ id: productos[0].id })" ui-sref-active="active">{{ productos[0].title }}</a></h2>
                     <hr>
-                    <p>
-                        {{ productos[0].resumen }}
-                    </p>
+                    <p>{{ productos[0].resumen }}</p>
                 </div>
             </div>
         </div>
@@ -36,9 +34,7 @@
                 <div class="linea-productos-description">
                     <h2><a ui-sref="productos.detail({ id: productos[1].id })" ui-sref-active="active">{{ productos[1].title }}</a></h2>
                     <hr>
-                    <p>
-                        {{ productos[1].resumen }}
-                    </p>
+                    <p>{{ productos[1].resumen }}</p>
                 </div>
             </div>
         </div>
@@ -52,9 +48,7 @@
                 <div class="linea-productos-description">
                     <h2><a ui-sref="productos.detail({ id: productos[2].id })" ui-sref-active="active">{{ productos[2].title }}</a></h2>
                     <hr>
-                    <p>
-                        {{ productos[2].resumen }}
-                    </p>
+                    <p>{{ productos[2].resumen }}</p>
                 </div>
             </div>
         </div>
@@ -62,17 +56,15 @@
     <div class="separator">
     </div>
     <div class="row with-margin linea-productos-3 not-visible" when-visible="animateElementIn"
-          when-not-visible="animateElementOut" ng-mouseenter="hoverLineaProductos($event)">
-         <div class="linea-productos-description">
-             <h2><a href="#">Proyectos</a></h2>
+        when-not-visible="animateElementOut" ng-mouseenter="hoverLineaProductos($event)">
+        <div class="linea-productos-description">
+            <h2><a href="#">{{ obra.title }}</a></h2>
             <hr>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id libero volutpat, venenatis mauris eu, tempus libero. Nunc ornare aliquam dolor, blandit pharetra metus ullamcorper et. Phasellus feugiat accumsan porta. Ut accumsan et sem nec bibendum. Vivamus erat nisi, ultrices vel purus commodo, mollis elementum mauris. Nam porttitor sit amet nunc vitae laoreet. Ut ultricies augue augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi consequat dui nec lorem commodo vestibulum. Quisque sed egestas ex. Nunc blandit ultrices mi sit amet consectetur. Integer in tempus lorem, sed ornare turpis. Nunc facilisis, lacus quis maximus dictum, risus diam dictum elit, at tincidunt quam risus vel magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.     
-            </p>
+            <p>{{ obra.resumen }}</p>
             <a ng-href="#" class="btn btn-lg btn-primary pull-right">Conoce más</a>
         </div>
         <div class="linea-productos-imagen">
-            <img src="//unsplash.it/300/300" class="not-visible">
+            <img ng-src="{{ path_location }}/img/obras/{{ obra.obra_images[0].url }}" class="not-visible">
         </div>
     </div>
 </div>
@@ -83,9 +75,7 @@
         <h1>Tuberías Plásticas</h1>
         <!--<img src="images/separador.svg" alt="separador"/>-->
         <hr>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a finibus sapien, vel tristique nulla. Cras a velit tincidunt, euismod dolor non, posuere nulla. Nam blandit id massa ac maximus. Nam vel justo augue. Proin pharetra nunc lacus, laoreet posuere nisi dapibus in. Aliquam gravida nulla ante, eu aliquam tellus efficitur vel. In ac mauris lacinia, pellentesque odio sed, sagittis turpis. Integer luctus fermentum urna, eget eleifend mauris malesuada tristique. Fusce id pretium sapien. Pellentesque maximus nulla ac dui lacinia ornare.
-        </p>
+        <p>{{ infos.resumen_tuplast }}</p>
         <a ng-href="#" class="btn btn-lg btn-primary ripple">¿Quiénes Somos?</a>
         <a ng-href="#" class="btn btn-lg btn-default hvr-underline-from-left">Políticas</a>
     </div>
@@ -101,12 +91,10 @@
         <br />
         <br />
         <div class="cartera-clientes-description animated fadeIn">
-            <p>
-                Nuestros clientes confian en la calidad de nuestros productos
-            </p>
+            <p>{{ infos.mensaje_clientes_1 }}</p>
             <br/>
             <br/>
-            <h1 class="col-md-12">Son más de 40 empresas con las que trabajamos conjuntamente</h1>
+            <h1 class="col-md-12">{{ infos.mensaje_clientes_2 }}</h1>
         </div>
         <div class="cartera-clientes-logos animated fadeIn col-sm-12" style="display: none;">
             <div class="row">

@@ -1,0 +1,23 @@
+<div>
+    <img class="img-responsive" src="//unsplash.it/1340/200" alt="nuestra-historia" />
+</div>
+
+<div class="container nosotros">
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Proyectos</a></li>
+        <li><a ui-sref="obras">Obras</a></li>
+        <li>{{ obra.title }}</li>
+    </ol>
+    <div class="row">
+        <div class="col-sm-12" style="padding: 20px;">
+            <h2>{{ obra.title }}</h2>
+            <hr>
+            <span ng-bind-html="obra.body"></span>
+            <br>
+            <div ng-image-gallery
+                 images="obra.obra_images">
+            </div>
+        </div>
+    </div>
+</div>

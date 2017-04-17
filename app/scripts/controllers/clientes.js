@@ -8,10 +8,10 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-  .controller('ClientesCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+.controller('ClientesCtrl', function($scope, ClientesService) {
+    $scope.path_logos = angular.module('tuplastFrontendApp').path_location + 'img/' + 'clientes/';
+    
+    ClientesService.get(function(data) {
+        $scope.clientes = data.clientes;
+    });
+});

@@ -36,19 +36,19 @@
                     <div class="col-sm-3 col-sm-offset-6 contacto-header">
                         <br>
                         <span class="contacto-header-field">
-                            <span class="glyphicon glyphicon-earphone glyphicon-color-default"></span> 044-659230
+                            <span class="glyphicon glyphicon-earphone glyphicon-color-default"></span> {{ infosRoot.telf_oficina }}
                         </span><br>
                         <span class="contacto-header-field">
-                            <span class="glyphicon glyphicon-envelope glyphicon-color-default"></span> ventas@tuberiasplasticas.com 
+                            <span class="glyphicon glyphicon-envelope glyphicon-color-default"></span> {{ infosRoot.email_1 }}
                         </span>
                     </div>
                     <div class="col-sm-1">
                         <br>
                         <div>
-                            <a ng-href="#">
+                            <a ng-href="{{ infosRoot.facebook_link }}" target="_blank">
                                 <img src="images/facebook-header.svg" style="width: 35px" alt="Facebook"/>
                             </a>
-                            <a ng-href="#">
+                            <a ng-href="{{ infosRoot.twitter_link }}" target="_blank">
                                 <img src="images/twitter-header.svg" style="width: 35px" alt="Twitter" />
                             </a>
                         </div>
@@ -134,10 +134,10 @@
                 <div class="col-sm-4">
                     <h4>Sìguenos en:</h4>
                     <div>
-                        <a ng-href="#">
+                        <a ng-href="{{ infosRoot.facebook_link }}">
                             <img src="images/facebook-footer.svg" style="width: 35px" alt="Facebook"/>
                         </a>
-                        <a ng-href="#">
+                        <a ng-href="{{ infosRoot.twitter_link }}">
                             <img src="images/twitter-footer.svg" style="width: 35px" alt="Twitter" />
                         </a>
                     </div>
@@ -145,12 +145,12 @@
                 <div class="col-sm-4">
                     <h4>Contacto:</h4>
                     <address>
-                        Telf. Oficina: <a href="tel:044-659230">044-659230</a><br />
+                        Telf. Oficina: <a href="tel:{{ infosRoot.telf_oficina }}">{{ infosRoot.telf_oficina }}</a><br />
 
-                        E-mail: <a href="mailto:ventas@tuberiasplasticas.com">ventas@tuberiasplasticas.com</a> <br />
-                        E-mail: <a href="mailto:info@tuberiasplasticas.com">info@tuberiasplasticas.com</a><br />
+                        E-mail: <a href="mailto:{{ infosRoot.email_1 }}">{{ infosRoot.email_1 }}</a> <br />
+                        E-mail: <a href="mailto:{{ infosRoot.email_2 }}">{{ infosRoot.email_2 }}</a><br />
 
-                        Área Técnica: <a href="tel:982579831">RPC: 982579831</a>
+                        Área Técnica: <a href="tel:{{ infosRoot.telf_area_tecnica }}">{{ infosRoot.telf_area_tecnica }}</a>
                     </address>
                 </div>
             </div>
@@ -214,6 +214,11 @@
     <script src="scripts/services/politicasService.js"></script>
     <script src="scripts/controllers/obras.js"></script>
     <script src="scripts/services/slidesService.js"></script>
+    <script src="scripts/services/obrasService.js"></script>
+    <script src="scripts/services/clientesService.js"></script>
+    <script src="scripts/controllers/obras-detail.js"></script>
+    <script src="scripts/services/convocatoriasservice.js"></script>
+    <script src="scripts/controllers/convocatorias.js"></script>
     <!-- endbuild -->
 </body>
 </html>

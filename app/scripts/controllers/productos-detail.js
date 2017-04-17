@@ -8,7 +8,7 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ProductosDetailCtrl', function ($scope, $stateParams, ProductosService) {
+.controller('ProductosDetailCtrl', function($scope, $stateParams, ProductosService) {
     var id = $stateParams.id;
         
     ProductosService.get({id: id}, function(data) {
