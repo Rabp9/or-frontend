@@ -8,10 +8,8 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-  .controller('BolsaTrabajoCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('BolsaTrabajoCtrl', function($scope, ConvocatoriasService) {
+    ConvocatoriasService.get(function(data) {
+        $scope.convocatorias = data.convocatorias;
+    });
+});

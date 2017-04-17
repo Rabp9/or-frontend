@@ -9,6 +9,9 @@
         },
         "when-visible": {
             "context": "div"
+        },
+        "ui-sref": {
+            "context": "a"
         }
     }
 }
