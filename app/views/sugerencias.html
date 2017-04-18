@@ -12,11 +12,23 @@
             <h2>Sugerencias</h2>
             <hr>
             <form>
-                <div class="form-group">
-                    <label for="sltTipoConsulta">Tipo</label>
-                    <select class="form-control" id="sltTipoConsulta">
-                        <option value="">Selecciona Tipo</option>
-                    </select>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="sltTipoSugerencia">Tipo</label>
+                            <select id="sltOrigen" class="form-control"
+                                ng-options="tipo_sugerencia.email as tipo_sugerencia.descripcion for tipo_sugerencia in tipo_sugerencias"
+                                ng-model="email">
+                                <option value="">Selecciona un Tipo de Sugerencia</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="txtEmail">Email</label>
+                            <input id="txtEmail" type="email" class="form-control" />
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="txtAsunto">Asunto</label>
@@ -24,7 +36,7 @@
                 </div>
                 <div class="form-group">
                     <label for="txtaMensaje">Mensaje</label>
-                    <textarea id="txtaMensaje" class="form-control"></textarea>
+                    <textarea id="txtaMensaje" class="form-control" style="height: 150px;"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
