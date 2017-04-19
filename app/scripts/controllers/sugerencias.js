@@ -12,4 +12,10 @@ angular.module('tuplastFrontendApp')
     TipoSugerenciasService.get(function(data) {
         $scope.tipo_sugerencias = data.tipo_sugerencias;
     });
+    
+    $scope.sendMessage = function (sugerencia) {
+        TipoSugerenciasService.sendMessage(sugerencia, function (data) {
+            $scope.message = data.message;
+        });
+    };
 });
