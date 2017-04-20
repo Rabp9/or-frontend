@@ -15,7 +15,7 @@ angular.module('tuplastFrontendApp')
         var obra_images = data.obra.obra_images;
         angular.forEach(obra_images, function(value, key) {
             value.url = angular.module('tuplastFrontendApp').path_location + 'img' + '/' + 'obras' + '/' + value.url;
-        })
+        });
         data.obra.obra_images = obra_images;
         $scope.obra = data.obra;
     });

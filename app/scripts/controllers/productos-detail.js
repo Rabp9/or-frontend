@@ -15,7 +15,7 @@ angular.module('tuplastFrontendApp')
         var producto_images = data.producto.producto_images;
         angular.forEach(producto_images, function(value, key) {
             value.url = angular.module('tuplastFrontendApp').path_location + 'img' + '/' + 'productos' + '/' + value.url;
-        })
+        });
         data.producto.producto_images = producto_images;
         $scope.producto = data.producto;
     });

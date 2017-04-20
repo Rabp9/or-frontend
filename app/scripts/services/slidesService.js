@@ -9,5 +9,5 @@
  */
 angular.module('tuplastFrontendApp')
 .factory('SlidesService', function($resource) {
-    return $resource(angular.module("tuplastFrontendApp").path_location + "slides/:id.json", {});
+    return $resource(angular.module('tuplastFrontendApp').path_location + 'slides/:id.json', {});
 });
