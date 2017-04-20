@@ -8,10 +8,11 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('MainCtrl', function ($scope, $window, SlidesService, ProductosService, ObrasService, InfosService) {
+.controller('MainCtrl', function ($scope, $window, SlidesService, ProductosService, ObrasService, InfosService, ClientesService) {
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
     $scope.active = 0;
+    $scope.path_logos = angular.module('tuplastFrontendApp').path_location + 'img/' + 'clientes/';
     // var slides = $scope.slides = [];
     var currIndex = 0;
     
@@ -52,6 +53,10 @@ angular.module('tuplastFrontendApp')
         });
     });
     
+    ClientesService.get(function(data) {
+        $scope.clientes = data.clientes;
+        // angular.forEach($scope.)
+    });
     /*
     $scope.addSlide = function() {
         var newWidth = 1400 + slides.length + 1;

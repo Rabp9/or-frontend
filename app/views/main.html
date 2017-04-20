@@ -64,7 +64,7 @@
             <a ng-href="#" class="btn btn-lg btn-primary pull-right">Conoce más</a>
         </div>
         <div class="linea-productos-imagen">
-            <img ng-src="{{ path_location }}/img/obras/{{ obra.obra_images[0].url }}" class="not-visible">
+            <img ng-src="{{ path_location }}/img/obras/{{ obra.obra_images[0].url }}" class="img-responsive" style="height: 100%;" >
         </div>
     </div>
 </div>
@@ -76,8 +76,8 @@
         <!--<img src="images/separador.svg" alt="separador"/>-->
         <hr>
         <p>{{ infos.resumen_tuplast }}</p>
-        <a ng-href="#" class="btn btn-lg btn-primary ripple">¿Quiénes Somos?</a>
-        <a ng-href="#" class="btn btn-lg btn-default hvr-underline-from-left">Políticas</a>
+        <a ng-href="#/quienes-somos" class="btn btn-lg btn-primary ripple">¿Quiénes Somos?</a>
+        <a ng-href="#/politicas" class="btn btn-lg btn-default hvr-underline-from-left">Políticas</a>
     </div>
 </div>
 <div class="separador">
@@ -98,64 +98,9 @@
         </div>
         <div class="cartera-clientes-logos animated fadeIn col-sm-12" style="display: none;">
             <div class="row">
-                <div class="col-xs-3 col-md-2">
+                <div class="col-xs-3 col-md-2" ng-repeat="cliente in clientes">
                     <span class="thumbnail animated zoomIn delay-3">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-0">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-0">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-2">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-2">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-1">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-0">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-1">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-2">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-3">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-2">
-                        <img src="//unsplash.it/300/300">
-                    </span>
-                </div>
-                <div class="col-xs-3 col-md-2">
-                    <span class="thumbnail animated zoomIn delay-0">
-                        <img src="//unsplash.it/300/300">
+                        <img ng-src="{{ path_logos + cliente.url }}" alt="{{ cliente.razon_social }}">
                     </span>
                 </div>
             </div>
