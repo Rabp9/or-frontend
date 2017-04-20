@@ -9,6 +9,8 @@
  */
 angular.module('tuplastFrontendApp')
 .controller('PoliticasCtrl', function($scope, PoliticasService) {
+    $scope.path_img = angular.module('tuplastFrontendApp').path_location + 'img/' + 'politicas/';
+    
     PoliticasService.get(function(data) {
         $scope.politicas = data.politicas;
     });
