@@ -33,7 +33,7 @@
                             <img src="images/logo.png" alt=""/>
                         </a>
                     </div>
-                    <div class="col-sm-3 col-sm-offset-5 contacto-header">
+                    <div class="col-sm-4 col-sm-offset-5 contacto-header">
                         <br>
                         <span class="contacto-header-field">
                             <span class="glyphicon glyphicon-earphone glyphicon-color-default"></span> {{ infosRoot.telf_oficina }}
@@ -99,8 +99,10 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-left">
                                 <li><a href="#/obras">Obras</a></li>
-                                <li><a href="#">Asesoría</a></li>
                                 <li><a href="#">Ventas</a></li>
+                                <li ng-repeat="page in pages">
+                                    <a ui-sref="pages({{ page.id }})" ui-sref-active="active">{{ page.title }}</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
@@ -222,6 +224,8 @@
     <script src="scripts/services/convocatoriasservice.js"></script>
     <script src="scripts/controllers/convocatorias.js"></script>
     <script src="scripts/services/tiposugerenciasservice.js"></script>
+    <script src="scripts/services/pagesservice.js"></script>
+    <script src="scripts/controllers/pages.js"></script>
     <!-- endbuild -->
 </body>
 </html>

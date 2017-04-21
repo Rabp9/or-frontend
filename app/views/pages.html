@@ -1,0 +1,14 @@
+<div class="container nosotros">
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Proyectos</a></li>
+        <li>{{ page.title }}</li>
+    </ol>
+    <div class="row">
+        <div class="col-sm-12" style="padding: 20px;">
+            <h2>{{ page.title }}</h2>
+            <hr>
+            <span ng-bind-html="page.body"></span>            
+        </div>
+    </div>
+</div>

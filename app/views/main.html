@@ -56,12 +56,12 @@
     <div class="separator">
     </div>
     <div class="row with-margin linea-productos-3 not-visible" when-visible="animateElementIn"
-        when-not-visible="animateElementOut" ng-mouseenter="hoverLineaProductos($event)">
+        when-not-visible="animateElementOut">
         <div class="linea-productos-description">
-            <h2><a href="#">{{ obra.title }}</a></h2>
+            <h2><a ui-sref="obras-detail({ id: obra.id })" ui-sref-active="active">{{ obra.title }}</a></h2>
             <hr>
             <p>{{ obra.resumen }}</p>
-            <a ng-href="#" class="btn btn-lg btn-primary pull-right">Conoce más</a>
+            <a ui-sref="obras-detail({ id: obra.id })" ui-sref-active="active" class="btn btn-lg btn-primary pull-right">Conoce más</a>
         </div>
         <div class="linea-productos-imagen">
             <img ng-src="{{ path_location }}/img/obras/{{ obra.obra_images[0].url }}" class="img-responsive" style="height: 100%;" >

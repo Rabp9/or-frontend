@@ -104,10 +104,15 @@ angular
     
     var pagesState = {
         name: 'pages',
-        url: '/pages',
+        url: '/pages/{id}',
         templateUrl: 'views/pages.html',
         controller: 'PagesCtrl',
-        controllerAs: 'pages'
+        controllerAs: 'pages',
+        params: {
+            id: {
+                value: '1'
+            }
+        }
     };
     
     var bolsaTrabajoState = {
@@ -158,7 +163,7 @@ angular
         imgAnim:   'fadeup'
     });
 })
-.run(function($rootScope, $interval, $state, $window, ProductosService, InfosService) {
+.run(function($rootScope, $interval, $state, $window, ProductosService, InfosService, PagesService) {
 
     $rootScope.showChat = function() {
         $window.open('#/chat/', '_blank', 'Chat Online');
@@ -202,6 +207,10 @@ angular
     
     ProductosService.get(function(data) {
        $rootScope.productos = data.productos;
+    });
+    
+    PagesService.get(function(data) {
+       $rootScope.pages = data.pages;
     });
     
     $rootScope.path_location = 'http://localhost:8000/or-backend/';
