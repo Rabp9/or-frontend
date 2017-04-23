@@ -8,7 +8,7 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ObrasDetailCtrl', function($scope, $stateParams, ObrasService) {
+.controller('ObrasDetailCtrl', function($scope, $stateParams, ObrasService, $rootScope) {
     var id = $stateParams.id;
     
     ObrasService.get({id: id}, function(data) {
@@ -18,5 +18,7 @@ angular.module('tuplastFrontendApp')
         });
         data.obra.obra_images = obra_images;
         $scope.obra = data.obra;
+        
+        $rootScope.title = $scope.obra.title;
     });
 });

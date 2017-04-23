@@ -8,9 +8,9 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ProductosDetailCtrl', function($scope, $stateParams, ProductosService) {
+.controller('ProductosDetailCtrl', function($scope, $stateParams, ProductosService, $rootScope) {
     var id = $stateParams.id;
-        
+    
     ProductosService.get({id: id}, function(data) {
         var producto_images = data.producto.producto_images;
         angular.forEach(producto_images, function(value, key) {
@@ -18,5 +18,6 @@ angular.module('tuplastFrontendApp')
         });
         data.producto.producto_images = producto_images;
         $scope.producto = data.producto;
+        $rootScope.title = $scope.producto.title;
     });
 });

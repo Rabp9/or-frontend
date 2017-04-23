@@ -2,7 +2,12 @@
     justify-content: space-between;
     margin: 5px;
     color: $color-terciario;
-    height: 500px;
+    @media (min-width: $screen-sm-min) {
+        height: 500px;
+    }
+    @media (max-width: $screen-xs-max) {
+        max-height: 500px;
+    }
     .linea-productos-imagen {
         background: $color-terciario;
         position: relative;
@@ -29,9 +34,14 @@
     // @include button-box-shadow(-5px 0px 5px 0px rgba(#000, 0.4));
     .linea-productos-description {
         order: 1;
-        width: 70%;
         padding: 12px;
         text-align: left;
+        @media (min-width: $screen-sm-min) {
+            width: 70%;
+        }
+        @media (max-width: $screen-xs-max) {
+            width: 100%;
+        }
     }
     .linea-productos-imagen {
         order: 2;
