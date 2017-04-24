@@ -9,7 +9,12 @@
 }
 
 body {
-    padding-top: $navbar-height + $navbar-header-top-height + ($navbar-header-top-margin * 2);
+    @media (min-width: $screen-sm-min) {
+        padding-top: $navbar-height + $navbar-header-top-height + ($navbar-header-top-margin * 2);
+    }
+    @media (max-width: $screen-xs-max) {
+        padding-top: $navbar-height;
+    }
     height: 100%;
 }
 

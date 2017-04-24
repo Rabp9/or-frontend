@@ -1,7 +1,14 @@
 .navbar-brand {
     padding: 0px;
     img {
-        height: $navbar-height + 25px;
+        @media (min-width: $screen-sm-min) {
+            height: $navbar-height + 25px;
+        }
+        @media (max-width: $screen-xs-max) {
+            height: 40px;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
     }
 }
 
@@ -293,4 +300,110 @@
         margin-left: 5px;
         font-size: 18px;
     }
+}
+
+.footer {
+    @media (max-width: $screen-xs-max) {
+        text-align: center;
+    }
+}
+
+@keyframes saliendo {
+    from {
+        height: 50px;
+    }
+
+    to {
+        height: 0px;
+    }
+}
+
+@keyframes entrando {
+    from {
+        height: 0px;
+    }
+
+    to {
+        height: 50px;
+    }
+}
+
+.menu.ng-hide {
+    animation: fadeOutUp 0.2s, saliendo 0.2s;
+}
+
+.menu.ng-hide-remove {
+    animation: fadeInDown 0.2s, entrando 0.2s;
+}
+
+@keyframes reduce {
+    from {
+        height: $navbar-height + 25px;
+    }
+
+    to {
+        height: 50px;
+    }
+}
+
+@keyframes enlarge {
+    from {
+        height: 50px;
+    }
+
+    to {
+        height: $navbar-height + 25px;
+    }
+}
+
+#imgLogo.reduce {
+    animation: reduce 1s;
+    height: 50px;
+}
+
+#imgLogo.enlarge {
+    animation: enlarge 1s;
+    height: $navbar-height + 25px;
+}
+
+@keyframes reduce-top {
+    from {
+        margin-top: $navbar-header-top-margin;
+        margin-bottom: $navbar-header-top-margin;
+        height: $navbar-header-top-height;
+    }
+
+    to {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 0px;
+    }
+}
+
+@keyframes enlarge-top {
+    from {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 0px;
+    }
+
+    to {
+        margin-top: $navbar-header-top-margin;
+        margin-bottom: $navbar-header-top-margin;
+        height: $navbar-header-top-height;
+    }
+}
+
+#dvNavTop.reduce-top {
+    animation: reduce-top 1s;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 0px;
+}
+
+#dvNavTop.enlarge-top {
+    animation: enlarge-top 1s;
+    margin-top: $navbar-header-top-margin;
+    margin-bottom: $navbar-header-top-margin;
+    height: $navbar-header-top-height;
 }

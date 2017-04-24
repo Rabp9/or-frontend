@@ -164,7 +164,8 @@ angular
     });
 })
 .run(function($rootScope, $interval, $state, $window, ProductosService, InfosService, PagesService) {
-
+    $rootScope.show = true;
+    
     $rootScope.showChat = function() {
         $window.open('#/chat/', '_blank', 'Chat Online');
     };
@@ -225,5 +226,28 @@ angular
             $rootScope.infosRoot[value] = data.info[value];
         });
     });
+    
+    $rootScope.showMenu = function($el) {
+        $rootScope.$apply(function() {
+            $rootScope.show = true;
+            $('#imgLogo').removeClass('reduce');
+            $('#imgLogo').addClass('enlarge');
+            
+            $('#dvNavTop').removeClass('reduce-top');
+            $('#dvNavTop').addClass('enlarge-top');
+        })
+    };
+    
+    $rootScope.hideMenu = function($el) {
+        $rootScope.$apply(function() {
+            $rootScope.show = false;
+            $('#imgLogo').removeClass('enlarge');
+            $('#imgLogo').addClass('reduce');
+            
+            $('#dvNavTop').removeClass('enlarge-top');
+            $('#dvNavTop').addClass('reduce-top');
+        })
+    };
+    
 })
 .path_location = 'http://localhost:8000/or-backend/';
