@@ -12,4 +12,8 @@ angular.module('tuplastFrontendApp')
     ProductosService.getLineasProductos(function(data) {
         $scope.productos = data.productos;
     });
+    
+    ProductosService.getPages(function(data) {
+        $scope.producto_pages = data.producto_pages;
+    });
 });

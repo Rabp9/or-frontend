@@ -206,8 +206,12 @@ angular
         $state.reload();
     };
     
-    ProductosService.get(function(data) {
-       $rootScope.productos = data.productos;
+    ProductosService.getPages(function(data) {
+        $rootScope.producto_pages = data.producto_pages;
+    });
+    
+    ProductosService.getLineasProductos(function(data) {
+        $rootScope.productos = data.productos;
     });
     
     PagesService.get(function(data) {

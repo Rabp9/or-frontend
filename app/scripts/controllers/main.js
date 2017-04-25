@@ -55,7 +55,9 @@ angular.module('tuplastFrontendApp')
     
     ClientesService.get(function(data) {
         $scope.clientes = data.clientes;
-        // angular.forEach($scope.)
+        angular.forEach($scope.clientes, function(value, key) {
+            value.delay = Math.floor(Math.random() * 4) + 0;
+        });
     });
     
     $scope.animateElementIn = function($el) {

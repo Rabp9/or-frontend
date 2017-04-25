@@ -13,6 +13,10 @@ angular.module('tuplastFrontendApp')
         getLineasProductos: {
             method: 'GET',
             url: angular.module('tuplastFrontendApp').path_location + 'productos/getLineasProductos/.json'
+        },
+        getPages: {
+            method: 'GET',
+            url: angular.module('tuplastFrontendApp').path_location + 'productos/getPages/.json'
         }
     });
 });
