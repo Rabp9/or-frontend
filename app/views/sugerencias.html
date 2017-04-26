@@ -1,5 +1,5 @@
 <div class="alert alert-dismissible" ng-class="{'alert-success': message.type === 'success', 'alert-danger': message.type === 'error'}" role="alert" ng-show="message.type !== undefined">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <button type="button" class="close" ng-click="message.type = undefined" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     {{ message.text }} 
 </div>
 <div>
@@ -20,7 +20,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="sltTipoSugerencia">Tipo</label>
-                            <select id="sltOrigen" class="form-control"
+                            <select id="sltTipoSugerencia" class="form-control"
                                 ng-options="tipo_sugerencia.email as tipo_sugerencia.descripcion for tipo_sugerencia in tipo_sugerencias"
                                 ng-model="sugerencia.email_destinatario">
                                 <option value="">Selecciona un Tipo de Sugerencia</option>
