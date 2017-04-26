@@ -160,7 +160,8 @@ angular
         imgBubbles:   false, 
         bgClose:   true,
         bubbles:   true, 
-        imgAnim:   'fadeup'
+        imgAnim:   'fadeup',
+        thumbSize: 160
     });
 })
 .run(function($rootScope, $interval, $state, $window, ProductosService, InfosService, PagesService) {

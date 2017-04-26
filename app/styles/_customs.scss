@@ -260,8 +260,15 @@
 }
 
 .thumb {
-    height: 80px !important;
-    width: 80px !important;
+    /*
+    height: auto !important;
+    width: auto !important;
+    */
+    @extend .img-rounded;
+}
+
+.ng-image-gallery {
+    margin-bottom: 10px;
 }
 
 .clientes {
@@ -270,7 +277,7 @@
             p {
                 text-align: center;
                 position: relative;
-                top: 50%;
+                // top: 50%;
                 font-size: 25px;
             }
         }
@@ -408,4 +415,11 @@
     margin-top: $navbar-header-top-margin;
     margin-bottom: $navbar-header-top-margin;
     height: $navbar-header-top-height;
+}
+
+.cliente-card {
+    height: 150px;
+    .cliente-card-info {
+        color: $color-cuartario;
+    }
 }

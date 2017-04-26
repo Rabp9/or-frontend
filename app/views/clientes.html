@@ -9,9 +9,9 @@
     <div class="row">
         <div class="col-xs-3 col-md-2" ng-repeat="cliente in clientes">
             <span class="thumbnail animated zoomIn delay-3">
-                <figure class="imghvr-flip-horiz">
-                    <img ng-src="{{ path_logos + cliente.url }}" alt="{{ cliente.razon_social }}">
-                    <figcaption>
+                <figure class="imghvr-flip-horiz cliente-card">
+                    <img class="img-responsive" ng-src="{{ path_logos + cliente.url }}" alt="{{ cliente.razon_social }}">
+                    <figcaption class="cliente-card-info">
                         <p>{{ cliente.razon_social }}</p>
                     </figcaption>
                 </figure>
