@@ -8,7 +8,7 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('MainCtrl', function ($scope, $window, SlidesService, ProductosService, ObrasService, InfosService, ClientesService) {
+.controller('MainCtrl', function ($scope, $window, SlidesService, ProductosService, ObrasService, InfosService, ClientesService, ngProgressFactory) {
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
     $scope.active = 0;
@@ -17,6 +17,8 @@ angular.module('tuplastFrontendApp')
     var currIndex = 0;
     
     var controladorWhenVisible = 0;
+    $scope.progressbar = ngProgressFactory.createInstance();
+    $scope.progressbar.start();
   
     SlidesService.get(function(data) {
         $scope.slides = data.slides;
@@ -58,6 +60,7 @@ angular.module('tuplastFrontendApp')
         angular.forEach($scope.clientes, function(value, key) {
             value.delay = Math.floor(Math.random() * 4) + 0;
         });
+        $scope.progressbar.complete();
     });
     
     $scope.animateElementIn = function($el) {

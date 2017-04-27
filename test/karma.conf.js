@@ -36,6 +36,8 @@ module.exports = function(config) {
       'bower_components/bootstrap-hover-animation-dropdown/dist/bootstrap-hover-animation-dropdown.js',
       'bower_components/tinymce/tinymce.js',
       'bower_components/angular-ui-tinymce/src/tinymce.js',
+      'bower_components/tg-angular-validator/dist/angular-validator.js',
+      'bower_components/ngprogress/build/ngprogress.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

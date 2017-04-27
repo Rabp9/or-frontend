@@ -19,7 +19,9 @@ angular
     'angular-scroll-animate',
     'ui.router',
     'bootstrapHoverAnimationDropdown',
-    'thatisuday.ng-image-gallery'
+    'thatisuday.ng-image-gallery',
+    'angularValidator',
+    'ngProgress'
 ])
 .config(function($stateProvider, $urlRouterProvider, ngImageGalleryOptsProvider) {
     var mainState = {
@@ -124,20 +126,13 @@ angular
         title: 'Bolsa de Trabajo'
     };
     
-    var plantaIndustrialState = {
-        name: 'plantaIndustrial',
-        url: '/planta-industrial',
-        templateUrl: 'views/planta-industrial.html',
-        controller: 'PlantaIndustrialCtrl',
-        controllerAs: 'plantaIndustrial'
-    };
-    
     var sugerenciasState = {
         name: 'sugerencias',
         url: '/sugerencias',
         templateUrl: 'views/sugerencias.html',
         controller: 'SugerenciasCtrl',
-        controllerAs: 'sugerencias'
+        controllerAs: 'sugerencias',
+        title: 'Sugerencias'
     };
     
     $stateProvider.state(mainState);
@@ -150,7 +145,6 @@ angular
     $stateProvider.state(obrasDetailState);
     $stateProvider.state(pagesState);
     $stateProvider.state(bolsaTrabajoState);
-    $stateProvider.state(plantaIndustrialState);
     $stateProvider.state(sugerenciasState);
     $urlRouterProvider.when('', '/');
     
@@ -164,24 +158,29 @@ angular
         thumbSize: 160
     });
 })
-.run(function($rootScope, $interval, $state, $window, ProductosService, InfosService, PagesService) {
+.run(function($rootScope, $state, $window, ProductosService, InfosService, PagesService) {
     $rootScope.show = true;
-    
+    $('#menu-alter').css('display', 'block');
+    $('#spnTel').css('display', 'inline');
+    $('#spnEml').css('display', 'inline');
     $rootScope.showChat = function() {
         $window.open('#/chat/', '_blank', 'Chat Online');
     };
     
+    /*
     $rootScope.layout = {};
     $rootScope.layout.loading = false; 
-            
+   
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
 
         //show loading gif
         $rootScope.layout.loading = true;
     });
-
+    */
+   
     $rootScope.$on('$stateChangeSuccess', function(event, toParams, fromState, fromParams) {
         // hide loading gif
+        /*
         $rootScope.counter = 0;
         $rootScope.total_counts = 50;
         $interval(function() {
@@ -190,19 +189,22 @@ angular
                 $rootScope.layout.loading = false;
             }
         }, 10, $rootScope.total_counts);
-
+        */
         // setting title
         $rootScope.title = $state.current.title;
-        
-        $window.scrollTo(0, 0);
+        if ($state.current.name !== 'productos.detail') {
+            $window.scrollTo(0, 0);
+        }
     });
-
+    
+    /*
     $rootScope.$on('$stateChangeCancel', function() {
 
         //hide loading gif
         $rootScope.layout.loading = false;
     });
-   
+    */
+  
     $rootScope.refresh = function() {
         $state.reload();
     };
@@ -253,6 +255,5 @@ angular
             $('#dvNavTop').addClass('reduce-top');
         })
     };
-    
 })
 .path_location = 'http://localhost:8000/or-backend/';

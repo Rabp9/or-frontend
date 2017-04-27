@@ -8,8 +8,11 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ObrasDetailCtrl', function($scope, $stateParams, ObrasService, $rootScope) {
+.controller('ObrasDetailCtrl', function($scope, $stateParams, ObrasService, $rootScope, ngProgressFactory) {
     var id = $stateParams.id;
+    
+    $scope.progressbar = ngProgressFactory.createInstance();
+    $scope.progressbar.start();
     
     ObrasService.get({id: id}, function(data) {
         var obra_images = data.obra.obra_images;
@@ -20,5 +23,6 @@ angular.module('tuplastFrontendApp')
         $scope.obra = data.obra;
         
         $rootScope.title = $scope.obra.title;
+        $scope.progressbar.complete();
     });
 });

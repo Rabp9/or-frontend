@@ -15,14 +15,15 @@
         <div class="col-sm-12" style="padding: 20px;">
             <h2>Sugerencias</h2>
             <hr>
-            <form ng-submit="sendMessage(sugerencia)">
+            <form novalidate angular-validator angular-validator-submit="sendMessage(sugerencia)" name="tipoSugerenciasAdd" angular-validator-quiet>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="sltTipoSugerencia">Tipo</label>
                             <select id="sltTipoSugerencia" class="form-control"
                                 ng-options="tipo_sugerencia.email as tipo_sugerencia.descripcion for tipo_sugerencia in tipo_sugerencias"
-                                ng-model="sugerencia.email_destinatario">
+                                ng-model="sugerencia.email_destinatario"
+                                name="tipoSugerencia" required required-message="'Este campo es requerido'" validate-on="blur">
                                 <option value="">Selecciona un Tipo de Sugerencia</option>
                             </select>
                         </div>
@@ -30,17 +31,20 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="txtEmail">Email</label>
-                            <input id="txtEmail" type="email" ng-model="sugerencia.email_remitente" class="form-control" />
+                            <input id="txtEmail" type="email" ng-model="sugerencia.email_remitente" class="form-control" 
+                                name="email" required required-message="'Este campo es requerido'" validate-on="blur"/>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="txtAsunto">Asunto</label>
-                    <input id="txtAsunto" type="text" class="form-control" ng-model="sugerencia.asunto" />
+                    <input id="txtAsunto" type="text" class="form-control" ng-model="sugerencia.asunto"
+                        name="infoDescripcion" required required-message="'Este campo es requerido'" validate-on="blur" />
                 </div>
                 <div class="form-group">
                     <label for="txtaMensaje">Mensaje</label>
-                    <textarea id="txtaMensaje" class="form-control" ng-model="sugerencia.mensaje" style="height: 150px;"></textarea>
+                    <textarea id="txtaMensaje" class="form-control" ng-model="sugerencia.mensaje" style="height: 150px;"
+                        name="mensaje" required required-message="'Este campo es requerido'" validate-on="blur"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
