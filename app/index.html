@@ -72,9 +72,8 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-left">
                                             <li><a ui-sref="obras">Obras</a></li>
-                                            <li><a href="#">Ventas</a></li>
                                             <li ng-repeat="page in pages">
-                                                <a ui-sref="pages({{ page.id }})">{{ page.title }}</a>
+                                                <a ui-sref="pages({ id: page.id })">{{ page.title }}</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -175,9 +174,8 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-left">
                                 <li><a ui-sref="obras">Obras</a></li>
-                                <li><a href="#">Ventas</a></li>
                                 <li ng-repeat="page in pages">
-                                    <a ui-sref="pages({{ page.id }})">{{ page.title }}</a>
+                                    <a ui-sref="pages({ id: page.id })">{{ page.title }}</a>
                                 </li>
                             </ul>
                         </li>
