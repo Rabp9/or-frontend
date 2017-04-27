@@ -12,6 +12,7 @@ angular.module('tuplastFrontendApp')
     var id = $stateParams.id;
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
+    $('.navbar-toggle').click();
     
     ProductosService.get({id: id}, function(data) {
         var producto_images = data.producto.producto_images;

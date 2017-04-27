@@ -167,6 +167,10 @@ angular
         $window.open('#/chat/', '_blank', 'Chat Online');
     };
     
+    $('.nav  a:last-child').on('click', function() {
+        $('.navbar-toggle').click(); //bootstrap 3.x by Richard
+    });
+    
     /*
     $rootScope.layout = {};
     $rootScope.layout.loading = false; 
