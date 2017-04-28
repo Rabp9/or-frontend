@@ -221,8 +221,12 @@ angular
         $rootScope.productos = data.productos;
     });
     
-    PagesService.get(function(data) {
-       $rootScope.pages = data.pages;
+    PagesService.getPages({type: 'PY'}, function(data) {
+       $rootScope.pages_proyectos = data.pages;
+    });
+    
+    PagesService.getPages({type: 'CN'}, function(data) {
+       $rootScope.pages_contactos = data.pages;
     });
     
     $rootScope.path_location = 'http://localhost:8000/or-backend/';
