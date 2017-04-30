@@ -8,7 +8,7 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ObrasDetailCtrl', function($scope, $stateParams, ObrasService, $rootScope, ngProgressFactory) {
+.controller('ObrasDetailCtrl', function ($scope, $stateParams, ObrasService, $rootScope, ngProgressFactory) {
     var id = $stateParams.id;
     
     $scope.progressbar = ngProgressFactory.createInstance();

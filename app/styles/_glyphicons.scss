@@ -14,16 +14,7 @@ $size-glyphicon-small: 18px;
 .glyphicon-color-default {
     color: $color-default;
 }
-/*
-.glyphicon-earphone:before {
-    background-image: url('../images/glyphicons/png/glyphicons-443-earphone.png');
-    background-size: $size-glyphicon-small $size-glyphicon-small;
-    display: inline-block;
-    width: $size-glyphicon-small; 
-    height: $size-glyphicon-small;
-    content: "";
-}
-*/
+
 .glyphicon-user-key:before {
     content: url('../fonts/glyphicons-526-user-key.png');
 }

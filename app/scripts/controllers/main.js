@@ -13,7 +13,6 @@ angular.module('tuplastFrontendApp')
     $scope.noWrapSlides = false;
     $scope.active = 0;
     $scope.path_logos = angular.module('tuplastFrontendApp').path_location + 'img/' + 'clientes/';
-    // var slides = $scope.slides = [];
     var currIndex = 0;
     
     var controladorWhenVisible = 0;
@@ -65,13 +64,13 @@ angular.module('tuplastFrontendApp')
     
     $scope.animateElementIn = function($el) {
         $el.removeClass('not-visible');
-        $el.addClass('animated fadeInUp'); // this example leverages animate.css classes
+        $el.addClass('animated fadeInUp');
     };
 
     $scope.animateElementOut = function($el) {
         if (controladorWhenVisible !== 5) {
             $el.addClass('not-visible');
-            $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
+            $el.removeClass('animated fadeInUp');
             controladorWhenVisible++;
         }
     };

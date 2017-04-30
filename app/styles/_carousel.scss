@@ -19,22 +19,12 @@
 
 .carousel-inner, .carousel-inner img, div.text-center {
     @media (min-width: $screen-sm-min) {
-        /*height: -webkit-calc(100vh - #{$navbar-height + $navbar-header-top-height + ($navbar-header-top-margin * 2)});
-        height:    -moz-calc(100vh - #{$navbar-height + $navbar-header-top-height + ($navbar-header-top-margin * 2)});
-        height:         calc(100vh - #{$navbar-height + $navbar-header-top-height + ($navbar-header-top-margin * 2)});
-*/
         height: 100%;
         min-height: 400px;
     }
     @media (max-width: $screen-xs-max) {
         height: 100%;
     }
-  /*  height: -webkit-calc(100vh - #{$navbar-height});
-    height:    -moz-calc(100vh - #{$navbar-height});
-    height:         calc(100vh - #{$navbar-height});
-    min-height: 580px;
-    */
-//    margin-bottom: -$carousel-indicators-bottom;
 }
 
 .carousel-indicators {

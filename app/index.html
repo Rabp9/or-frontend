@@ -21,12 +21,6 @@
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <!-- Add your site or application content here -->
-    <!--
-    <span id="spLoader" ng-show='layout.loading' style="width: {{counter * 100 / total_counts}}%">
-    </span>
-    -->
     <div id="dvHeader" class="header">
         <div class="navbar navbar-default navbar-fixed-top navbar-inner" role="navigation">
             <div class="container hidden-xs">
@@ -92,14 +86,14 @@
                                     </li>
                             </ul>
                         </div>
-                        <div class="col-sm-4 contacto-header" style="font-size: 12px; margin-top: 16px;">
+                        <div class="col-sm-4 contacto-header">
                             <span class="glyphicon glyphicon-earphone glyphicon-color-default"></span> {{ infosRoot.telf_oficina }}
                             <span class="glyphicon glyphicon-envelope glyphicon-color-default"></span> {{ infosRoot.email_1 }}
                             <a ng-href="{{ infosRoot.facebook_link }}" target="_blank">
-                                <img src="images/facebook-header.svg" style="width: 16px" alt="Facebook"/>
+                                <img class="img-sn-link-sm" src="images/facebook-header.svg" alt="Facebook"/>
                             </a>
                             <a ng-href="{{ infosRoot.twitter_link }}" target="_blank">
-                                <img src="images/twitter-header.svg" style="width: 16px" alt="Twitter" />
+                                <img class="img-sn-link-sm" src="images/twitter-header.svg" alt="Twitter" />
                             </a>
                         </div>
                     </div>
@@ -118,10 +112,10 @@
                         <br>
                         <div>
                             <a ng-href="{{ infosRoot.facebook_link }}" target="_blank">
-                                <img src="images/facebook-header.svg" style="width: 35px" alt="Facebook"/>
+                                <img class="img-sn-link-md" src="images/facebook-header.svg" alt="Facebook"/>
                             </a>
                             <a ng-href="{{ infosRoot.twitter_link }}" target="_blank">
-                                <img src="images/twitter-header.svg" style="width: 35px" alt="Twitter" />
+                                <img class="img-sn-link-md" src="images/twitter-header.svg" alt="Twitter" />
                             </a>
                         </div>
                     </div>
@@ -217,10 +211,10 @@
                     <h4>Sìguenos en:</h4>
                     <div>
                         <a ng-href="{{ infosRoot.facebook_link }}">
-                            <img src="images/facebook-footer.svg" style="width: 35px" alt="Facebook"/>
+                            <img class="img-sn-link-md" src="images/facebook-footer.svg" alt="Facebook"/>
                         </a>
                         <a ng-href="{{ infosRoot.twitter_link }}">
-                            <img src="images/twitter-footer.svg" style="width: 35px" alt="Twitter" />
+                            <img class="img-sn-link-md" src="images/twitter-footer.svg" alt="Twitter" />
                         </a>
                     </div>
                 </div>
@@ -241,13 +235,6 @@
         <div class="copyright">
             <p>© Copyright 2017 TUBERÍAS PLÁSTICAS SAC</p>
         </div>
-        <!--
-        <nav class="navbar navbar-default navbar-fixed-bottom navbar-chat-link">
-            <div class="container">
-                <button class="navbar-right btn" ng-click="showChat()">Chat online</button>
-            </div>
-        </nav>
-        -->
     </div>
 
 
