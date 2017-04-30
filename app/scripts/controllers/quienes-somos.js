@@ -27,13 +27,13 @@ angular.module('tuplastFrontendApp')
     
     $scope.animateElementIn = function($el) {
         $el.removeClass('not-visible');
-        $el.addClass('animated fadeInUp'); // this example leverages animate.css classes
+        $el.addClass('animated fadeInUp');
     };
 
     $scope.animateElementOut = function($el) {
         if (controladorWhenVisible !== 10) {
             $el.addClass('not-visible');
-            $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
+            $el.removeClass('animated fadeInUp');
             controladorWhenVisible++;
         }
     };

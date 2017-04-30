@@ -9,7 +9,7 @@
         <li>{{ obra.title }}</li>
     </ol>
     <div class="row">
-        <div class="col-sm-12" style="padding: 20px;">
+        <div class="col-sm-12 padding-x2">
             <h2>{{ obra.title }}</h2>
             <hr>
             <span ng-bind-html="obra.body"></span>
@@ -17,7 +17,7 @@
             <div ng-image-gallery
                  images="obra.obra_images">
             </div>
-            <div style="text-align: center;">
+            <div class="center-heading">
                 <a class="btn btn-link" href="#/obras">Regresar a lista Obras</a>
             </div>
         </div>

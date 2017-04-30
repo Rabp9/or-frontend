@@ -8,7 +8,7 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ClientesCtrl', function($scope, ClientesService, ngProgressFactory) {
+.controller('ClientesCtrl', function ($scope, ClientesService, ngProgressFactory) {
     $scope.path_logos = angular.module('tuplastFrontendApp').path_location + 'img/' + 'clientes/';
     
     $scope.progressbar = ngProgressFactory.createInstance();

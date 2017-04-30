@@ -1,0 +1,48 @@
+.navbar-brand {
+    padding: 0px;
+    img {
+        @media (min-width: $screen-sm-min) {
+            height: $navbar-height + 25px;
+        }
+        @media (max-width: $screen-xs-max) {
+            height: 40px;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+    }
+}
+
+.navbar-inner {
+    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.175);
+    box-shadow: 0 3px 3px rgba(0,0,0,0.175);
+}
+
+.navbar-header {
+    width: 400px;
+}
+
+.navbar-header-top {
+    margin-top: $navbar-header-top-margin;
+    margin-bottom: $navbar-header-top-margin;
+    height: $navbar-header-top-height;
+}
+
+.navbar-chat-link {
+    border: 0px;
+    background: transparent;
+    .container {
+        button {
+            background-color: $color-primario;
+            height: 50px;
+            padding: 0px 50px;
+            font-size: 20px;
+            margin-right: 250px;
+            &:hover {
+                color: white;
+            }
+            &:focus {
+                color: white;
+            }
+        }
+    }
+}

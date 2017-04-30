@@ -8,13 +8,13 @@
         <li>Políticas</li>
     </ol>
     <div class="row">
-        <div class="col-sm-12" style="padding: 20px;">
+        <div class="col-sm-12 padding-x1">
             <div class="row">
                 <div class="col-sm-6 politica-detail" ng-repeat="politica in politicas">
                     <h2>{{ politica.title }}</h2>
                     <hr>
                     <figure class="imghvr-flip-horiz">
-                        <img style="height: 340px;" class="img-responsive" ng-src="{{path_img + politica.url }}" alt="{{ politica.title }}">
+                        <img class="img-responsive img-politicas" ng-src="{{path_img + politica.url }}" alt="{{ politica.title }}">
                         <figcaption class="politica-detail-info">
                             <span ng-bind-html="politica.body"></span>
                         </figcaption>

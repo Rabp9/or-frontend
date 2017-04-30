@@ -170,45 +170,14 @@ angular
     $('.nav  a:last-child').on('click', function() {
         $('.navbar-toggle').click(); //bootstrap 3.x by Richard
     });
-    
-    /*
-    $rootScope.layout = {};
-    $rootScope.layout.loading = false; 
-   
-    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-
-        //show loading gif
-        $rootScope.layout.loading = true;
-    });
-    */
-   
+       
     $rootScope.$on('$stateChangeSuccess', function(event, toParams, fromState, fromParams) {
-        // hide loading gif
-        /*
-        $rootScope.counter = 0;
-        $rootScope.total_counts = 50;
-        $interval(function() {
-            $rootScope.counter++;
-            if($rootScope.counter === $rootScope.total_counts) {
-                $rootScope.layout.loading = false;
-            }
-        }, 10, $rootScope.total_counts);
-        */
-        // setting title
         $rootScope.title = $state.current.title;
         if ($state.current.name !== 'productos.detail') {
             $window.scrollTo(0, 0);
         }
     });
     
-    /*
-    $rootScope.$on('$stateChangeCancel', function() {
-
-        //hide loading gif
-        $rootScope.layout.loading = false;
-    });
-    */
-  
     $rootScope.refresh = function() {
         $state.reload();
     };
@@ -219,6 +188,10 @@ angular
     
     ProductosService.getLineasProductos(function(data) {
         $rootScope.productos = data.productos;
+    });
+    
+    PagesService.getPages({type: 'NS'}, function(data) {
+       $rootScope.pages_nosotros = data.pages;
     });
     
     PagesService.getPages({type: 'PY'}, function(data) {

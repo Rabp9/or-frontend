@@ -1,0 +1,20 @@
+{
+    "elements": {},
+    "attributes": {
+        "uib-carousel": {
+            "context": "div"
+        },
+        "angular-validator": {
+            "context": "form"
+        },
+        "when-visible": {
+            "context": "div"
+        },
+        "ui-sref": {
+            "context": "a"
+        },
+        "ui-sref-active": {
+            "context": "li"
+        }
+    }
+}

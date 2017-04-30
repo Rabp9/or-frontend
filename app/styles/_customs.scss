@@ -1,17 +1,3 @@
-.navbar-brand {
-    padding: 0px;
-    img {
-        @media (min-width: $screen-sm-min) {
-            height: $navbar-height + 25px;
-        }
-        @media (max-width: $screen-xs-max) {
-            height: 40px;
-            margin-left: 20px;
-            margin-top: 5px;
-        }
-    }
-}
-
 .row.with-margin  {
     margin: 10px 0px;
 }
@@ -21,7 +7,6 @@
     transition: background-color 0.5s;
     height: 450px;
     padding: 12px;
-    // border-top: 1px solid;
     &:hover {
         background-color: $color-default;
     }
@@ -31,12 +16,14 @@
     h1:first {
         color: $color-primario;
     }
+    .cartera-clientes-logos {
+        display: none;
+        .thumbnail {
+            height: 100px !important;
+        }
+    }
 }
 
-.navbar-inner {
-    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.175);
-    box-shadow: 0 3px 3px rgba(0,0,0,0.175);
-}
 
 .not-visible {
     visibility: hidden;
@@ -132,10 +119,6 @@
     }
 }
 
-.navbar-header {
-    width: 400px;
-}
-
 .separador {
     height: 70px;
 }
@@ -196,12 +179,6 @@
             margin-bottom: 0px;
         }
     }
-}
-
-.navbar-header-top {
-    margin-top: $navbar-header-top-margin;
-    margin-bottom: $navbar-header-top-margin;
-    height: $navbar-header-top-height;
 }
 
 .objetivos {
@@ -284,27 +261,9 @@
     }
 }
 
-.navbar-chat-link {
-    border: 0px;
-    background: transparent;
-    .container {
-        button {
-            background-color: $color-primario;
-            height: 50px;
-            padding: 0px 50px;
-            font-size: 20px;
-            margin-right: 250px;
-            &:hover {
-                color: white;
-            }
-            &:focus {
-                color: white;
-            }
-        }
-    }
-}
-
 .contacto-header {
+    font-size: 12px; 
+    margin-top: 16px;
     .contacto-header-field {
         margin-left: 5px;
         font-size: 18px;
@@ -430,4 +389,57 @@
 
 #ngProgress {
     background-color: $color-default !important;
+}
+
+div.padding-x1 {
+    padding: 0px 10px;
+}
+
+div.padding-x2 {
+    padding: 20px;
+}
+
+.img-politicas {
+    height: 340px;
+}
+
+div.thumbnail.obras {
+    padding: 0px !important;
+}
+
+.height-x4 {
+    height: 380px !important;
+}
+
+.height-x3 {
+    max-height: 250px !important;
+}
+
+.height-x1 {
+    height: 68px !important;
+}
+
+.center-heading {
+    text-align: center;
+}
+
+.img-slider {
+    margin: auto; 
+    width: 100%;
+}
+
+.img-productos {
+    height: 200px;
+}
+
+.img-obra {
+    height: 100%;
+}
+
+.img-sn-link-sm {
+    width: 16px;
+}
+
+.img-sn-link-md {
+    width: 35px;
 }
