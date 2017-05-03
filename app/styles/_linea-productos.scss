@@ -9,7 +9,7 @@
         max-height: 500px;
     }
     .linea-productos-imagen {
-        background: $color-terciario;
+        background: $color-default;
         position: relative;
         @include button-box-shadow(-5px 0px 5px 0px rgba(#000, 0.4));
         img {
@@ -47,7 +47,7 @@
         order: 2;
         width: 30%;
         overflow-y: auto;
-        background: $color-terciario;
+        background: $color-default;
         position: relative;
         @include button-box-shadow(-5px 0px 5px 0px rgba(#000, 0.4));
         img {
