@@ -191,6 +191,10 @@ angular
         $rootScope.productos = data.productos;
     });
     
+    PagesService.getPages({type: 'NS'}, function(data) {
+       $rootScope.pages_nosotros = data.pages;
+    });
+    
     PagesService.getPages({type: 'PY'}, function(data) {
        $rootScope.pages_proyectos = data.pages;
     });

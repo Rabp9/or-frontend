@@ -42,6 +42,9 @@
                                         <ul class="dropdown-menu dropdown-menu-left">
                                             <li><a ui-sref="quienesSomos">¿Quiénes somos?</a></li>
                                             <li><a ui-sref="politicas">Políticas</a></li>
+                                            <li ng-repeat="page in pages_nosotros">
+                                                <a ui-sref="pages({ id: page.id })">{{ page.title }}</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li ui-sref-active="active" class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
@@ -146,6 +149,9 @@
                             <ul class="dropdown-menu dropdown-menu-left">
                                 <li><a ui-sref="quienesSomos">¿Quiénes somos?</a></li>
                                 <li><a ui-sref="politicas">Políticas</a></li>
+                                <li ng-repeat="page in pages_nosotros">
+                                    <a ui-sref="pages({ id: page.id })">{{ page.title }}</a>
+                                </li>
                             </ul>
                         </li>
                         <li ui-sref-active="active" class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
