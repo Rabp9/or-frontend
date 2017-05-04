@@ -172,12 +172,13 @@ angular
     });
        
     $rootScope.$on('$stateChangeSuccess', function(event, toParams, fromState, fromParams) {
+      
         $rootScope.title = $state.current.title;
         if ($state.current.name !== 'productos.detail') {
             $window.scrollTo(0, 0);
         }
     });
-    
+      
     $rootScope.refresh = function() {
         $state.reload();
     };
@@ -231,7 +232,7 @@ angular
             $rootScope.show = false;
             $('#imgLogo').removeClass('enlarge');
             $('#imgLogo').addClass('reduce');
-            
+                        
             $('#dvNavTop').removeClass('enlarge-top');
             $('#dvNavTop').addClass('reduce-top');
         })
