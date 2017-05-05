@@ -224,7 +224,7 @@ angular
             
             $('#dvNavTop').removeClass('reduce-top');
             $('#dvNavTop').addClass('enlarge-top');
-        })
+        });
     };
     
     $rootScope.hideMenu = function($el) {
@@ -235,7 +235,7 @@ angular
                         
             $('#dvNavTop').removeClass('enlarge-top');
             $('#dvNavTop').addClass('reduce-top');
-        })
+        });
     };
 })
 .path_location = 'http://localhost:8000/or-backend/';
