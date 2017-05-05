@@ -443,3 +443,20 @@ div.thumbnail.obras {
 .img-sn-link-md {
     width: 35px;
 }
+
+.crop {
+    width: 100%;
+    @media (min-width: $screen-sm-min) {
+        height: 200px;
+    }
+    @media (max-width: $screen-xs-max) {
+        height: 90px;
+    }
+    overflow: hidden;
+}
+
+.crop img {
+    height: auto;
+    width: 100%;
+    margin: -30px 0px;
+}
