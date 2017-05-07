@@ -487,6 +487,21 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+    
+    // FTP Deployment
+    'ftp-deploy': {
+        build: {
+            auth: {
+                host: 'robertobocanegra.com',
+                port: 21,
+                authKey: 'robertobocanegra'
+            },
+            src: '<%= yeoman.dist %>',
+            dest: 'tuplast.robertobocanegra.com/',
+            forceVerbose: true
+            //exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'path/to/dist/tmp']
+        }
     }
   });
 

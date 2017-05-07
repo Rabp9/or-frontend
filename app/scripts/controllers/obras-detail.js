@@ -10,6 +10,7 @@
 angular.module('tuplastFrontendApp')
 .controller('ObrasDetailCtrl', function ($scope, $stateParams, ObrasService, $rootScope, ngProgressFactory) {
     var id = $stateParams.id;
+    $scope.loading = true;
     
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
@@ -24,5 +25,6 @@ angular.module('tuplastFrontendApp')
         
         $rootScope.title = $scope.obra.title;
         $scope.progressbar.complete();
+        $scope.loading = false;
     });
 });

@@ -10,6 +10,7 @@
 angular.module('tuplastFrontendApp')
 .controller('ObrasCtrl', function ($scope, ObrasService, ngProgressFactory) {
     $scope.path_img = angular.module('tuplastFrontendApp').path_location + 'img/' + 'obras/';
+    $scope.loading = true;
     
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
@@ -17,5 +18,6 @@ angular.module('tuplastFrontendApp')
     ObrasService.get(function(data) {
         $scope.obras = data.obras;
         $scope.progressbar.complete();
+        $scope.loading = false;
     });
 });

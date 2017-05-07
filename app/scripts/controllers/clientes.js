@@ -10,6 +10,7 @@
 angular.module('tuplastFrontendApp')
 .controller('ClientesCtrl', function ($scope, ClientesService, ngProgressFactory) {
     $scope.path_logos = angular.module('tuplastFrontendApp').path_location + 'img/' + 'clientes/';
+    $scope.loading = true;
     
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
@@ -17,5 +18,6 @@ angular.module('tuplastFrontendApp')
     ClientesService.get(function(data) {
         $scope.clientes = data.clientes;
         $scope.progressbar.complete();
+        $scope.loading = false;
     });
 });

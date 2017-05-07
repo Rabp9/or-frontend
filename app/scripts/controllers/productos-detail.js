@@ -12,6 +12,7 @@ angular.module('tuplastFrontendApp')
     var id = $stateParams.id;
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
+    $scope.loading = true;
     $('.navbar-toggle').click();
     
     ProductosService.get({id: id}, function(data) {
@@ -23,5 +24,6 @@ angular.module('tuplastFrontendApp')
         $scope.producto = data.producto;
         $rootScope.title = $scope.producto.title;
         $scope.progressbar.complete();
+        $scope.loading = false;
     });
 });

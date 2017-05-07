@@ -1,6 +1,7 @@
 <div class="padding-x1">
     <h2>{{ producto.title }}</h2>
     <hr>
+    <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
     <span ng-bind-html="producto.body"></span>
     <br>
     <div ng-image-gallery

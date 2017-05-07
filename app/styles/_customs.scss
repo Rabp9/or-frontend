@@ -460,3 +460,16 @@ div.thumbnail.obras {
     width: 100%;
     margin: -30px 0px;
 }
+
+#js-navbar-collapse {
+    @media (min-width: $screen-sm-min) {
+        display: none;
+    }
+    @media (max-width: $screen-xs-max) {
+        display: block;
+    }
+}
+
+.img-loading {
+    height: 100px;
+}

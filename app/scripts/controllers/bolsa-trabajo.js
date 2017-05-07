@@ -11,9 +11,11 @@ angular.module('tuplastFrontendApp')
 .controller('BolsaTrabajoCtrl', function ($scope, ConvocatoriasService, ngProgressFactory) {
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
+    $scope.loading = true;
     
     ConvocatoriasService.get(function(data) {
         $scope.convocatorias = data.convocatorias;
         $scope.progressbar.complete();
+        $scope.loading = false;
     });
 });

@@ -11,11 +11,13 @@
         <div class="col-sm-12 padding-x2">
             <h2>Nuestra Historia</h2>
             <hr>
+            <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
             <span ng-bind-html="quienesSomos.nuestraHistoria"></span>
             <h2>Valores</h2>
             <hr>
             <div class="row">
                 <div class="col-sm-12">
+                    <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
                     <ul class="ul-valores">
                         <li>{{ quienesSomos.valor1 }}</li>
                         <li>{{ quienesSomos.valor2 }}</li>
@@ -29,9 +31,11 @@
             </div>
             <h2>Visión</h2>
             <hr>
+            <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
             <span ng-bind-html="quienesSomos.vision"></span>
             <h2>Misión</h2>
             <hr>
+            <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
             <span ng-bind-html="quienesSomos.mision"></span>
             <br>
             <br>

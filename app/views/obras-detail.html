@@ -14,6 +14,7 @@
             <hr>
             <span ng-bind-html="obra.body"></span>
             <br>
+            <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
             <div ng-image-gallery
                  images="obra.obra_images">
             </div>

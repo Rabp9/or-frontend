@@ -11,10 +11,12 @@ angular.module('tuplastFrontendApp')
 .controller('SugerenciasCtrl', function ($scope, TipoSugerenciasService, ngProgressFactory) {
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
+    $scope.loading = 'Cargando...';
     
     TipoSugerenciasService.get(function(data) {
         $scope.tipo_sugerencias = data.tipo_sugerencias;
         $scope.progressbar.complete();
+        $scope.loading = 'Selecciona un Tipo de Sugerencia';
     });
     
     $scope.sendMessage = function (sugerencia) {

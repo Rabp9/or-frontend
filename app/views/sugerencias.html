@@ -24,7 +24,7 @@
                                 ng-options="tipo_sugerencia.email as tipo_sugerencia.descripcion for tipo_sugerencia in tipo_sugerencias"
                                 ng-model="sugerencia.email_destinatario"
                                 name="tipoSugerencia" required required-message="'Este campo es requerido'" validate-on="blur">
-                                <option value="">Selecciona un Tipo de Sugerencia</option>
+                                <option value="">{{ loading }}</option>
                             </select>
                         </div>
                     </div>

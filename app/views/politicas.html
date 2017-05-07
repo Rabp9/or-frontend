@@ -10,6 +10,7 @@
     <div class="row">
         <div class="col-sm-12 padding-x1">
             <div class="row">
+                <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
                 <div class="col-sm-6 politica-detail" ng-repeat="politica in politicas">
                     <h2>{{ politica.title }}</h2>
                     <hr>

@@ -7,6 +7,7 @@
         <li>Clientes</li>
     </ol>
     <div class="row">
+        <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
         <div class="col-xs-6 col-md-2" ng-repeat="cliente in clientes">
             <span class="thumbnail animated zoomIn delay-3">
                 <figure class="imghvr-flip-horiz cliente-card">

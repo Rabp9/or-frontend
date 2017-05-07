@@ -16,12 +16,14 @@ angular.module('tuplastFrontendApp')
     $scope.quienesSomos = {};
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
+    $scope.loading = true;
     
     InfosService.getDataMany(dataSearch, function(data) {
         angular.forEach(dataSearch, function(value, key) {
             $scope.quienesSomos[value] = data.info[value];
-            $scope.progressbar.complete();
         });
+        $scope.progressbar.complete();
+        $scope.loading = false;
     });
     
     

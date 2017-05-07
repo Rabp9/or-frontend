@@ -19,6 +19,8 @@
                 </tr>
             </thead>
             <tbody>
+                <tr ng-hide="!loading"><td colspan="3"><div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div></td></tr>
+                <tr ng-show="!loading && convocatorias.length === 0"><td colspan="5">No hay registros</td></tr>
                 <tr ng-repeat="convocatoria in convocatorias">
                     <td>{{ convocatoria.descripcion }}</td>
                     <td>{{ convocatoria.fecha }}</td>
