@@ -8,6 +8,6 @@
  * Factory in the tuplastFrontendApp.
  */
 angular.module('tuplastFrontendApp')
-.factory('SlidesService', function($resource) {
-    return $resource(angular.module('tuplastFrontendApp').path_location + 'slides/:id.json', {});
+.factory('SlidesService', function($resource, EnvService) {
+    return $resource(EnvService.getHost() + 'slides/:id.json', {});
 });

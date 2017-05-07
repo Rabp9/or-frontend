@@ -49,6 +49,16 @@
     bottom: 40%;
     text-align: left;
     padding: 10px;
+    h1 {
+        @media (max-width: $screen-xs-max) {
+            font-size: 100% !important;
+        }
+    }
+    p {
+        @media (max-width: $screen-xs-max) {
+            font-size: 75% !important;
+        }
+    }
 }
 
 .carousel-fade {

@@ -2,13 +2,13 @@
     <button type="button" class="close" ng-click="message.type = undefined" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     {{ message.text }} 
 </div>
-<div>
-    <img class="img-responsive" src="//unsplash.it/1340/200" alt="sugerencias" />
+<div class="crop">
+    <img class="img-responsive" src="images/image3.png" alt="nuestra-historia" />
 </div>
 <div class="container">
     <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Contáctanos</a></li>
+        <li><a href="#/sugerencias">Contáctanos</a></li>
         <li>Sugerencias</li>
     </ol>
     <div class="row">
@@ -47,7 +47,7 @@
                     <textarea id="txtaMensaje" class="form-control" ng-model="sugerencia.mensaje" style="height: 150px;"
                         name="mensaje" required required-message="'Este campo es requerido'" validate-on="blur"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-lg btn-default hvr-underline-from-left pull-right">Enviar</button>
             </form>
         </div>
     </div>

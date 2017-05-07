@@ -8,19 +8,19 @@
  * Factory in the tuplastFrontendApp.
  */
 angular.module('tuplastFrontendApp')
-.factory('InfosService', function($resource) {
-    return $resource(angular.module('tuplastFrontendApp').path_location + 'infos/:id.json', {}, {
+.factory('InfosService', function($resource, EnvService) {
+    return $resource(EnvService.getHost() + 'infos/:id.json', {}, {
         saveMany: {
             method: 'POST',
-            url: angular.module('tuplastFrontendApp').path_location + 'infos/saveMany.json',
+            url: EnvService.getHost() + 'infos/saveMany.json',
         },
         getDataMany: {
             method: 'POST',
-            url: angular.module('tuplastFrontendApp').path_location + 'infos/getDataMany.json',
+            url: EnvService.getHost() + 'infos/getDataMany.json',
         },
         getDataByData: {
             method: 'POST',
-            url: angular.module('tuplastFrontendApp').path_location + 'infos/getDataByData.json',
+            url: EnvService.getHost() + 'infos/getDataByData.json',
         }
     });
 });

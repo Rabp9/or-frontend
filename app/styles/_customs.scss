@@ -9,6 +9,12 @@
     padding: 12px;
     &:hover {
         background-color: $color-default;
+        .cartera-clientes-header {
+            color: $color-cuartario;
+        }
+        .carter-clientes-separator {
+            border-top-color: $color-cuartario;
+        }
     }
     img {
         @extend .img-rounded;

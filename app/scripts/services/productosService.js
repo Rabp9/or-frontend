@@ -8,15 +8,15 @@
  * Factory in the tuplastFrontendApp.
  */
 angular.module('tuplastFrontendApp')
-.factory('ProductosService', function($resource) {
-    return $resource(angular.module('tuplastFrontendApp').path_location + 'productos/:id.json', {}, {
+.factory('ProductosService', function($resource, EnvService) {
+    return $resource(EnvService.getHost() + 'productos/:id.json', {}, {
         getLineasProductos: {
             method: 'GET',
-            url: angular.module('tuplastFrontendApp').path_location + 'productos/getLineasProductos/.json'
+            url: EnvService.getHost() + 'productos/getLineasProductos/.json'
         },
         getPages: {
             method: 'GET',
-            url: angular.module('tuplastFrontendApp').path_location + 'productos/getPages/.json'
+            url: EnvService.getHost() + 'productos/getPages/.json'
         }
     });
 });

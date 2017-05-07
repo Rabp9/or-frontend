@@ -8,6 +8,6 @@
  * Service in the tuplastFrontendApp.
  */
 angular.module('tuplastFrontendApp')
-.factory('PoliticasService', function ($resource) {
-    return $resource(angular.module('tuplastFrontendApp').path_location + 'politicas/:id.json', {});
+.factory('PoliticasService', function ($resource, EnvService) {
+    return $resource(EnvService.getHost() + 'politicas/:id.json', {});
 });

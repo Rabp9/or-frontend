@@ -8,6 +8,6 @@
  * Factory in the tuplastFrontendApp.
  */
 angular.module('tuplastFrontendApp')
-.factory('ObrasService', function($resource) {
-    return $resource(angular.module('tuplastFrontendApp').path_location + 'obras/:id.json', {});
+.factory('ObrasService', function($resource, EnvService) {
+    return $resource(EnvService.getHost() + 'obras/:id.json', {});
 });

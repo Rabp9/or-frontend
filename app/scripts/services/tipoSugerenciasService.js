@@ -8,11 +8,11 @@
  * Factory in the tuplastFrontendApp.
  */
 angular.module('tuplastFrontendApp')
-.factory('TipoSugerenciasService', function($resource) {
-    return $resource(angular.module('tuplastFrontendApp').path_location + 'tipo_sugerencias/:id.json', {}, {
+.factory('TipoSugerenciasService', function($resource, EnvService) {
+    return $resource(EnvService.getHost() + 'tipo_sugerencias/:id.json', {}, {
         sendMessage: {
             method: 'POST',
-            url: angular.module('tuplastFrontendApp').path_location + 'tipo_sugerencias/sendMessage/.json',
+            url: EnvService.getHost() + 'tipo_sugerencias/sendMessage/.json',
         }
     });
 });

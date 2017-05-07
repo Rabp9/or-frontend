@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="tuplastFrontendApp">
+<html lang="es" ng-app="tuplastFrontendApp">
 <head>
     <meta charset="utf-8"> 
     <title ng-bind="title + ' - Tuberias Plásticas'">Tuberías Plásticas</title>
@@ -281,16 +281,16 @@
             <div class="row">
                 <div class="col-sm-4">
                     <h4>Eventos</h4>
-                    <a href="#">Descargar Brochure</a>
+                    <a ng-href="{{ infosRoot.brochure }}" target="_blank">Descargar Brochure</a>
                 </div>
                 <div class="col-sm-4">
                     <h4>Sìguenos en:</h4>
                     <div>
-                        <a ng-href="{{ infosRoot.facebook_link }}">
-                            <img class="img-sn-link-md" src="images/facebook-footer.svg" alt="Facebook"/>
+                        <a ng-href="{{ infosRoot.facebook_link }}" target="_blank">
+                            <img class="img-sn-link-md" src="images/facebook-header.svg" alt="Facebook"/>
                         </a>
-                        <a ng-href="{{ infosRoot.twitter_link }}">
-                            <img class="img-sn-link-md" src="images/twitter-footer.svg" alt="Twitter" />
+                        <a ng-href="{{ infosRoot.twitter_link }}" target="_blank">
+                            <img class="img-sn-link-md" src="images/twitter-header.svg" alt="Twitter" />
                         </a>
                     </div>
                 </div>
@@ -370,6 +370,7 @@
     <script src="scripts/services/tiposugerenciasservice.js"></script>
     <script src="scripts/services/pagesservice.js"></script>
     <script src="scripts/controllers/pages.js"></script>
+    <script src="scripts/services/envservice.js"></script>
     <!-- endbuild -->
 </body>
 </html>

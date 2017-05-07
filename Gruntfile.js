@@ -553,10 +553,11 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('default', [
-    'newer:jshint',
-    'newer:jscs',
-    // 'test',
-    'build'
-  ]);
+    grunt.registerTask('default', [
+        'newer:jshint',
+        'newer:jscs',
+        // 'test',
+        'build',
+        'ftp-deploy'
+    ]);
 };

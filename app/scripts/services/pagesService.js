@@ -8,11 +8,11 @@
  * Factory in the tuplastFrontendApp.
  */
 angular.module('tuplastFrontendApp')
-.factory('PagesService', function ($resource) {
-    return $resource(angular.module('tuplastFrontendApp').path_location + 'pages/:id.json', {}, {
+.factory('PagesService', function ($resource, EnvService) {
+    return $resource(EnvService.getHost() + 'pages/:id.json', {}, {
         getPages: {
             method: 'GET',
-            url: angular.module('tuplastFrontendApp').path_location + 'pages/getPages/:type.json',
+            url: EnvService.getHost() + 'pages/getPages/:type.json',
         }
     });
 });

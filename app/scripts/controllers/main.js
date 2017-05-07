@@ -37,6 +37,17 @@ angular.module('tuplastFrontendApp')
             $scope.productos.push(productos_aux[index]);
             productos_aux.splice(index, 1);
         }
+        angular.forEach($scope.productos, function(value, key) {
+            var char_count = value.title.length;
+            var lineaProducto = $('.linea-productos-header').eq(key);
+            if (char_count > 0 && char_count < 16) {
+                $(lineaProducto).css('padding', '0px 75px');
+            } else if (char_count >= 16 && char_count < 35) {
+                $(lineaProducto).css('padding', '0px 28px');
+            } else if (char_count >= 35) {
+                $(lineaProducto).css('padding', '0px 0px');
+            }
+        });
     });
     
     ObrasService.get(function(data) {
