@@ -13,7 +13,9 @@ angular.module('tuplastFrontendApp')
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
     $scope.loading = true;
-    // $('.navbar-toggle').click();
+    if ($('#bs-example-navbar-collapse-1').hasClass('in')) {
+        $('.navbar-toggle').click();
+    }
     
     ProductosService.get({id: id}, function(data) {
         var producto_images = data.producto.producto_images;

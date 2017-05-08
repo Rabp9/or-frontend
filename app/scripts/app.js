@@ -161,6 +161,7 @@ angular
 .run(function($rootScope, $state, $window, ProductosService, InfosService, PagesService, EnvService) {
     angular.module('tuplastFrontendApp').path_location = EnvService.getHost();
     $rootScope.path_location = EnvService.getHost();
+    $rootScope.layout = {};
     
     $rootScope.show = true;
     $('#menu-alter').css('display', 'block');

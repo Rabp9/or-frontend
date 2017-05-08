@@ -24,7 +24,11 @@
                 <tr ng-repeat="convocatoria in convocatorias">
                     <td>{{ convocatoria.descripcion }}</td>
                     <td>{{ convocatoria.fecha }}</td>
-                    <td><a ng-href="{{ path_location + 'files/convocatorias/' + convocatoria.documentacion }}" target="_blank"><span class="glyphicon glyphicon-list-alt"></span></a></td>
+                    <td>
+                        <a ng-href="{{ path_location + 'convocatorias/download/' + convocatoria.id }}" target="_blank">
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>
