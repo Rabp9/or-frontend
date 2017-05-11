@@ -316,13 +316,15 @@
     }
 
     to {
-        height: 50px;
+        height: 38px;
+        margin: 6px 0px 6px 0px;
     }
 }
 
 @keyframes enlarge {
     from {
-        height: 50px;
+        height: 38px;
+        margin: 6px 0px 6px 0px;
     }
 
     to {
@@ -332,7 +334,8 @@
 
 #imgLogo.reduce {
     animation: reduce 1s;
-    height: 50px;
+    height: 38px;
+    margin: 6px 0px 6px 0px;
 }
 
 #imgLogo.enlarge {
