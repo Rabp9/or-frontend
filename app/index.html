@@ -53,9 +53,6 @@
                                             <span class="caret"></span>
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-left">
-                                            <li ng-repeat="producto_page in producto_pages">
-                                                <a ui-sref="productos.detail({ id: producto_page.id })">{{ producto_page.title }}</a>
-                                            </li>
                                             <li ng-repeat="producto in productos">
                                                 <a ui-sref="productos.detail({ id: producto.id })">{{ producto.title }}</a>
                                             </li>
@@ -154,9 +151,6 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-left">
-                                <li ng-repeat="producto_page in producto_pages">
-                                    <a ui-sref="productos.detail({ id: producto_page.id })">{{ producto_page.title }}</a>
-                                </li>
                                 <li ng-repeat="producto in productos">
                                     <a ui-sref="productos.detail({ id: producto.id })">{{ producto.title }}</a>
                                 </li>
@@ -230,9 +224,6 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li ng-repeat="producto_page in producto_pages">
-                                <a ui-sref="productos.detail({ id: producto_page.id })">{{ producto_page.title }}</a>
-                            </li>
                             <li ng-repeat="producto in productos">
                                 <a ui-sref="productos.detail({ id: producto.id })">{{ producto.title }}</a>
                             </li>

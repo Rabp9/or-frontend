@@ -1,10 +1,19 @@
 <div class="padding-x1">
     <h2>{{ producto.title }}</h2>
-    <hr>
+    <hr ng-hide="loading">
     <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
     <span ng-bind-html="producto.body"></span>
     <br>
     <div ng-image-gallery
          images="producto.producto_images">
     </div>
+    <a ng-show="!loading && producto.brochure !== null" ng-href="{{ path_location + 'productos/download/' + producto.id }}" target="_blank">
+        <span class="glyphicon glyphicon-list-alt"></span> Descarga el Brochure
+    </a>
+    <h4 ng-hide="loading || hijos.length === 0">Sub Categorías</h4>
+    <ul ng-hide="loading" class="list-group">
+        <li class="list-group-item" ng-repeat="hijo in hijos">
+            <a ui-sref="productos.detail({ id: hijo.id })" ui-sref-active="active" ng-bind-html="hijo.title" ></a>
+        </li>
+    </ul>
 </div>

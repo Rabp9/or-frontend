@@ -12,8 +12,15 @@
     <div class="row">
         <div class="col-sm-3 lista-links">
             <ul>
-                <li ng-repeat="producto in productos">
-                    <a ui-sref="productos.detail({ id: producto.id })" ui-sref-active="active"  ng-bind-html="producto.title" ></a>
+                <li ng-repeat="producto_page in producto_pages">
+                    <a ui-sref="productos.detail({ id: producto_page.id })" ui-sref-active="active">{{ producto_page.title }}</a>
+                </li>
+                <li>Línea de Productos
+                    <ul>
+                        <li ng-repeat="producto in productos">
+                            <a ui-sref="productos.detail({ id: producto.id })" ui-sref-active="active">{{ producto.title }}</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

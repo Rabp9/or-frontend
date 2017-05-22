@@ -187,12 +187,12 @@ angular
     $rootScope.refresh = function() {
         $state.reload();
     };
-    
+    /*
     ProductosService.getPages(function(data) {
         $rootScope.producto_pages = data.producto_pages;
     });
-    
-    ProductosService.getLineasProductos(function(data) {
+    */
+    ProductosService.getRootProductos(function(data) {
         $rootScope.productos = data.productos;
     });
     

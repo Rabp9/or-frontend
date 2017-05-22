@@ -17,6 +17,14 @@ angular.module('tuplastFrontendApp')
         getPages: {
             method: 'GET',
             url: EnvService.getHost() + 'productos/getPages/.json'
+        },
+        getTreeList: {
+            method: 'GET',
+            url: EnvService.getHost() + 'productos/getTreeList/:spacer.json'
+        },
+        getRootProductos:{
+            method: 'GET',
+            url: EnvService.getHost() + 'productos/getRootProductos.json'
         }
     });
 });

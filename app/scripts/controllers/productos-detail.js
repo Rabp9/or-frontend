@@ -24,6 +24,7 @@ angular.module('tuplastFrontendApp')
         });
         data.producto.producto_images = producto_images;
         $scope.producto = data.producto;
+        $scope.hijos = data.hijos;
         $rootScope.title = $scope.producto.title;
         $scope.progressbar.complete();
         $scope.loading = false;
