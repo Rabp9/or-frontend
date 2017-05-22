@@ -12,6 +12,7 @@
   "unused": false,
   "globals": {
     "angular": false,
-    "$": true
+    "$": true,
+    "google": true
   }
 }

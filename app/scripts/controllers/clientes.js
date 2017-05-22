@@ -18,14 +18,14 @@ angular.module('tuplastFrontendApp')
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
     
-    $scope.googleMapsUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBN3iXCosOm01j8X97QyrYYGfGRRRuyMFY";
+    $scope.googleMapsUrl = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBN3iXCosOm01j8X97QyrYYGfGRRRuyMFY';
     
     SlidesService.getHeader(function(data) {
         $scope.imagen = data.file;
     });
     
     NgMap.getMap().then(function(map) {
-        google.maps.event.trigger(map, "resize"); 
+        google.maps.event.trigger(map, 'resize'); 
     });
     
     ClientesService.getCiudades(function (data) {
@@ -40,7 +40,7 @@ angular.module('tuplastFrontendApp')
             
             $scope.ciudad_lat = data.clientes[0].latitud;
             $scope.ciudad_lng = data.clientes[0].longitud;
-        })
+        });
     });
     
     $scope.getClientesByCiudad = function (ciudad, event) {
@@ -58,7 +58,7 @@ angular.module('tuplastFrontendApp')
                 $scope.include_markers = true;
             }
             $scope.loading_clientes = false;
-        })
-    }
+        });
+    };
     
 });
