@@ -1,0 +1,31 @@
+<div class="crop">
+    <img class="img-responsive" src="images/image2.png" alt="nuestra-historia" />
+</div>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li>Clientes</li>
+    </ol>
+    <h2>Clientes</h2>
+    <hr>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Razón Social</th>
+                    <th>RUC</th>
+                    <th>Logo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-hide="!loading"><td colspan="3"><div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div></td></tr>
+                <tr ng-show="!loading && clientes.length === 0"><td colspan="5">No hay registros</td></tr>
+                <tr ng-repeat="cliente in clientes">
+                    <td>{{ cliente.razon_social }}</td>
+                    <td>{{ cliente.ruc }}</td>
+                    <td><img class="img-responsive" ng-src="{{ path_logos + cliente.url }}" alt="{{ cliente.razon_social }}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

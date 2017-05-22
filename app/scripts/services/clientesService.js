@@ -15,6 +15,14 @@ angular.module('tuplastFrontendApp')
             url: EnvService.getHost() + 'clientes/preview/.json',
             transformRequest: angular.identity,
             headers: { 'Content-Type': undefined }
+        },
+        getCiudades: {
+            method: 'GET',
+            url: EnvService.getHost() + 'clientes/getCiudades/.json'
+        },
+        getClientesByCiudad: {
+            method: 'GET',
+            url: EnvService.getHost() + 'clientes/getClientesByCiudad/:ciudad.json'
         }
     });
 });

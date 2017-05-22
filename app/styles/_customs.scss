@@ -482,3 +482,25 @@ div.thumbnail.obras {
 .img-loading {
     height: 100px;
 }
+
+.dvMrkCliente {
+    border: 1px solid $color-default;
+    background-color: white; 
+    padding: 5px;
+    margin: 0px;
+}
+
+.dvMrkCliente::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -15px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: $color-default transparent transparent transparent;
+}
+
+.custom-marker {
+    padding: 0px;
+}

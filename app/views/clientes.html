@@ -8,24 +8,28 @@
     </ol>
     <h2>Clientes</h2>
     <hr>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Razón Social</th>
-                    <th>RUC</th>
-                    <th>Logo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-hide="!loading"><td colspan="3"><div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div></td></tr>
-                <tr ng-show="!loading && clientes.length === 0"><td colspan="5">No hay registros</td></tr>
-                <tr ng-repeat="cliente in clientes">
-                    <td>{{ cliente.razon_social }}</td>
-                    <td>{{ cliente.ruc }}</td>
-                    <td><img class="img-responsive" ng-src="{{ path_logos + cliente.url }}" alt="{{ cliente.razon_social }}"></td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="row">
+        <div class="col-sm-2">
+            <ul id="ulCiudades" class="nav nav-pills nav-stacked">
+                <li ng-show="loading_ciudades"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></li>
+                <li ng-hide="loading_ciudades" role="presentation" ng-class="{active: $index === 0}" ng-repeat="ciudad in ciudades">
+                    <a style="cursor: pointer;" ng-click="getClientesByCiudad(ciudad, $event)">{{ ciudad }}</a>
+                </li>
+            </ul>  
+        </div>
+        <div class="col-sm-10">
+            <div ng-show="loading_clientes"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
+            <div ng-if="!loading_clientes" map-lazy-load="https://maps.google.com/maps/api/js"  map-lazy-load-params="{{ googleMapsUrl }}">
+                <ng-map center="{{ ciudad_lat }}, {{ ciudad_lng }}" zoom="14" style="height: 500px;"
+                    zoom-to-include-markers="{{ include_markers }}" default-style="false">
+                    <custom-marker ng-repeat="cliente in clientes" position="{{cliente.latitud}}, {{cliente.longitud}}" >
+                        <div class="dvMrkCliente">
+                            <h4 style="text-align: center;">{{ cliente.razon_social }}</h4>
+                            <img style="height: 50px;" src="{{ path_logos + cliente.url }}" alt="{{ cliente.razon_social }}">
+                        </div>
+                    </custom-marker>
+                </ng-map>
+            </div>
+        </div>
     </div>
 </div>

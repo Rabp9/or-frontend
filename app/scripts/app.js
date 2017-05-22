@@ -21,7 +21,8 @@ angular
     'bootstrapHoverAnimationDropdown',
     'thatisuday.ng-image-gallery',
     'angularValidator',
-    'ngProgress'
+    'ngProgress',
+    'ngMap'
 ])
 .config(function($stateProvider, $urlRouterProvider, ngImageGalleryOptsProvider) {
     var mainState = {
