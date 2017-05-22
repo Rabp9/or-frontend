@@ -209,7 +209,7 @@ angular
     });
           
     var search = ['facebook_link', 'twitter_link', 'telf_oficina',
-        'email_1', 'email_2', 'telf_area_tecnica', 'brochure'
+        'email_1', 'email_2', 'telf_area_tecnica', 'brochure', 'telf_area_ventas'
     ];
     $rootScope.infosRoot = {};
     

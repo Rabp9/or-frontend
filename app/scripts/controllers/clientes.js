@@ -8,7 +8,9 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ClientesCtrl', function ($scope, ClientesService, ngProgressFactory, NgMap) {
+.controller('ClientesCtrl', function ($scope, ClientesService, ngProgressFactory, 
+    NgMap, SlidesService) {
+    
     $scope.path_logos = angular.module('tuplastFrontendApp').path_location + 'img/' + 'clientes/';
     $scope.loading_clientes = true;
     $scope.loading_ciudades = true;
@@ -17,6 +19,10 @@ angular.module('tuplastFrontendApp')
     $scope.progressbar.start();
     
     $scope.googleMapsUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBN3iXCosOm01j8X97QyrYYGfGRRRuyMFY";
+    
+    SlidesService.getHeader(function(data) {
+        $scope.imagen = data.file;
+    });
     
     NgMap.getMap().then(function(map) {
         google.maps.event.trigger(map, "resize"); 

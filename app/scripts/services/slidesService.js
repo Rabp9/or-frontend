@@ -9,5 +9,10 @@
  */
 angular.module('tuplastFrontendApp')
 .factory('SlidesService', function($resource, EnvService) {
-    return $resource(EnvService.getHost() + 'slides/:id.json', {});
+    return $resource(EnvService.getHost() + 'slides/:id.json', {}, {
+        getHeader: {
+            method: 'GET',
+            url: EnvService.getHost() + 'slides/getHeader.json',
+        }
+    });
 });

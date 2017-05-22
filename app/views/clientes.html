@@ -1,5 +1,5 @@
 <div class="crop">
-    <img class="img-responsive" src="images/image2.png" alt="nuestra-historia" />
+    <img class="img-responsive" ng-src="{{ path_location + imagen }}" alt="clientes" />
 </div>
 <div class="container">
     <ol class="breadcrumb">
@@ -24,8 +24,8 @@
                     zoom-to-include-markers="{{ include_markers }}" default-style="false">
                     <custom-marker ng-repeat="cliente in clientes" position="{{cliente.latitud}}, {{cliente.longitud}}" >
                         <div class="dvMrkCliente">
-                            <h4 style="text-align: center;">{{ cliente.razon_social }}</h4>
-                            <img style="height: 50px;" src="{{ path_logos + cliente.url }}" alt="{{ cliente.razon_social }}">
+                            <h4>{{ cliente.razon_social }}</h4>
+                            <img src="{{ path_logos + cliente.url }}" alt="{{ cliente.razon_social }}">
                         </div>
                     </custom-marker>
                 </ng-map>

@@ -8,7 +8,9 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('QuienesSomosCtrl', function ($scope, InfosService, ngProgressFactory) {
+.controller('QuienesSomosCtrl', function ($scope, InfosService, ngProgressFactory,
+    SlidesService) {
+        
     var controladorWhenVisible = 0;
     var dataSearch = ['nuestraHistoria', 'vision', 'mision', 'valor1', 'valor2',
         'valor3', 'valor4', 'valor5', 'valor6', 'valor7'
@@ -17,6 +19,10 @@ angular.module('tuplastFrontendApp')
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
     $scope.loading = true;
+    
+    SlidesService.getHeader(function(data) {
+        $scope.imagen = data.file;
+    });
     
     InfosService.getDataMany(dataSearch, function(data) {
         angular.forEach(dataSearch, function(value, key) {

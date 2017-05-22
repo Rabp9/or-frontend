@@ -1,6 +1,7 @@
 {
     "elements": {
-        "ui-view": {}
+        "ui-view": {},
+        "ng-map": {}
     },
     "attributes": {
         "uib-carousel": {

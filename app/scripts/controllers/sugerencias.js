@@ -8,10 +8,16 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('SugerenciasCtrl', function ($scope, TipoSugerenciasService, ngProgressFactory) {
+.controller('SugerenciasCtrl', function ($scope, TipoSugerenciasService, ngProgressFactory,
+    SlidesService) {
+    
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
     $scope.loading = 'Cargando...';
+    
+    SlidesService.getHeader(function(data) {
+        $scope.imagen = data.file;
+    });
     
     TipoSugerenciasService.get(function(data) {
         $scope.tipo_sugerencias = data.tipo_sugerencias;
