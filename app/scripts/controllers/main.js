@@ -72,7 +72,7 @@ angular.module('tuplastFrontendApp')
             });
             
             // Clientes
-            $scope.clientes = data[4].clientes;
+            $scope.clientes = data[4].clientes.slice(0, 8);
             angular.forEach($scope.clientes, function(value, key) {
                 value.delay = Math.floor(Math.random() * 4) + 0;
             });

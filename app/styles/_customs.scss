@@ -243,10 +243,6 @@
 }
 
 .thumb {
-    /*
-    height: auto !important;
-    width: auto !important;
-    */
     @extend .img-rounded;
 }
 
@@ -267,13 +263,16 @@
     }
 }
 
-.contacto-header {
+.contacto-header, .contacto-header-top {
     font-size: 12px; 
-    margin-top: 16px;
     .contacto-header-field {
         margin-left: 5px;
         font-size: 18px;
     }
+}
+
+.contacto-header-top {
+    margin-top: 16px;
 }
 
 .footer {
@@ -512,4 +511,34 @@ div.thumbnail.obras {
 
 .custom-marker {
     padding: 0px;
+}
+
+.clientes-show {
+    &:nth-child(7), &:nth-child(8) {
+        @media (max-width: $screen-xs-max) {
+            display: none;
+        }
+    }
+}
+
+.li-area {
+    border-bottom: 1px solid;
+    a {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+.li-linea-producto {
+    a {
+        font-size: 15px;
+        color: $color-default;
+        font-weight: bold;
+    }
+}
+
+.li-pagina {
+    a {
+        font-size: 15px;
+    }
 }

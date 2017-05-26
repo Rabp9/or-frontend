@@ -11,7 +11,6 @@ angular.module('tuplastFrontendApp')
 .controller('ClientesCtrl', function ($scope, ClientesService, ngProgressFactory, 
     NgMap, SlidesService) {
     
-    $scope.path_logos = angular.module('tuplastFrontendApp').path_location + 'img/' + 'clientes/';
     $scope.loading_clientes = true;
     $scope.loading_ciudades = true;
     
@@ -25,9 +24,15 @@ angular.module('tuplastFrontendApp')
     });
     
     NgMap.getMap().then(function(map) {
+        $scope.map = map;
         google.maps.event.trigger(map, 'resize'); 
     });
     
+    $scope.showCliente = function(event, cliente) {
+        $scope.selectedCliente = cliente;
+        $scope.map.showInfoWindow('myInfoWindow', this);
+    };
+
     ClientesService.getCiudades(function (data) {
         $scope.ciudades = data.ciudades;
         $scope.progressbar.complete();

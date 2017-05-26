@@ -1,6 +1,7 @@
 {
     "elements": {
         "ui-view": {},
+        "info-window": {},
         "ng-map": {}
     },
     "attributes": {
