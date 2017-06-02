@@ -21,6 +21,10 @@ angular.module('tuplastFrontendApp')
         getDataByData: {
             method: 'POST',
             url: EnvService.getHost() + 'infos/getDataByData.json',
+        },
+        getData: {
+            method: 'GET',
+            url: EnvService.getHost() + 'infos/getData/:data.json',
         }
     });
 });

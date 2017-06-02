@@ -11,6 +11,7 @@ angular.module('tuplastFrontendApp')
 .controller('SugerenciasCtrl', function ($scope, TipoSugerenciasService, ngProgressFactory,
     SlidesService) {
     
+    $scope.sugerencia = {};
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
     $scope.loading = 'Cargando...';

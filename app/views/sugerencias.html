@@ -21,8 +21,8 @@
                         <div class="form-group">
                             <label for="sltTipoSugerencia">Tipo</label>
                             <select id="sltTipoSugerencia" class="form-control"
-                                ng-options="tipo_sugerencia.email as tipo_sugerencia.descripcion for tipo_sugerencia in tipo_sugerencias"
-                                ng-model="sugerencia.email_destinatario"
+                                ng-options="tipo_sugerencia.id as tipo_sugerencia.descripcion for tipo_sugerencia in tipo_sugerencias"
+                                ng-model="sugerencia.tipo_sugerencia_id"
                                 name="tipoSugerencia" required required-message="'Este campo es requerido'" validate-on="blur">
                                 <option value="">{{ loading }}</option>
                             </select>

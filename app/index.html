@@ -78,6 +78,7 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-left">
                                             <li><a ui-sref="bolsaTrabajo">Bolsa de Trabajo</a></li>
+                                            <li><a ui-sref="plantaIndustrial">Planta Industrial</a></li>
                                             <li ng-repeat="page in pages_contactos">
                                                 <a ui-sref="pages({ id: page.id })">{{ page.title }}</a>
                                             </li>
@@ -176,6 +177,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-left">
                                 <li><a ui-sref="bolsaTrabajo">Bolsa de Trabajo</a></li>
+                                <li><a ui-sref="plantaIndustrial">Planta Industrial</a></li>
                                 <li ng-repeat="page in pages_contactos">
                                     <a ui-sref="pages({ id: page.id })">{{ page.title }}</a>
                                 </li>
@@ -249,6 +251,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-left">
                             <li><a ui-sref="bolsaTrabajo">Bolsa de Trabajo</a></li>
+                            <li><a ui-sref="plantaIndustrial">Planta Industrial</a></li>
                             <li ng-repeat="page in pages_contactos">
                                 <a ui-sref="pages({ id: page.id })">{{ page.title }}</a>
                             </li>
@@ -364,6 +367,7 @@
     <script src="scripts/services/pagesservice.js"></script>
     <script src="scripts/controllers/pages.js"></script>
     <script src="scripts/services/envservice.js"></script>
+    <script src="scripts/controllers/planta-industrial.js"></script>
     <!-- endbuild -->
 </body>
 </html>

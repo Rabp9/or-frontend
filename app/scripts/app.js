@@ -136,6 +136,15 @@ angular
         title: 'Sugerencias'
     };
     
+    var plantaIndustrialState = {
+        name: 'plantaIndustrial',
+        url: '/planta-industrial',
+        templateUrl: 'views/planta-industrial.html',
+        controller: 'PlantaIndustrialCtrl',
+        controllerAs: 'plantaIndustrial',
+        title: 'Planta Industrial'
+    };
+    
     $stateProvider.state(mainState);
     $stateProvider.state(quienesSomosState);
     $stateProvider.state(politicasState);
@@ -147,6 +156,7 @@ angular
     $stateProvider.state(pagesState);
     $stateProvider.state(bolsaTrabajoState);
     $stateProvider.state(sugerenciasState);
+    $stateProvider.state(plantaIndustrialState);
     $urlRouterProvider.when('', '/');
     
     ngImageGalleryOptsProvider.setOpts({
