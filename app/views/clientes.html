@@ -25,6 +25,7 @@
                     <info-window id="myInfoWindow">
                         <div ng-non-bindable>
                             <h6>{{ selectedCliente.razon_social }}</h6>
+                            <p>{{ selectedCliente.rubro }}</p>
                         </div>
                     </info-window>
                     <marker ng-repeat="cliente in clientes" position="{{ cliente.latitud }}, {{ cliente.longitud }}"

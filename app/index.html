@@ -59,13 +59,14 @@
                                         </ul>
                                     </li>
                                     <li ui-sref-active="active"><a ui-sref="clientes">Clientes</a></li>
-                                    <li ng-class="{active: ('obras-detail' | includedByState)}" ui-sref-active="active" class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
+                                    <li ng-class="{active: ('obras-detail' | includedByState) || ('asesorias-detail' | includedByState)}" ui-sref-active="active" class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
                                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                            Proyectos 
+                                            Proyectos
                                             <span class="caret"></span>
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-left">
                                             <li><a ui-sref="obras">Obras</a></li>
+                                            <li><a ui-sref="asesorias">Asesoría</a></li>
                                             <li ng-repeat="page in pages_proyectos">
                                                 <a ui-sref="pages({ id: page.id })">{{ page.title }}</a>
                                             </li>
@@ -158,13 +159,14 @@
                             </ul>
                         </li>
                         <li ui-sref-active="active"><a ui-sref="clientes">Clientes</a></li>
-                        <li ng-class="{active: ('obras-detail' | includedByState)}" ui-sref-active="active" class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
+                        <li ng-class="{active: ('obras-detail' | includedByState) || ('asesorias-detail' | includedByState)}" ui-sref-active="active" class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Proyectos 
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-left">
                                 <li><a ui-sref="obras">Obras</a></li>
+                                <li><a ui-sref="asesorias">Asesoría</a></li>
                                 <li ng-repeat="page in pages_proyectos">
                                     <a ui-sref="pages({ id: page.id })">{{ page.title }}</a>
                                 </li>
@@ -232,13 +234,14 @@
                         </ul>
                     </li>
                     <li ui-sref-active="active"><a ui-sref="clientes">Clientes</a></li>
-                    <li ng-class="{active: ('obras-detail' | includedByState)}" ui-sref-active="active" class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
+                    <li ng-class="{active: ('obras-detail' | includedByState) || ('asesorias-detail' | includedByState)}" ui-sref-active="active" class="dropdown" bs-hover-dropdown animation-in="'fadeIn'" animation-out="'fadeOut'" bs-hover="false">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             Proyectos 
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-left">
                             <li><a ui-sref="obras">Obras</a></li>
+                            <li><a ui-sref="asesorias">Asesoría</a></li>
                             <li ng-repeat="page in pages_proyectos">
                                 <a ui-sref="pages({ id: page.id })">{{ page.title }}</a>
                             </li>
@@ -368,6 +371,9 @@
     <script src="scripts/controllers/pages.js"></script>
     <script src="scripts/services/envservice.js"></script>
     <script src="scripts/controllers/planta-industrial.js"></script>
+    <script src="scripts/controllers/asesorias.js"></script>
+    <script src="scripts/controllers/asesorias-detail.js"></script>
+    <script src="scripts/services/asesoriasservice.js"></script>
     <!-- endbuild -->
 </body>
 </html>

@@ -5,21 +5,18 @@
     <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><a ui-sref="obras">Proyectos</a></li>
-        <li><a ui-sref="obras">Obras</a></li>
-        <li>{{ obra.title }}</li>
+        <li><a ui-sref="asesorias">Asesoría</a></li>
+        <li>{{ asesoria.title }}</li>
     </ol>
     <div class="row">
         <div class="col-sm-12 padding-x2">
-            <h2>{{ obra.title }}</h2>
+            <h2>{{ asesoria.title }}</h2>
             <hr>
-            <span ng-bind-html="obra.body"></span>
+            <span ng-bind-html="asesoria.body"></span>
             <br>
             <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
-            <div ng-image-gallery
-                 images="obra.obra_images">
-            </div>
             <div class="center-heading">
-                <a class="btn btn-link" href="#/obras">Regresar a lista Obras</a>
+                <a class="btn btn-link" href="#/asesorias">Regresar a lista Asesorías</a>
             </div>
         </div>
     </div>

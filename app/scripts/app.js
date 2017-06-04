@@ -105,6 +105,28 @@ angular
         }
     };
     
+    var asesoriasState = {
+        name: 'asesorias',
+        url: '/asesorias',
+        templateUrl: 'views/asesorias.html',
+        controller: 'AsesoriasCtrl',
+        controllerAs: 'asesorias',
+        title: 'Asesorias'
+    };
+    
+    var asesoriasDetailState = {
+        name: 'asesorias-detail',
+        url: '/asesorias/{id}',
+        templateUrl: 'views/asesorias-detail.html',
+        controller: 'AsesoriasDetailCtrl',
+        controllerAs: 'asesoriasDetail',
+        params: {
+            id: {
+                value: '1'
+            }
+        }
+    };
+    
     var pagesState = {
         name: 'pages',
         url: '/pages/{id}',
@@ -153,6 +175,8 @@ angular
     $stateProvider.state(clientesState);
     $stateProvider.state(obrasState);
     $stateProvider.state(obrasDetailState);
+    $stateProvider.state(asesoriasState);
+    $stateProvider.state(asesoriasDetailState);
     $stateProvider.state(pagesState);
     $stateProvider.state(bolsaTrabajoState);
     $stateProvider.state(sugerenciasState);
@@ -197,11 +221,7 @@ angular
     $rootScope.refresh = function() {
         $state.reload();
     };
-    /*
-    ProductosService.getPages(function(data) {
-        $rootScope.producto_pages = data.producto_pages;
-    });
-    */
+    
     ProductosService.getRootProductos(function(data) {
         $rootScope.productos = data.productos;
     });

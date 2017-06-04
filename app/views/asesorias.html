@@ -1,0 +1,22 @@
+<div class="crop">
+    <img class="img-responsive" ng-src="{{ path_location + imagen }}" alt="obras" />
+</div>
+<div class="container politicas">
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#/obras">Proyectos</a></li>
+        <li>Asesorías</li>
+    </ol>
+    <div class="row">
+        <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
+        <div class="col-sm-12" ng-repeat="asesoria in asesorias">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3>{{ asesoria.title }}</h3></div>
+                <div class="panel-body">
+                    <p>{{ asesoria.resumen }}</p>   
+                    <a ui-sref="asesorias-detail({ id: asesoria.id })" class="btn btn-lg btn-default hvr-underline-from-left pull-right" role="button">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

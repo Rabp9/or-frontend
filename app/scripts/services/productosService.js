@@ -14,6 +14,10 @@ angular.module('tuplastFrontendApp')
             method: 'GET',
             url: EnvService.getHost() + 'productos/getLineasProductos/.json'
         },
+        getProductosMain: {
+            method: 'GET',
+            url: EnvService.getHost() + 'productos/getProductosMain/.json'
+        },
         getPages: {
             method: 'GET',
             url: EnvService.getHost() + 'productos/getPages/.json'

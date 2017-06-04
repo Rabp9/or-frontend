@@ -28,7 +28,7 @@ angular.module('tuplastFrontendApp')
         
         return $q.all([
             SlidesService.get().$promise,
-            ProductosService.getLineasProductos().$promise,
+            ProductosService.getProductosMain().$promise,
             ObrasService.get().$promise,
             InfosService.getDataMany(search).$promise,
             ClientesService.get().$promise
