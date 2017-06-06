@@ -30,6 +30,9 @@
         h6 {
             font-weight: bold;
         }
+        li {
+            cursor: default;
+        }
     }
 }
 
@@ -551,4 +554,13 @@ div.thumbnail.obras {
     margin: 1px 0px 1px 0px;
     padding: 5px;
     border-radius: 5px;
+}
+
+.cartera-clientes-logos {
+    a {
+        color: #ffffff;
+        &:hover {
+            color: #000000;
+        }
+    }
 }

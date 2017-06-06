@@ -1,7 +1,3 @@
-<div class="alert alert-dismissible" ng-class="{'alert-success': message.type === 'success', 'alert-danger': message.type === 'error'}" role="alert" ng-show="message.type !== undefined">
-    <button type="button" class="close" ng-click="message.type = undefined" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    {{ message.text }} 
-</div>
 <div class="crop">
     <img class="img-responsive" ng-src="{{ path_location + imagen }}" alt="sugerencias" />
 </div>
@@ -15,9 +11,13 @@
         <div class="col-sm-12 padding-x2">
             <h2>Sugerencias</h2>
             <hr>
+            <div class="alert alert-dismissible" ng-class="{'alert-success': message.type === 'success', 'alert-danger': message.type === 'error'}" role="alert" ng-show="message.type !== undefined">
+                <button type="button" class="close" ng-click="message.type = undefined" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                {{ message.text }} 
+            </div>
             <form novalidate angular-validator angular-validator-submit="sendMessage(sugerencia)" name="tipoSugerenciasAdd" angular-validator-quiet>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="form-group">
                             <label for="sltTipoSugerencia">Tipo</label>
                             <select id="sltTipoSugerencia" class="form-control"
@@ -28,7 +28,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-9">
                         <div class="form-group">
                             <label for="txtEmail">Email</label>
                             <input id="txtEmail" type="email" ng-model="sugerencia.email_remitente" class="form-control" 

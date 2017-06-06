@@ -93,12 +93,35 @@
         </div>
         <div class="cartera-clientes-logos animated fadeIn col-sm-12">
             <div class="row">
-                <div class="col-xs-4 col-md-3 clientes-show" ng-repeat="cliente in clientes">
-                    <span class="thumbnail animated zoomIn delay-{{ cliente.delay }}">
-                        <h6>{{ cliente.razon_social }}</h6>
-                        <p>{{ cliente.rubro }}</p>
-                    </span>
-                </div>
+                <div>
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a data-target="#rub1" aria-controls="home" role="tab" data-toggle="tab">Home</a>
+                        </li>
+                        <li role="presentation">
+                            <a data-target="#rub2" aria-controls="profile" role="tab" data-toggle="tab">Profile</a>
+                        </li>
+                        <li role="presentation">
+                            <a data-target="#rub3" aria-controls="messages" role="tab" data-toggle="tab">Messages</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="rub1">
+                            dsadsadas
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="rub2">
+                            dsddddddddddd
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="rub3">
+                            ffffffffff
+                        </div>
+                    </div>
+
+                  </div>
             </div>
         </div>
     </div>
