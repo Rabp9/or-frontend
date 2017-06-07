@@ -31,7 +31,7 @@ angular.module('tuplastFrontendApp')
             ProductosService.getProductosMain().$promise,
             ObrasService.get().$promise,
             InfosService.getDataMany(search).$promise,
-            ClientesService.get().$promise
+            ClientesService.getRubros().$promise
         ]).then(function(data) {
             // Slides
             $scope.slides = data[0].slides;
@@ -71,10 +71,14 @@ angular.module('tuplastFrontendApp')
                 $scope.infos[value] = data[3].info[value];
             });
             
-            // Clientes
-            $scope.clientes = data[4].clientes.slice(0, 8);
-            angular.forEach($scope.clientes, function(value, key) {
-                value.delay = Math.floor(Math.random() * 4) + 0;
+            // Clientes Rubros
+            $scope.rubros = data[4].rubros;
+
+            angular.forEach($scope.rubros, function (value, key) {
+                value.clientes = value.clientes.slice(0, 8);
+                angular.forEach(value.clientes, function (v_cliente, k_cliente) {
+                    v_cliente.delay = Math.floor(Math.random() * 4) + 0;                    
+                });
             });
             
             // Complete

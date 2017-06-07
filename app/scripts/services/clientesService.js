@@ -17,6 +17,14 @@ angular.module('tuplastFrontendApp')
         getClientesByCiudad: {
             method: 'GET',
             url: EnvService.getHost() + 'clientes/getClientesByCiudad/:ciudad.json'
-        }
+        },
+        getRubros: {
+            method: 'GET',
+            url: EnvService.getHost() + 'clientes/getRubros/.json'
+        },
+        getClientesByRubro: {
+            method: 'GET',
+            url: EnvService.getHost() + 'clientes/getClientesByRubro/:rubro.json'
+        },
     });
 });

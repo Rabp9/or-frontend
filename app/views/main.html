@@ -97,27 +97,20 @@
 
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active">
-                            <a data-target="#rub1" aria-controls="home" role="tab" data-toggle="tab">Home</a>
-                        </li>
-                        <li role="presentation">
-                            <a data-target="#rub2" aria-controls="profile" role="tab" data-toggle="tab">Profile</a>
-                        </li>
-                        <li role="presentation">
-                            <a data-target="#rub3" aria-controls="messages" role="tab" data-toggle="tab">Messages</a>
+                        <li role="presentation" ng-class="{active: $index === 0}" ng-repeat="rubro in rubros">
+                            <a data-target="#rubro{{ $index }}" aria-controls="home" role="tab" data-toggle="tab">{{ rubro.rubro }}</a>
                         </li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="rub1">
-                            dsadsadas
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="rub2">
-                            dsddddddddddd
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="rub3">
-                            ffffffffff
+                        <div role="tabpanel" class="tab-pane" ng-class="{active: $index === 0}" ng-repeat="rubro in rubros" id="rubro{{ $index }}">
+                            <div class="col-xs-4 col-md-3 clientes-show" ng-repeat="cliente in rubro.clientes">
+                                <span class="thumbnail animated zoomIn delay-{{ cliente.delay }}">
+                                    <h6>{{ cliente.razon_social }}</h6>
+                                    <p>{{ cliente.rubro }}</p>	
+                                </span>
+                            </div>
                         </div>
                     </div>
 
