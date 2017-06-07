@@ -84,6 +84,9 @@ angular.module('tuplastFrontendApp')
             $scope.rubros = data[4].rubros;
 
             angular.forEach($scope.rubros, function (value, key) {
+                if (value.rubro === '') {
+                    value.rubro = 'Otros';
+                }
                 value.clientes = value.clientes.slice(0, 8);
                 angular.forEach(value.clientes, function (v_cliente, k_cliente) {
                     v_cliente.delay = Math.floor(Math.random() * 4) + 0;                    

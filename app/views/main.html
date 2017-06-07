@@ -1,7 +1,7 @@
 <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" class="slide carousel-fade">
     <div uib-slide ng-repeat="slide in slides track by slide.index" index="slide.index">
         <img class="img-slider" ng-src="{{ path_location}}/img/slides/{{ slide.url }}">
-        <div class="carousel-caption animated fadeInLeft" ng-hide="slide.titulo === null"
+        <div class="carousel-caption animated fadeInLeft" ng-if="slide.titulo !== null && slide.titulo !== undefined && slide.titulo !== ''"
             ng-style="{'background': slide.color_bg, 'color': slide.color }">
             <h1>{{slide.titulo}}</h1>
             <p>{{slide.contenido}}</p>
@@ -83,7 +83,6 @@
     ng-mouseenter="hoverCarteraClientes($event, true)" ng-mouseleave="hoverCarteraClientes($event, false)" >
     <div class="col-sm-6 col-sm-offset-3 center-heading">
         <h1 class="cartera-clientes-header">Cartera de Clientes</h1>
-        <hr class="carter-clientes-separator">
         <br />
         <br />
         <div class="cartera-clientes-description animated fadeIn">
@@ -95,7 +94,6 @@
         <div class="cartera-clientes-logos animated fadeIn col-sm-12">
             <div class="row">
                 <div>
-
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" ng-class="{active: $index === 0}" ng-repeat="rubro in rubros">
@@ -109,7 +107,6 @@
                             <div class="col-xs-4 col-md-3 clientes-show" ng-repeat="cliente in rubro.clientes">
                                 <span class="thumbnail animated zoomIn delay-{{ cliente.delay }}">
                                     <h6>{{ cliente.razon_social }}</h6>
-                                    <p>{{ cliente.rubro }}</p>	
                                 </span>
                             </div>
                         </div>
