@@ -38,6 +38,15 @@ angular.module('tuplastFrontendApp')
             $scope.height_slide = $window.innerHeight - (1 + 50 + 80 + (25 * 2)); // 50: $navbar-height, 80: $navbar-header-top-height, 25: $navbar-header-top-margin
             angular.forEach($scope.slides, function(value, key) {
                 $scope.slides[key].index = currIndex;
+                
+                var hex = $scope.slides[key].color_bg.replace('#', ''),
+                r = parseInt(hex.substring(0,2), 16),
+                g = parseInt(hex.substring(2,4), 16),
+                b = parseInt(hex.substring(4,6), 16),
+                result = 'rgba('+ r + ',' + g + ',' + b + ', 0.8)';
+                console.log(result);
+                $scope.slides[key].color_bg = result;
+
                 currIndex++;
             });
             
