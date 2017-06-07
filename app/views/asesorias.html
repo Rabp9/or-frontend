@@ -13,7 +13,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><h3>{{ asesoria.title }}</h3></div>
                 <div class="panel-body">
-                    <p>{{ asesoria.resumen }}</p>   
+                    <p ng-bind-html="asesoria.resumen"></p>
                     <a ui-sref="asesorias-detail({ id: asesoria.id })" class="btn btn-lg btn-default hvr-underline-from-left pull-right" role="button">Ver más</a>
                 </div>
             </div>
