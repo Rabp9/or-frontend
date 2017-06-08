@@ -12,7 +12,7 @@
             <h2>Nuestra Historia</h2>
             <hr>
             <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
-            <span ng-bind-html="quienesSomos.nuestraHistoria"></span>
+            <span ng-bind-html="trustAsHtml(quienesSomos.nuestraHistoria)"></span>
             <h2>Valores</h2>
             <hr>
             <div class="row">
@@ -32,11 +32,11 @@
             <h2>Visión</h2>
             <hr>
             <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
-            <span ng-bind-html="quienesSomos.vision"></span>
+            <span ng-bind-html="trustAsHtml(quienesSomos.vision)"></span>
             <h2>Misión</h2>
             <hr>
             <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
-            <span ng-bind-html="quienesSomos.mision"></span>
+            <span ng-bind-html="trustAsHtml(quienesSomos.mision)"></span>
             <br>
             <br>
         </div>

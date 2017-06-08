@@ -2,7 +2,7 @@
     <h2>{{ producto.title }} <small>{{ producto.subtitle }}</small></h2>
     <hr ng-hide="loading">
     <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
-    <span ng-bind-html="producto.body"></span>
+    <span ng-bind-html="trustAsHtml(producto.body)"></span>
     <br>
     <div ng-image-gallery
          images="producto.producto_images">
@@ -13,7 +13,7 @@
     <h4 ng-hide="loading || hijos.length === 0">Sub Categorías</h4>
     <ul ng-hide="loading" class="list-group">
         <li class="list-group-item" ng-repeat="hijo in hijos">
-            <a ui-sref="productos.detail({ id: hijo.id })" ui-sref-active="active" ng-bind-html="hijo.title" ></a>
+            <a ui-sref="productos.detail({ id: hijo.id })" ui-sref-active="active" ng-bind-html="hijo.title"></a>
         </li>
     </ul>
 </div>

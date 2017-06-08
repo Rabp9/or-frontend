@@ -12,7 +12,7 @@
         <div class="col-sm-12 padding-x2">
             <h2>{{ asesoria.title }}</h2>
             <hr>
-            <span ng-bind-html="asesoria.body"></span>
+            <span ng-bind-html="trustAsHtml(asesoria.body)"></span>
             <br>
             <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
             <div class="center-heading">

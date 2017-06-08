@@ -8,7 +8,7 @@
         <div class="col-sm-12" style="padding: 20px;">
             <h2>{{ page.title }}</h2>
             <hr>
-            <span ng-bind-html="page.body"></span>       
+            <span ng-bind-html="trustAsHtml(page.body)"></span>       
             <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>     
         </div>
     </div>

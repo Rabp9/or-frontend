@@ -193,7 +193,7 @@ angular
         thumbSize: 160
     });
 })
-.run(function($rootScope, $state, $window, ProductosService, InfosService, PagesService, EnvService) {
+.run(function($rootScope, $state, $window, ProductosService, InfosService, PagesService, EnvService, $sce) {
     angular.module('tuplastFrontendApp').path_location = EnvService.getHost();
     $rootScope.path_location = EnvService.getHost();
     $rootScope.layout = {};
@@ -269,5 +269,9 @@ angular
             $('#dvNavTop').removeClass('enlarge-top');
             $('#dvNavTop').addClass('reduce-top');
         });
+    };
+    
+    $rootScope.trustAsHtml = function(string) {
+        return $sce.trustAsHtml(string);
     };
 });

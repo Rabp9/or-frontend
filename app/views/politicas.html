@@ -17,7 +17,7 @@
                     <figure class="imghvr-flip-horiz">
                         <img class="img-responsive img-politicas" ng-src="{{path_img + politica.url }}" alt="{{ politica.title }}">
                         <figcaption class="politica-detail-info">
-                            <span ng-bind-html="politica.body"></span>
+                            <span ng-bind-html="trustAsHtml(politica.body)"></span>
                         </figcaption>
                     </figure>
                 </div>
