@@ -39,13 +39,15 @@ angular.module('tuplastFrontendApp')
             angular.forEach($scope.slides, function(value, key) {
                 $scope.slides[key].index = currIndex;
                 
-                var hex = $scope.slides[key].color_bg.replace('#', ''),
-                r = parseInt(hex.substring(0,2), 16),
-                g = parseInt(hex.substring(2,4), 16),
-                b = parseInt(hex.substring(4,6), 16),
-                result = 'rgba('+ r + ',' + g + ',' + b + ', 0.8)';
-                $scope.slides[key].color_bg = result;
-
+                if ($scope.slides[key].color_bg !== null) {
+                    var hex = $scope.slides[key].color_bg.replace('#', ''),
+                    r = parseInt(hex.substring(0,2), 16),
+                    g = parseInt(hex.substring(2,4), 16),
+                    b = parseInt(hex.substring(4,6), 16),
+                    result = 'rgba('+ r + ',' + g + ',' + b + ', 0.8)';
+                    $scope.slides[key].color_bg = result;
+                }
+                
                 currIndex++;
             });
             
@@ -58,15 +60,16 @@ angular.module('tuplastFrontendApp')
                 productos_aux.splice(index, 1);
             }
             angular.forEach($scope.productos, function(value, key) {
-                console.log(value);
-                var char_count = value.title.length;
-                var lineaProducto = $('.linea-productos-header').eq(key);
-                if (char_count > 0 && char_count < 16) {
-                    $(lineaProducto).css('padding', '0px 75px');
-                } else if (char_count >= 16 && char_count < 35) {
-                    $(lineaProducto).css('padding', '0px 28px');
-                } else if (char_count >= 35) {
-                    $(lineaProducto).css('padding', '0px 0px');
+                if (value !== undefined) {
+                    var char_count = value.title.length;
+                    var lineaProducto = $('.linea-productos-header').eq(key);
+                    if (char_count > 0 && char_count < 16) {
+                        $(lineaProducto).css('padding', '0px 75px');
+                    } else if (char_count >= 16 && char_count < 35) {
+                        $(lineaProducto).css('padding', '0px 28px');
+                    } else if (char_count >= 35) {
+                        $(lineaProducto).css('padding', '0px 0px');
+                    }
                 }
             });
             

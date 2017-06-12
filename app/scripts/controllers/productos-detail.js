@@ -17,7 +17,7 @@ angular.module('tuplastFrontendApp')
         $('.navbar-toggle').click();
     }
     
-    ProductosService.get({id: id}, function(data) {
+    ProductosService.getPublic({id: id}, function(data) {
         var producto_images = data.producto.producto_images;
         angular.forEach(producto_images, function(value, key) {
             value.url = angular.module('tuplastFrontendApp').path_location + 'img' + '/' + 'productos' + '/' + value.url;

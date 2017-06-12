@@ -26,9 +26,13 @@ angular.module('tuplastFrontendApp')
             method: 'GET',
             url: EnvService.getHost() + 'productos/getTreeList/:spacer.json'
         },
-        getRootProductos:{
+        getRootProductos: {
             method: 'GET',
             url: EnvService.getHost() + 'productos/getRootProductos.json'
+        },
+        getPublic: {
+            method: 'GET',
+            url: EnvService.getHost() + 'productos/getPublic.json'
         }
     });
 });
