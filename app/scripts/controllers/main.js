@@ -58,7 +58,6 @@ angular.module('tuplastFrontendApp')
                 productos_aux.splice(index, 1);
             }
             angular.forEach($scope.productos, function(value, key) {
-                console.log(value);
                 var char_count = value.title.length;
                 var lineaProducto = $('.linea-productos-header').eq(key);
                 if (char_count > 0 && char_count < 16) {
