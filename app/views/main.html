@@ -1,4 +1,4 @@
-<div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" class="slide carousel-fade">
+<div uib-carousel interval="2000" active="active" interval="myInterval" no-wrap="noWrapSlides" class="slide carousel-fade">
     <div uib-slide ng-repeat="slide in slides track by slide.index" index="slide.index">
         <img class="img-slider" ng-src="{{ path_location}}/img/slides/{{ slide.url }}">
         <div class="carousel-caption animated fadeInLeft" ng-if="slide.titulo !== null && slide.titulo !== undefined && slide.titulo !== ''"

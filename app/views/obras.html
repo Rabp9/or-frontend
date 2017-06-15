@@ -10,17 +10,18 @@
     <div class="row">
         <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
         <ul class="media-list">
-            <li class="media" ng-repeat="obra in obras">
-                <div class="media-left">
-                    <a ui-sref="obras-detail({ id: obra.id })">
-                        <img style="width: 300px;" class="media-object" ng-src="{{path_img + obra.obra_images[0].url }}" alt="{{ obra.title }}">
-                    </a>
+            <div class="row with-margin linea-productos-3 not-visible" when-visible="animateElementIn"
+                when-not-visible="animateElementOut" ng-repeat="obra in obras">
+                <div class="linea-productos-description">
+                    <h2><a ui-sref="obras-detail({ id: obra.id })" ui-sref-active="active">{{ obra.title }}</a></h2>
+                    <hr>
+                    <p>{{ obra.resumen }}</p>
+                    <a ui-sref="obras-detail({ id: obra.id })" ui-sref-active="active" class="btn btn-lg btn-default hvr-underline-from-left pull-right">Conoce más</a>
                 </div>
-                <div class="media-body">
-                    <h4 class="media-heading">{{ obra.title }}</h4>
-                    <span ng-bind-html="trustAsHtml(obra.resumen)"></span>
+                <div class="linea-productos-imagen hidden-xs">
+                    <img ng-src="{{ path_location }}/img/obras/{{ obra.obra_images[0].url }}" class="img-responsive img-obra">
                 </div>
-            </li>
+            </div>
         </ul>
     </div>
 </div>
