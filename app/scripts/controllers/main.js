@@ -69,6 +69,7 @@ angular.module('tuplastFrontendApp')
                         $(lineaProducto).css('padding', '0px 28px');
                     } else if (char_count >= 35) {
                         $(lineaProducto).css('padding', '0px 0px');
+                        $(lineaProducto).css('font-size', '26px');
                     }
                 }
             });
