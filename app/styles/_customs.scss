@@ -83,6 +83,7 @@
     p {
         /*width: 50%;*/
         margin: 0 auto;
+        text-align: justify;
     }
     h1 {
         color: $color-primario;
@@ -573,6 +574,12 @@ div.thumbnail.obras {
     h3 {
         text-align: center;
     }
+    p {
+        text-align: justify;
+    }
+}
+
+.cartera-clientes-description {
     p {
         text-align: justify;
     }
