@@ -8,9 +8,9 @@
     height: 450px;
     padding: 12px;
     &:hover {
-        background-color: $color-default;
+        background-color: white;
         .cartera-clientes-header {
-            color: $color-cuartario;
+            color: black;
         }
         .carter-clientes-separator {
             border-top-color: $color-cuartario;
@@ -24,6 +24,13 @@
     }
     .cartera-clientes-logos {
         display: none;
+        color: $color-primario;
+        a {
+            color: $color-primario;
+            &:active {
+                color: $color-primario !important;
+            }
+        }
         .thumbnail {
             height: 100px !important;
         }
