@@ -4,8 +4,10 @@
     <div ng-show="loading"><img class="img-loading center-block img-responsive" src="images/loading.gif" alt="Cargando..."></div>
     <span ng-bind-html="trustAsHtml(producto.body)"></span>
     <br>
-    <div ng-image-gallery
-         images="producto.producto_images">
+    <div uib-carousel interval="2000" active="active" interval="myInterval" no-wrap="noWrapSlides" class="slide carousel-fade">
+        <div uib-slide ng-repeat="image in producto.producto_images track by image.index" index="image.index">
+            <img class="img-slider" ng-src="{{path + image.url}}" ng-click="openImage(path + image.url)" style="cursor: pointer;">
+        </div>
     </div>
     <a ng-show="!loading && producto.brochure !== null" ng-href="{{ path_location + 'productos/download/' + producto.id }}" target="_blank">
         <span class="glyphicon glyphicon-list-alt"></span> Descarga el Brochure
