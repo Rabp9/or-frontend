@@ -9,7 +9,8 @@
  */
 angular.module('tuplastFrontendApp')
 .controller('MainCtrl', function ($scope, $window, SlidesService, ProductosService, 
-    ObrasService, InfosService, ClientesService, ngProgressFactory, $q, $rootScope) {
+    ObrasService, InfosService, ClientesService, ngProgressFactory, $q, $rootScope,
+    $interval) {
         
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
@@ -21,14 +22,41 @@ angular.module('tuplastFrontendApp')
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
   
+    function getProductosMain() {
+        $interval(function() {
+            ProductosService.getProductosMain(function(data) {
+                var productos_aux = data.productos;
+                $scope.productos = [];
+                for (var i = 0; i < 3; i++) {
+                    var index = Math.floor(Math.random() * productos_aux.length) + 0;
+                    $scope.productos.push(productos_aux[index]);
+                    productos_aux.splice(index, 1);
+                }
+                angular.forEach($scope.productos, function(value, key) {
+                    if (value !== undefined) {
+                        var char_count = value.title.length;
+                        var lineaProducto = $('.linea-productos-header').eq(key);
+                        if (char_count > 0 && char_count < 16) {
+                            $(lineaProducto).css('padding', '0px 75px');
+                        } else if (char_count >= 16 && char_count < 35) {
+                            $(lineaProducto).css('padding', '0px 28px');
+                        } else if (char_count >= 35) {
+                            $(lineaProducto).css('padding', '0px 0px');
+                            $(lineaProducto).css('font-size', '26px');
+                        }
+                    }
+                });
+            });
+        }, 5000);
+    }
+    
     function init() {
         $rootScope.layout.loading = true;
         var search = ['resumen_tuplast', 'mensaje_clientes_1', 'mensaje_clientes_2'];
         $scope.infos = {};
         
-        return $q.all([
+        $q.all([
             SlidesService.get().$promise,
-            ProductosService.getProductosMain().$promise,
             ObrasService.get().$promise,
             InfosService.getDataMany(search).$promise,
             ClientesService.getRubros().$promise
@@ -51,41 +79,18 @@ angular.module('tuplastFrontendApp')
                 currIndex++;
             });
             
-            // Productos
-            var productos_aux = data[1].productos;
-            $scope.productos = [];
-            for (var i = 0; i < 3; i++) {
-                var index = Math.floor(Math.random() * productos_aux.length) + 0;
-                $scope.productos.push(productos_aux[index]);
-                productos_aux.splice(index, 1);
-            }
-            angular.forEach($scope.productos, function(value, key) {
-                if (value !== undefined) {
-                    var char_count = value.title.length;
-                    var lineaProducto = $('.linea-productos-header').eq(key);
-                    if (char_count > 0 && char_count < 16) {
-                        $(lineaProducto).css('padding', '0px 75px');
-                    } else if (char_count >= 16 && char_count < 35) {
-                        $(lineaProducto).css('padding', '0px 28px');
-                    } else if (char_count >= 35) {
-                        $(lineaProducto).css('padding', '0px 0px');
-                        $(lineaProducto).css('font-size', '26px');
-                    }
-                }
-            });
-            
             // Obras
-            var obras_aux = data[2].obras;
+            var obras_aux = data[1].obras;
             var index_obra = Math.floor(Math.random() * obras_aux.length) + 0;
             $scope.obra = obras_aux[index_obra];
             
             // Infos
             angular.forEach(search, function(value, key) {
-                $scope.infos[value] = data[3].info[value];
+                $scope.infos[value] = data[2].info[value];
             });
             
             // Clientes Rubros
-            $scope.rubros = data[4].rubros;
+            $scope.rubros = data[3].rubros;
 
             angular.forEach($scope.rubros, function (value, key) {
                 if (value.rubro === '') {
@@ -101,6 +106,7 @@ angular.module('tuplastFrontendApp')
             $scope.progressbar.complete();
             $rootScope.layout.loading = false;
         });
+        getProductosMain();
     }
     
     init();
