@@ -8,7 +8,7 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ObrasCtrl', function ($scope, ObrasService, ngProgressFactory, SlidesService) {
+.controller('ObrasCtrl', function ($scope, ObrasService, ngProgressFactory, HeadersService) {
     $scope.path_img = angular.module('tuplastFrontendApp').path_location + 'img/' + 'obras/';
     $scope.loading = true;
     var controladorWhenVisible = 0;
@@ -16,8 +16,8 @@ angular.module('tuplastFrontendApp')
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
     
-    SlidesService.getHeader(function(data) {
-        $scope.imagen = data.file;
+    HeadersService.getByDescripcion({descripcion: 'obras'}, function(data) {
+        $scope.imagen = 'img/headers/' + data.header.url;
     });
     
     ObrasService.get(function(data) {

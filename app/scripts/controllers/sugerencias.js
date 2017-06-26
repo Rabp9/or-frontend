@@ -9,15 +9,15 @@
  */
 angular.module('tuplastFrontendApp')
 .controller('SugerenciasCtrl', function ($scope, TipoSugerenciasService, ngProgressFactory,
-    SlidesService) {
+    HeadersService) {
     
     $scope.sugerencia = {};
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
     $scope.loading = 'Cargando...';
     
-    SlidesService.getHeader(function(data) {
-        $scope.imagen = data.file;
+    HeadersService.getByDescripcion({descripcion: 'sugerencias'}, function(data) {
+        $scope.imagen = 'img/headers/' + data.header.url;
     });
     
     TipoSugerenciasService.get(function(data) {

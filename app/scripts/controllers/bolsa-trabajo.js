@@ -9,14 +9,14 @@
  */
 angular.module('tuplastFrontendApp')
 .controller('BolsaTrabajoCtrl', function ($scope, ConvocatoriasService, ngProgressFactory,
-    SlidesService) {
+    HeadersService) {
         
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
     $scope.loading = true;
     
-    SlidesService.getHeader(function(data) {
-        $scope.imagen = data.file;
+    HeadersService.getByDescripcion({descripcion: 'quienes_somos'}, function(data) {
+        $scope.imagen = 'img/headers/' + data.header.url;
     });
     
     ConvocatoriasService.get(function(data) {

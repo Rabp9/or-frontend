@@ -9,7 +9,7 @@
  */
 angular.module('tuplastFrontendApp')
 .controller('QuienesSomosCtrl', function ($scope, InfosService, ngProgressFactory,
-    SlidesService) {
+    HeadersService) {
         
     var controladorWhenVisible = 0;
     var dataSearch = ['nuestraHistoria', 'vision', 'mision', 'valor1', 'valor2',
@@ -20,8 +20,8 @@ angular.module('tuplastFrontendApp')
     $scope.progressbar.start();
     $scope.loading = true;
     
-    SlidesService.getHeader(function(data) {
-        $scope.imagen = data.file;
+    HeadersService.getByDescripcion({descripcion: 'quienes_somos'}, function(data) {
+        $scope.imagen = 'img/headers/' + data.header.url;
     });
     
     InfosService.getDataMany(dataSearch, function(data) {

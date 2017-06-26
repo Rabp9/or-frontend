@@ -8,15 +8,15 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('PoliticasCtrl', function ($scope, PoliticasService, ngProgressFactory, SlidesService) {
+.controller('PoliticasCtrl', function ($scope, PoliticasService, ngProgressFactory, HeadersService) {
     $scope.path_img = angular.module('tuplastFrontendApp').path_location + 'img/' + 'politicas/';
     $scope.loading = true;
     
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
     
-    SlidesService.getHeader(function(data) {
-        $scope.imagen = data.file;
+    HeadersService.getByDescripcion({descripcion: 'politicas'}, function(data) {
+        $scope.imagen = 'img/headers/' + data.header.url;
     });
     
     PoliticasService.get(function(data) {

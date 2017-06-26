@@ -9,7 +9,7 @@
  */
 angular.module('tuplastFrontendApp')
 .controller('ClientesCtrl', function ($scope, ClientesService, ngProgressFactory, 
-    NgMap, SlidesService) {
+    NgMap, HeadersService) {
     
     $scope.loading_clientes = true;
     $scope.loading_ciudades = true;
@@ -18,9 +18,9 @@ angular.module('tuplastFrontendApp')
     $scope.progressbar.start();
     
     $scope.googleMapsUrl = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBN3iXCosOm01j8X97QyrYYGfGRRRuyMFY';
-    
-    SlidesService.getHeader(function(data) {
-        $scope.imagen = data.file;
+
+    HeadersService.getByDescripcion({descripcion: 'clientes'}, function(data) {
+        $scope.imagen = 'img/headers/' + data.header.url;
     });
     
     NgMap.getMap().then(function(map) {
