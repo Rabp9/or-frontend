@@ -25,13 +25,7 @@ angular.module('tuplastFrontendApp')
     function getProductosMain() {
         $interval(function() {
             ProductosService.getProductosMain(function(data) {
-                var productos_aux = data.productos;
-                $scope.productos = [];
-                for (var i = 0; i < 3; i++) {
-                    var index = Math.floor(Math.random() * productos_aux.length) + 0;
-                    $scope.productos.push(productos_aux[index]);
-                    productos_aux.splice(index, 1);
-                }
+                $scope.productos = data.productos;
                 angular.forEach($scope.productos, function(value, key) {
                     if (value !== undefined) {
                         var char_count = value.title.length;

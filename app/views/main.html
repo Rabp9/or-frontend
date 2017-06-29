@@ -15,7 +15,7 @@
         <div class="col-sm-4">
             <div class="linea-productos not-visible delay-0" when-visible="animateElementIn" when-not-visible="animateElementOut">
                 <div class="linea-productos-imagen">
-                    <img ng-src="{{ path_location }}/img/productos/{{ productos[0].producto_images[0].url }}" alt="" class="hvr-grow img-responsive img-productos">
+                    <img ng-src="{{ path_location }}/img/productos/{{ productos[0].productoImage.url }}" alt="" class="hvr-grow img-responsive img-productos">
                 </div>
                 <div class="linea-productos-description">
                     <h2 class="linea-productos-header"><a ui-sref="productos.detail({ id: productos[0].id })" ui-sref-active="active">{{ productos[0].title }}</a></h2>
@@ -28,7 +28,7 @@
             <div class="linea-productos not-visible delay-3" when-visible="animateElementIn"
                   when-not-visible="animateElementOut">
                 <div class="linea-productos-imagen">
-                    <img ng-src="{{ path_location }}/img/productos/{{ productos[1].producto_images[0].url }}" alt="" class="hvr-grow img-responsive img-productos">
+                    <img ng-src="{{ path_location }}/img/productos/{{ productos[1].productoImage.url }}" alt="" class="hvr-grow img-responsive img-productos">
                 </div>
                 <div class="linea-productos-description">
                     <h2 class="linea-productos-header"><a ui-sref="productos.detail({ id: productos[1].id })" ui-sref-active="active">{{ productos[1].title }}</a></h2>
@@ -41,7 +41,7 @@
             <div class="linea-productos not-visible delay-2" when-visible="animateElementIn"
                   when-not-visible="animateElementOut">
                 <div class="linea-productos-imagen">
-                    <img ng-src="{{ path_location }}/img/productos/{{ productos[2].producto_images[0].url }}" alt="" class="hvr-grow img-responsive img-productos">
+                    <img ng-src="{{ path_location }}/img/productos/{{ productos[2].productoImage.url }}" alt="" class="hvr-grow img-responsive img-productos">
                 </div>
                 <div class="linea-productos-description">
                     <h2 class="linea-productos-header"><a ui-sref="productos.detail({ id: productos[2].id })" ui-sref-active="active">{{ productos[2].title }}</a></h2>

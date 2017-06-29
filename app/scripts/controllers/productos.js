@@ -8,10 +8,10 @@
  * Controller of the tuplastFrontendApp
  */
 angular.module('tuplastFrontendApp')
-.controller('ProductosCtrl', function ($scope, ProductosService, SlidesService) {
+.controller('ProductosCtrl', function ($scope, ProductosService, HeadersService) {
     
-    SlidesService.getHeader(function(data) {
-        $scope.imagen = data.file;
+    HeadersService.getByDescripcion({descripcion: 'productos'}, function(data) {
+        $scope.imagen = 'img/headers/' + data.header.url;
     });
     
     ProductosService.getTreeList({spacer: '&nbsp;'}, function(data) {
