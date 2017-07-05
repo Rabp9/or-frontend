@@ -1,5 +1,5 @@
-<div>
-    <img class="img-responsive" ng-src="{{ path_location + imagen }}" alt="quienes-somos" />
+<div ng-if="imagen !== 'img/headers/null'">
+    <img class="img-responsive" ng-src="{{ path_location + imagen }}" alt="quienes-somos" style="width: 100%" />
 </div>
 <div class="container nosotros">
     <ol class="breadcrumb">
