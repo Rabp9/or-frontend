@@ -14,7 +14,7 @@ angular.module('tuplastFrontendApp')
         $scope.imagen = 'img/headers/' + data.header.url;
     });
     
-    ProductosService.getTreeList({spacer: '&nbsp;'}, function(data) {
+    ProductosService.getTreeList({spacer: ' '}, function(data) {
         $scope.productos = data.productos;
     });
 });
