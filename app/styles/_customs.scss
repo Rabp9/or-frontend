@@ -5,7 +5,8 @@
 .cartera-clientes {
     background-color: white;
     transition: background-color 0.5s;
-    height: 450px;
+    min-height: 450px;
+    height: auto;
     padding: 12px;
     &:hover {
         background-color: white;
@@ -609,5 +610,14 @@ div.thumbnail.obras {
         border-radius: 10px;
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
         background-color: $color-primario;
+    }
+}
+
+.ng-image-gallery .ng-image-gallery-thumbnails .thumb {
+    @media (min-width: $screen-sm-min) {
+        margin-right: 5px !important;
+    }
+    @media (max-width: $screen-xs-max) {
+        margin-right: 0px !important;
     }
 }

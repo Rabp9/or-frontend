@@ -9,15 +9,15 @@
  */
 angular.module('tuplastFrontendApp')
 .controller('ObrasDetailCtrl', function ($scope, $stateParams, ObrasService, $rootScope,
-    ngProgressFactory, SlidesService) {
+    ngProgressFactory, HeadersService) {
     var id = $stateParams.id;
     $scope.loading = true;
     
     $scope.progressbar = ngProgressFactory.createInstance();
     $scope.progressbar.start();
     
-    SlidesService.getHeader(function(data) {
-        $scope.imagen = data.file;
+    HeadersService.getByDescripcion({descripcion: 'obras'}, function(data) {
+        $scope.imagen = 'img/headers/' + data.header.url;
     });
     
     ObrasService.get({id: id}, function(data) {
