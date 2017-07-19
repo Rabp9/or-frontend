@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-sm-3 lista-links">
             <ul>
-                <li ng-hide="producto.type === 'P'" ng-repeat="producto in productos" ng-class="{'li-area': producto.type === 'A', 'li-linea-producto': producto.type === 'L', 'li-pagina': producto.type === 'P'}">
+                <li ng-repeat="producto in productos" ng-class="{'li-area': producto.type === 'A', 'li-linea-producto': producto.type === 'L', 'li-pagina': producto.type === 'P'}">
                     <a ui-sref="productos.detail({ id: producto.id })" ui-sref-active="active"  ng-bind-html="producto.title" ></a>
                 </li>
             </ul>
