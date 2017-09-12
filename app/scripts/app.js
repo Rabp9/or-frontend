@@ -193,7 +193,9 @@ angular
         thumbSize: 160
     });
 })
-.run(function($rootScope, $state, $window, ProductosService, InfosService, PagesService, EnvService, $sce) {
+.run(function($rootScope, $state, $window, ProductosService, InfosService, PagesService, EnvService, 
+    $sce, $q) {
+    
     angular.module('tuplastFrontendApp').path_location = EnvService.getHost();
     $rootScope.path_location = EnvService.getHost();
     $rootScope.layout = {};
@@ -221,7 +223,18 @@ angular
     $rootScope.refresh = function() {
         $state.reload();
     };
-    
+    $q.all([
+        ProductosService.getRootProductos().$promise,
+        PagesService.getPages({type: 'CN'}).$promise,
+        PagesService.getPages({type: 'PY'}).$promise,
+        PagesService.getPages({type: 'NS'}).$promise
+    ]).then(function(data) {
+        $rootScope.productos = data[0].productos;
+        $rootScope.pages_nosotros = data[3].pages;
+        $rootScope.pages_proyectos = data[2].pages;
+        $rootScope.pages_contactos = data[1].pages;
+    });
+    /*
     ProductosService.getRootProductos(function(data) {
         $rootScope.productos = data.productos;
     });
@@ -237,7 +250,7 @@ angular
     PagesService.getPages({type: 'CN'}, function(data) {
        $rootScope.pages_contactos = data.pages;
     });
-          
+    */    
     var search = ['facebook_link', 'linkedin_link', 'telf_oficina',
         'email_1', 'email_2', 'telf_area_tecnica', 'brochure', 'telf_area_ventas'
     ];
