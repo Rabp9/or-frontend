@@ -223,34 +223,19 @@ angular
     $rootScope.refresh = function() {
         $state.reload();
     };
-    $q.all([
-        ProductosService.getRootProductos().$promise,
-        PagesService.getPages({type: 'CN'}).$promise,
-        PagesService.getPages({type: 'PY'}).$promise,
-        PagesService.getPages({type: 'NS'}).$promise
-    ]).then(function(data) {
-        $rootScope.productos = data[0].productos;
-        $rootScope.pages_nosotros = data[3].pages;
-        $rootScope.pages_proyectos = data[2].pages;
-        $rootScope.pages_contactos = data[1].pages;
-    });
-    /*
+    
     ProductosService.getRootProductos(function(data) {
         $rootScope.productos = data.productos;
     });
     
-    PagesService.getPages({type: 'NS'}, function(data) {
-       $rootScope.pages_nosotros = data.pages;
+    var pages = ['CN', 'PY', 'NS'];
+    
+    PagesService.getPages(pages, function(data) {
+        $rootScope.pages_nosotros = data.pages.CN;
+        $rootScope.pages_proyectos = data.pages.PY;
+        $rootScope.pages_contactos = data.pages.NS;
     });
     
-    PagesService.getPages({type: 'PY'}, function(data) {
-       $rootScope.pages_proyectos = data.pages;
-    });
-    
-    PagesService.getPages({type: 'CN'}, function(data) {
-       $rootScope.pages_contactos = data.pages;
-    });
-    */    
     var search = ['facebook_link', 'linkedin_link', 'telf_oficina',
         'email_1', 'email_2', 'telf_area_tecnica', 'brochure', 'telf_area_ventas'
     ];

@@ -51,7 +51,7 @@ angular.module('tuplastFrontendApp')
         
         $q.all([
             SlidesService.get().$promise,
-            ObrasService.get().$promise,
+            ObrasService.getRandom().$promise,
             InfosService.getDataMany(search).$promise,
             ClientesService.getRubros().$promise
         ]).then(function(data) {
@@ -74,9 +74,7 @@ angular.module('tuplastFrontendApp')
             });
             
             // Obras
-            var obras_aux = data[1].obras;
-            var index_obra = Math.floor(Math.random() * obras_aux.length) + 0;
-            $scope.obra = obras_aux[index_obra];
+            $scope.obra = data[1].obra;
             
             // Infos
             angular.forEach(search, function(value, key) {

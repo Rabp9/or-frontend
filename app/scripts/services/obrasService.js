@@ -9,5 +9,10 @@
  */
 angular.module('tuplastFrontendApp')
 .factory('ObrasService', function($resource, EnvService) {
-    return $resource(EnvService.getHost() + 'obras/:id.json', {});
+    return $resource(EnvService.getHost() + 'obras/:id.json', {}, {
+        getRandom: {
+            method: 'GET',
+            url: EnvService.getHost() + 'obras/getRandom.json',
+        }
+    });
 });
