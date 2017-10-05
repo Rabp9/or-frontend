@@ -19,7 +19,7 @@ angular.module('tuplastFrontendApp')
                 case 'tuplast.pe':
                     return 'http://tuplast.pe/api/';
                 case 'www.tuplast.pe':
-                    return 'http://tuplast.pe/api/';
+                    return 'http://www.tuplast.pe/api/';
             }
         }
     };
