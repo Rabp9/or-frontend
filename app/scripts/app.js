@@ -273,3 +273,5 @@ angular
         return $sce.trustAsHtml(string);
     };
 });
+angular.module('uib/template/carousel/carousel.html', []).run(['$templateCache', function($templateCache) {
+}]);

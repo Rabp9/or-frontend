@@ -557,7 +557,7 @@ module.exports = function (grunt) {
         'newer:jshint',
         'newer:jscs',
         // 'test',
-        'build',
-        'ftp-deploy'
+        'build'//,
+        // 'ftp-deploy'
     ]);
 };
